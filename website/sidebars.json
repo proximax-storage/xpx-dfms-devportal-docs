@@ -1,0 +1,48 @@
+{
+  "docs": {
+    "Getting Started": [
+	"getting_started_1"
+	],
+    "Built-In Features": [
+      "features_1",
+      "features_2",
+      "features_3",
+      "features_4",
+      "features_5",
+      "features_6",
+      "features_7",
+      "features_8",
+      "features_9",
+      "features_10",
+      "features_11"
+    ],
+    "REST API": [
+      "rest_api_1",
+      "rest_api_2",
+      "rest_api_3",
+      "rest_api_4"
+    ],
+    "SDKs": [
+      "sdk_1",
+      "sdk_2",
+      "sdk_3",
+      "sdk_4"
+    ],
+    "Guides": [
+      "guides_1",
+      "guides_2",
+      "guides_3",
+      "guides_4",
+      "guides_5",
+      "guides_6",
+      "guides_7"
+    ],
+    "Client": [
+	"client_1",
+	"client_2"
+    ]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}
