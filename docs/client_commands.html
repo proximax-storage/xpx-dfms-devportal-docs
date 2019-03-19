@@ -103,13 +103,14 @@ systemctl reset-failed
 <p>Command which can be used to upload\download files to storage or get info about existing contracts.</p>
 <h3><a class="anchor" aria-hidden="true" id="create"></a><a href="#create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create</h3>
 <p>Upload file to the storage.</p>
-<p>Flags allowed:</p>
+<p>Flags required:</p>
 <ul>
-<li>duration - duration of contract in blocks (default <code>10000</code>)</li>
-<li>replications - count of replicators, which will store the file (default <code>3</code>)</li>
-<li>verifications - count of verifiers, which will verify that replicators store actual file (default <code>3</code>)</li>
-<li>verifiers - array of pre-selected verifiers to be used in contract</li>
+<li>duration - duration of contract in blocks</li>
+<li>replications - count of replicators, which will store the file</li>
+<li>verifications - count of verifiers, which will verify that replicators store actual file
+Flags allowed:</li>
 <li>pdp - proof of data posession algorithm (<code>CPOR</code>/<code>MHT</code>/<code>SPDP</code> - default <code>SPDP</code>)</li>
+<li>verifiers - array of pre-selected verifiers to be used in contract</li>
 </ul>
 <p>Arguments:</p>
 <ul>
