@@ -104,12 +104,18 @@ txHash, err := accCl.UploadFile(context.Background(), contract.PubKey, keyPair.P
 }
 
 <span class="hljs-comment">// sign contract by private key of contract first</span>
-<span class="hljs-keyword">if</span> err = accCl.SignTx(ctx, contract.PubKey, txHash, contractKeyPair); err != <span class="hljs-literal">nil</span> {
+contractSignature, err := utils.SignTxHash(txHash, contractKeyPair)
+<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
     <span class="hljs-comment">// handle error somehow</span>
 }
 
 <span class="hljs-comment">// sign contract by client key</span>
-<span class="hljs-keyword">if</span> err = accCl.SignTx(ctx, contract.PubKey, txHash, clientKeyPair); err != <span class="hljs-literal">nil</span> {
+clientSignature, err := utils.SignTxHash(txHash, clientKeyPair)
+<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+    <span class="hljs-comment">// handle error somehow</span>
+}
+
+<span class="hljs-keyword">if</span> err = accCl.ConfirmContract(context.Background(), contractKeyPair.PubKey, contractSignature, clientSignature); err != <span class="hljs-literal">nil</span> {
     <span class="hljs-comment">// handle error somehow</span>
 }
 </code></pre>
