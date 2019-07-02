@@ -15,11 +15,23 @@ strong{
 
 .info{
     padding: 10px 20px;
-    margin-bottom: 20px;
-    background-color: #F7F5FA; 
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-left: 5px solid #79b6e4; 
+    -webkit-box-shadow: 0 4px 10px 0 rgba(28, 45, 40, 0.10);
+    box-shadow: 0 4px 10px 0 rgba(28, 45, 40, 0.10);
 }
 .info p:last-child {
     margin-bottom: 0;
+}
+
+.docs-prevnext a {
+    max-width: 300px;
+    text-transform: none;
+}
+
+.hljs {
+	background: #f0f4f7;
 }
 
 ol{
@@ -217,10 +229,10 @@ div.cap-alpha-ol ol {
     background-color: transparent;
 }
 .separateOnPageNav .navigationSlider .slidingNav ul li a {
-    color: #1fb4ac !important;
+    color: #24292e !important;
 }
-.navigationSlider .slidingNav ul li.siteNavItemActive a {
-    border-bottom: 2px solid #1fb4ac;
+.separateOnPageNav .navigationSlider .slidingNav ul li a:hover {
+    color: #1fb4ac !important;
 }
 
 .docMainWrapper > *:last-child {
@@ -244,7 +256,7 @@ div.cap-alpha-ol ol {
     display: table;
     position: relative;
     overflow: hidden;
-    padding: 40px 20px;
+    padding: 40px 20px 20px;
     margin-bottom: 20px;
     -webkit-box-shadow: 0 8px 20px 0 rgba(28, 45, 40, 0.20);
     box-shadow: 0 8px 20px 0 rgba(28, 45, 40, 0.20);
@@ -404,7 +416,7 @@ div.cap-alpha-ol ol {
 }
 .menu-content,
 .separateOnPageNav .docsNavContainer {
-    background: #f1f4f7;
+    background: #f6fafd;
 }
 .separateOnPageNav.sideNavVisible .navPusher .mainContainer {
     max-width: 900px;
@@ -442,6 +454,19 @@ div.cap-alpha-ol ol {
 }
 .collapsible .arrow svg path:first-child {
     fill: #24292e;
+}
+
+.navSearchWrapper:before,
+.navSearchWrapper:after {
+    border-color: #ddd;
+}
+
+.reactNavSearchWrapper input#search_input_react,
+.reactNavSearchWrapper input#search_input_react:active,
+.reactNavSearchWrapper input#search_input_react:focus {
+    color: #24292e;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
 /* REDOC CSS */
@@ -654,10 +679,10 @@ div.cap-alpha-ol ol {
     }
     .navigationSlider .slidingNav ul,
 	.tocActive .onPageNav {
-        background-color: #f1f4f7;
+        background-color: #f6fafd;
     }
     .tocActive .navBreadcrumb {
-    	border-bottom-color: #f1f4f7;
+    	border-bottom-color: #f6fafd;
     }
     .tocActive .onPageNav > .toc-headings {
         padding: 30px 10px;
@@ -702,12 +727,19 @@ div.cap-alpha-ol ol {
 @media only screen and (max-width: 735px) {
     .fixedHeaderContainer a {
         display: block;
+        max-width: 180px;
         height: 26px;
+        margin-bottom: 10px;
     }
     .fixedHeaderContainer header .headerTitleWithLogo {
-        font-size: 12px;
+        font-size: 9px;
+        letter-spacing: -0.4px;
+        top: -9px;
+        left: 30px;
     }
-	.jumbotron.home
+    .navigationSlider .slidingNav ul {
+        margin-top: 60px;
+    }
 	.jumbotron-img {
 		display: none;
 	}

@@ -11,7 +11,7 @@
 const siteConfig = {
   docsSideNavCollapsible: true,
 
-  title: 'ProximaX Storage DFMS', // Title for your website.
+  title: 'Storage DFMS', // Title for your website.
   tagline: 'Create your applications using Data File Management System as a backbone',
   url: 'https://proximax-storage.github.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
