@@ -1,12 +1,774 @@
 /* your custom css */
+body,
+.fixedHeaderContainer {
+	max-width: 1700px;
+	margin: 0 auto;
+}
+strong{
+    font-weight: bolder;
+}
+
+.caption{
+    text-align: center;
+    font-size : 120%;
+}
+
+.info{
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-left: 5px solid #79b6e4; 
+    -webkit-box-shadow: 0 4px 10px 0 rgba(28, 45, 40, 0.10);
+    box-shadow: 0 4px 10px 0 rgba(28, 45, 40, 0.10);
+}
+.info p:last-child {
+    margin-bottom: 0;
+}
+
+.docs-prevnext a {
+    max-width: 300px;
+    text-transform: none;
+}
+
+.hljs {
+	background: #f0f4f7;
+}
+
+ol{
+    padding-left : 1em;
+}
+
+div.alpha-ol ol { 
+    list-style-type: lower-alpha; 
+}
+
+div.cap-alpha-ol ol { 
+    list-style-type: upper-alpha; 
+}
+
+.navPusher {
+    padding-top: 0;
+}
+
+.home + .mainContainer {
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.jumbotron {
+    position: relative;
+    padding-top: 0px !important;
+    color: #fff;
+    background: #0a2d61;
+    background: linear-gradient(75deg,#0a2d61,#14b6ac);
+}
+
+.jumbotron.home {
+    margin-bottom: -190px !important;
+    background-image: url(/img/bg-home-hero.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+    background-color: #24292e;
+}
+
+.jumbotron.home:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    background: linear-gradient(-45deg, #01ece0, #11507d, #46175f, #1bc706);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+}
+
+.jumbotron.home .inner,
+.max-width-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.separateOnPageNav .wrapper, 
+.separateOnPageNav .headerWrapper.wrapper {
+	max-width: none;
+}
+.jumbotron .inner {
+    position: relative;
+    z-index: 2;
+    padding: 80px 20px 260px;
+}
+
+.jumbotron h1,
+.jumbotron p {
+    max-width: 650px;
+}
+
+.jumbotron h6 {
+    max-width: 400px;
+    line-height: 1.8em;
+}
+
+.jumbotron h1 {
+    font-size: 42px;
+}
+
+.jumbotron h6 {
+    font-size: 18px;
+}
+
+.jumbotron p {
+    font-size: 12px;
+}
+
+.jumbotron .button {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.jumbotron p span {
+    background-color: rgba(243, 169, 28, 0.85);
+    padding: 2px 7px;
+    border-radius: 3px;
+}
+
+.jumbotron-img {
+	max-width: 400px;
+	float: right;
+	margin-left: 30px;
+	margin-top: 50px;
+}
+
+.bg-diagonal {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 250px;
+	left: 0;
+	bottom: -100px;
+	background-color: #fff;
+	-webkit-transform: skewY(-5deg);
+	-moz-transform: skewY(-5deg);
+	-ms-transform: skewY(-5deg);
+	-o-transform: skewY(-5deg);
+	transform: skewY(-5deg);
+}
+
+.home + .mainContainer > .container > .wrapper {
+	margin-top: -100px;
+}
+
+.gap{
+    margin-bottom: 40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.briefDef p {
+    padding: 60px 20%;
+    font-size: 16px;
+}
+
+.container {
+	position: relative;
+	z-index: 4;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.separateOnPageNav .postContainer {
+    padding: 58px 0 0;
+}
+.separateOnPageNav .docMainWrapper .postContainer .wrapper {
+    padding-top: 0;
+}
+
+/* NAV */
+.fixedHeaderContainer {
+	left: 0;
+	right: 0;
+	top: 0;
+}
+.fixedHeaderContainer header .headerTitleWithLogo {
+	font-size: 18px;
+    font-weight: 700;
+}
+.fixedHeaderContainer a {
+    color: #24292e;
+}
+.fixedHeaderContainer a:hover {
+    color: #2d3237;
+}
+.fixedHeaderContainer {
+    position: fixed;
+    padding: 12px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e6ea;
+}
+
+.navigationSlider .slidingNav ul li a {
+    color: #24292e !important;
+    font-weight: 700;
+    font-size: 14px;
+}
+.navigationSlider .slidingNav ul li > a:focus, 
+.navigationSlider .slidingNav ul li > a:hover, 
+.navigationSlider .slidingNav ul li.siteNavItemActive > a, 
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a,
+.navigationSlider .slidingNav ul {
+	color: #1fb4ac !important;
+    background-color: transparent;
+}
+.separateOnPageNav .navigationSlider .slidingNav ul li a {
+    color: #24292e !important;
+}
+.separateOnPageNav .navigationSlider .slidingNav ul li a:hover {
+    color: #1fb4ac !important;
+}
+
+.docMainWrapper > *:last-child {
+	margin-right: 24px;
+}
+
+.docsSliderActive .toc .navBreadcrumb, .tocActive .navBreadcrumb {
+	margin-bottom: 0;
+}
+
+/* CARD */
+.card-container a {
+	color: #23282e !important;
+	font-size: 14px;
+}
+.card {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    display: table;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 8px 20px 0 rgba(28, 45, 40, 0.20);
+    box-shadow: 0 8px 20px 0 rgba(28, 45, 40, 0.20);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15px;
+    transform: translateY(-15px);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card:hover:after {
+    transform: translateY(0);
+}
+
+.blockImage,
+.blockContent {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.blockImage {
+	width: 30%;
+	padding: 0 20px;
+}
+
+.blockImage img {
+	max-width: 40px !important;
+}
+
+.blockContent {
+	width: 70%;
+}
+
+.blockContent h2 {
+	margin-top: 0;
+}
+
+.blockContent p {
+	margin-bottom: 0;
+}
+
+/*.blockElement:nth-child(1) .card:after {
+    background-color: #1fb4ac;
+}*/
+
+.blockElement:nth-child(1) .card:after {
+    background-color: #79b6e3;
+}
+
+.blockElement:nth-child(2) .card:after {
+    background-color: #f06623;
+}
+
+.blockElement:nth-child(3) .card:after {
+    background-color: #f3a91c;
+}
+
+.imageAlignTop .blockImage {
+	max-width: 40px;
+}
+
+.card-container a {
+    color: #555;
+    font-size: 15px;
+}
+
+.card-container a:hover .card {
+    -webkit-box-shadow: 0 8px 20px 0 rgba(28, 45, 40, 0.40);
+    box-shadow: 0 8px 20px 0 rgba(28, 45, 40, 0.40);
+}
+
+.card-img img {
+    margin: 40px;
+    height: 50px;
+}
+
+/* FOOTER */
+.nav-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #1d1a21;
+}
+
+.socialInfo{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 1em;
+    max-width: 1080px;
+}
+
+.socialInfo ul {
+    padding-left: 0;
+}
+
+.nav-footer .socialInfo a:hover{
+    color: #fff;
+}
+
+.nav-footer .socialInfo a {
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+}
+
+.nav-footer .socialInfo li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.acknowledgement{
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* BUTTON */
+.button {
+    border-color: #1fb4ac; 
+    color: #1fb4ac;
+}
+.button:hover,
+.button.button-filled {
+    background-color: #1fb4ac; 
+}
+.button.button-filled {
+	color: #ffffff;
+	padding-left: 25px;
+	padding-right: 25px;
+	text-transform: none;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+/* TABS */
+.tabs .nav-tabs > div.active {
+    border-bottom-color: #1fb4ac;
+}
+
+/* MAJOR TWEAK */
+.docMainWrapper {
+    padding: 0;
+}
+.separateOnPageNav .docsNavContainer {
+	position: sticky;
+	top: 0;
+    padding-left: 30px;
+    padding-right: 10px;
+    border-right: 1px solid #e2e6ea;
+}
+.menu-content,
+.separateOnPageNav .docsNavContainer {
+    background: #f6fafd;
+}
+.separateOnPageNav.sideNavVisible .navPusher .mainContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #ffffff;
+}
+.toc .toggleNav .navGroup .navGroupCategoryTitle {
+	font-size: 16px;
+}
+.toc .toggleNav .navGroup .navGroupCategoryTitle,
+.toc .toggleNav ul li.navListItemActive a,
+.toc .toggleNav ul li a,
+.toc .toggleNav ul li a:focus {
+    color: #24292e;
+	border: 1px solid transparent;
+	background-color: transparent;
+}
+.toc .toggleNav ul {
+	padding: 0;
+}
+.toc .toggleNav ul li a {
+	padding: 7px 20px;
+	margin-right: 20px;
+}
+.toc .toggleNav ul li a:hover {
+	color: #24292e;
+	background-color: #e2e6ea;
+	border-color: #e2e6ea;
+}
+.toc .toggleNav ul li.navListItemActive a {
+	background-color: #ffffff;
+	border-color: #e2e6ea;
+}
+.collapsible .arrow svg path:first-child {
+    fill: #24292e;
+}
+
+.navSearchWrapper:before,
+.navSearchWrapper:after {
+    border-color: #ddd;
+}
+
+.reactNavSearchWrapper input#search_input_react,
+.reactNavSearchWrapper input#search_input_react:active,
+.reactNavSearchWrapper input#search_input_react:focus {
+    color: #24292e;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* REDOC CSS */
+.menu-content {
+    top: 0 !important;
+    flex: 0 0 380px;
+}
+.menu-content,
+.docsNavContainer.docsSliderActive {
+    height: 100vh !important;
+}
+.api-content {
+    padding: 40px 25px 0;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+.sc-bwzfXH .api-info {
+    padding-top: 0;
+}
+.eoxkJU {
+    border-color: #1fb4ac !important;
+}
+
+/* GRADIENT ANIMATION */
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
+@media only screen and (max-width: 1080px) {
+}
+
 @media only screen and (min-width: 1024px) {
+    .navigationSlider .slidingNav ul {
+        background: none;
+    }
+    .sideNavVisible .navPusher {
+        padding-top: 58px;
+    }
+    .separateOnPageNav .docsNavContainer {
+        flex: 0 0 380px;
+    }
+    .docsSliderActive .toc {
+		padding-top: 0;
+	}
+	.docsSliderActive .toc section .navGroups {
+		padding-top: 40px;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+    .menu-content,
+    .separateOnPageNav .docsNavContainer {
+        flex: 0 0 280px;
+    }
+    .separateOnPageNav.sideNavVisible .navPusher .mainContainer {
+        padding-left: 30px;
+        padding-right: 30px
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .fixedHeaderContainer header .headerTitleWithLogo {
+        display: inline-block !important;
+        vertical-align: super;
+    }
+    .jumbotron h1 {
+        font-size: 32px;
+    }
+    .gridBlock .fourByGridBlock {
+        flex: 1 0 40%;
+    }
+    .gridBlock > * {
+        margin: 0 12px 20px;
+    }
+    .gridBlock > *:first-child {
+        margin-left: 12px;
+    }
+    .gridBlock > *:last-child {
+        margin-right: 12px;
+    }
+    .briefDef p {
+    	padding-left: 30px;
+    	padding-right: 30px;
+    }
 }
 
 @media only screen and (max-width: 1023px) {
+    .jumbotron .inner {
+        padding-top: 130px;
+    }
+    .jumbotron {
+        background: linear-gradient(180deg,#0a2d61,#14b6ac);
+    }
+	.jumbotron-img {
+		max-width: 300px;
+	}
+	.blockImage,
+	.blockContent {
+		text-align: center;
+		display: block;
+		width: 100%;
+	}
+	.blockImage {
+		padding: 0;
+	}
+	.imageAlignTop .blockImage {
+		max-width: 100px;
+		margin: 0 auto 20px;
+	}
+	.blockImage img {
+		max-width: 80px !important;
+	}
+    .separateOnPageNav.sideNavVisible .navPusher .mainContainer {
+        margin-top: 100px;
+        border-left: 0;
+    }
+    .navigationSlider .slidingNav ul {
+        margin-bottom: 0;
+        margin-top: 51px;
+        background-color: #ffffff;
+    }
+    .sideNavVisible .navigationSlider .slidingNav ul {
+        border: 0;
+        margin-top: 60px;
+    }
+    .navigationSlider .slidingNav ul li a {
+    	color: #23282e !important;
+    }
+    .sideNavVisible .navigationSlider .slidingNav ul li,
+    .tocActive .navToggle, .tocActive .navBreadcrumb h2 {
+        display: none;
+    }
+    .tocActive .tocToggler {
+    	position: absolute;
+    	right: 25px;
+    }
+    .toc .toggleNav ul li a {
+    	margin-right: 0;
+    }
+    .docMainWrapper > *:last-child {
+    	margin-right: 0;
+    }
+    .sideNavVisible .navigationSlider .slidingNav ul li.navSearchWrapper {
+        display: block;
+    }
+    .separateOnPageNav .docsNavContainer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .sideNavVisible .docsNavContainer {
+        top: 59px;
+        position: fixed;
+        z-index: 9999;
+    }
+    .sideNavVisible .docsNavContainer .toc .navBreadcrumb {
+        background-color: transparent;
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    }
+    .sideNavVisible .toc .toggleNav,
+    .sideNavVisible .navBreadcrumb a, .navBreadcrumb span {
+        color: #24292e;
+    }
+    .tocActive.sideNavVisible .docsNavContainer .toc .navBreadcrumb,
+    .sideNavVisible .docsNavContainer.docsSliderActive .toc .navBreadcrumb,
+    .sideNavVisible .line1, .line2, .line3 {
+        background-color: #ffffff;
+    }
+    .sideNavVisible .docsSliderActive .toc .navBreadcrumb, 
+    .sideNavVisible .tocActive .navBreadcrumb {
+        border: 0;
+    }
+    .tocActive .onPageNav {
+        top: 99px;
+        z-index: 999;
+    }
+    .navigationSlider .slidingNav ul,
+	.tocActive .onPageNav {
+        background-color: #f6fafd;
+    }
+    .tocActive .navBreadcrumb {
+    	border-bottom-color: #f6fafd;
+    }
+    .tocActive .onPageNav > .toc-headings {
+        padding: 30px 10px;
+    }
+    .onPageNav ul li {
+        font-size: 16px;
+    }
+    #redoc .hsnYXF {
+        margin-top: 52px;
+        position: relative;
+    }
+    .api-content {
+        padding-top: 80px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .menu-content {
+        top: 60px !important;
+        height: calc(100vh - 60px) !important;
+        background: #0a2d61 !important;
+        background: linear-gradient(45deg,#0a2d61,#14b6ac) !important;
+    }
+    .fYmjpP,
+    .jtdytL {
+        color: #000 !important;
+    }
+    .fYmjpP {
+        bottom: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+	.jumbotron.home {
+		background-size: cover;
+	}
+    .jumbotron h1 {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .fixedHeaderContainer a {
+        display: block;
+        max-width: 180px;
+        height: 26px;
+        margin-bottom: 10px;
+    }
+    .fixedHeaderContainer header .headerTitleWithLogo {
+        font-size: 9px;
+        letter-spacing: -0.4px;
+        top: -9px;
+        left: 30px;
+    }
+    .navigationSlider .slidingNav ul {
+        margin-top: 60px;
+    }
+	.jumbotron-img {
+		display: none;
+	}
+    .fixedHeaderContainer {
+        top: 0;
+    }
+    .gridBlock .fourByGridBlock {
+        flex: 1 0 100%;
+    }
+    .gridBlock > * {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .gridBlock > *:first-child {
+        margin-left: 0;
+    }
+    .gridBlock > *:last-child {
+        margin-right: 0;
+    }
+    .nav-footer .sitemap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .headerTitleWithLogo {
+        display: block !important;
+    }
 }
 
 @media only screen and (min-width: 1400px) {
