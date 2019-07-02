@@ -21,55 +21,39 @@ class HomeSplash extends React.Component {
     const langPart = `${language ? `${language}/` : ''}`;
     const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
-    const SplashContainer = props => (
-      <div className="homeContainer">
-        <div className="homeSplashFade">
-          <div className="wrapper homeWrapper">{props.children}</div>
+    return (
+        <div className="home jumbotron gap">
+          <div className="inner">
+            <img src="img/illustration-developer.png" className="jumbotron-img" />
+            <h1>Develop your apps with ProximaX Distributed File Management System as a backbone.</h1>
+            <h6>Providing you the maximum data security to protect your digital assets.</h6>
+            <a href="docs/getting_started_1" class="button button-filled">Getting Started &rarr;</a>
+            <p>Storage V3 DFMS Guide &mdash; NEW UPDATE! <span>07.01.2019</span></p>
+          </div>
+          <div class="bg-diagonal"></div>
         </div>
-      </div>
     );
+  }
+}
 
-    const Logo = props => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
-      </div>
-    );
-
-    const ProjectTitle = () => (
-      <h2 className="projectTitle">
-        {siteConfig.title}
-        <small>{siteConfig.tagline}</small>
-      </h2>
-    );
-
-    const PromoSection = props => (
-      <div className="section promoSection">
-        <div className="promoRow">
-          <div className="pluginRowBlock">{props.children}</div>
-        </div>
-      </div>
-    );
-
-    const Button = props => (
-      <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={props.href} target={props.target}>
-          {props.children}
-        </a>
-      </div>
-    );
+class BriefDef extends React.Component{
+  render(){
 
     return (
-      <SplashContainer>
-        <Logo img_src={`${baseUrl}img/docusaurus.svg`} />
-        <div className="inner">
-          <ProjectTitle siteConfig={siteConfig} />
-          <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
-          </PromoSection>
+      <section className="container text-center">
+        <div className="briefDef ">
+          <p>The <strong>ProximaX</strong> storage layer is deployed through a <strong>Distributed File Management System (“DFMS”)</strong> protocol which integrates directly with the blockchain layer. Its peer-to-peer distributed architecture makes the network decentralised and users free from the influence of any third-party storage provider, and allows for client-side encryption for maximum data security. This system is immune to common threats of security and privacy as it is based on encrypted and sharded file storage in a peer-to-peer network.</p>
         </div>
-      </SplashContainer>
+      </section>
+    );
+  }
+}
+
+class ExtraScript extends React.Component{
+  render(){
+
+    return (
+      <script src="../../js/custom.js"></script>
     );
   }
 }
@@ -77,7 +61,7 @@ class HomeSplash extends React.Component {
 class Index extends React.Component {
   render() {
     const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
+    const {baseUrl, docsUrl} = siteConfig;
 
     const Block = props => (
       <Container
@@ -85,121 +69,84 @@ class Index extends React.Component {
         id={props.id}
         background={props.background}>
         <GridBlock
-          align="center"
           contents={props.children}
           layout={props.layout}
         />
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
+    const CardBlock_threeColumn = props => (
+      <Container
+        id={props.id}
+        background={props.background}>
+        <RenderCards cardsData={props.children} />
+      </Container>
     );
 
-    const TryOut = () => (
-      <Block id="try">
-        {[
-          {
-            content: 'Talk about trying this out',
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: 'left',
-            title: 'Try it Out',
-          },
-        ]}
-      </Block>
-    );
+    const RenderCards = (cardProps) => {
 
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content: 'Talk about learning how to use this',
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: 'right',
-            title: 'Learn How',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/docusaurus.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
-          },
-        ]}
-      </Block>
-    );
-
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
+      const cards = cardProps.cardsData
+        .map(cardInfo => (
+          <a className="blockElement imageAlignTop fourByGridBlock" href={cardInfo.link} key={cardInfo.link} >
+              <div className="card">
+                <div className="blockImage">
+                  <img src={cardInfo.image} />
+                </div>
+                <div className="blockContent">
+                  <h2>
+                    <div>
+                      <p>{cardInfo.title}</p>
+                    </div>
+                  </h2>
+                  <div>
+                    <p>{cardInfo.content}</p>
+                  </div>
+                </div>
+              </div>
           </a>
         ));
 
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
+        return (
+          <div className="gridBlock card-container">{cards}</div>
+        );
+    }
 
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
+    const Cards_firstRow = () => (
+      <CardBlock_threeColumn>
+        {[
+          {
+            content: 'The Quick Brown Fox Jumps Over The Lazy Dog.',
+            image: `${baseUrl}img/home-guides.png`,
+            imageAlign: 'top',
+            link: `${baseUrl}`,
+            title: 'Guides',
+          },
+          {
+            content: 'The Quick Brown Fox Jumps Over The Lazy Dog.',
+            image: `${baseUrl}img/home-built-in-features.png`,
+            imageAlign: 'top',
+            link: `${baseUrl}`,
+            title: 'Built-in Features',
+          },
+          {
+            content: 'The Quick Brown Fox Jumps Over The Lazy Dog.',
+            image: `${baseUrl}img/home-references.png`,
+            imageAlign: 'top',
+            link: `${baseUrl}`,
+            title: 'References',
+          },
+        ]}
+      </CardBlock_threeColumn>
+    );
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          <Cards_firstRow />
         </div>
+        <BriefDef language={language} />
+        <ExtraScript />
       </div>
     );
   }
