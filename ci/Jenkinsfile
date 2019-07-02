@@ -50,15 +50,15 @@ pipeline {
       }
     }
  
-    stage('Deploy to bcstorage.xpxsirius.io') {
+    stage('Deploy to storagedocs.xpxsirius.io') {
       steps {
         echo 'Managing S3'
         withAWS(credentials: 'jenkins-ecr', region: 'ap-southeast-2') {
         echo 'Deleting old files'
-        s3Delete bucket: 'bcstorage.xpxsirius.io', path: './'
+        s3Delete bucket: 'storagedocs.xpxsirius.io', path: './'
 
         echo 'Uploading new files'
-        s3Upload bucket: 'bcstorage.xpxsirius.io', acl: 'PublicRead', file: 'website/build/proximax-storage-docs/', sseAlgorithm: 'AES256'
+        s3Upload bucket: 'storagedocs.xpxsirius.io', acl: 'PublicRead', file: 'website/build/proximax-storage-docs/', sseAlgorithm: 'AES256'
       }
 
         echo 'Managing CloudFront'
