@@ -45,19 +45,19 @@ const siteConfig = {
     secondaryColor: '#f06623',
   },
 
-  /* Custom fonts for website */
-  /*
+  stylesheets: [
+    "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900"
+  ],
+
   fonts: {
     myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
       "-apple-system",
       "system-ui"
+    ],
+    myOtherFont: [
+      "Lato"
     ]
   },
-  */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} ProximaX`,
