@@ -3,22 +3,38 @@
     "Getting Started": [
       "getting_started/what_is",
       "getting_started/economy"
-	  ],
-    "Built-In Features": [
-      "built_in_features/drive",
-      "built_in_features/contract_prolongation"
     ],
     "Roles":[
       "roles/owner",
       "roles/replicator",
       "roles/verifier"
     ],
+    "Built-In Features": [
+      "built_in_features/exchange",
+      {
+        "type": "subcategory",
+        "label": "Drive",
+        "ids": [
+          "built_in_features/drive/overview",
+          "built_in_features/drive/lifecycle",
+          "built_in_features/drive/contract_prolongation",
+          "built_in_features/drive/state"
+        ]
+      },
+      "built_in_features/challange"
+    ],
     "Protocols":[
       "protocols/cross_block_protocol",
       "protocols/fair_streaming"
     ],
     "Guides": [
-      "guides/create_drive"
+      "guides/create_drive",
+      "guides/join_to_drive",
+      "guides/upload_file",
+      "guides/rename_move_file",
+      "guides/download_file",
+      "guides/remove_file",
+      "guides/end_drive_contract"
     ]
   },
   "docs-other": {
