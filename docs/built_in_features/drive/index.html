@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Drive · Storage DFMS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;A drive is a multisig account created by user that consist of cosigners (replicators, without owner not is user). Think of the disk account as the different boxes that contain copies of your file.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Drive · Storage DFMS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://proximax-storage.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;A drive is a multisig account created by user that consist of cosigners (replicators, without owner not is user). Think of the disk account as the different boxes that contain copies of your file.&lt;/p&gt;
+"/><meta property="og:image" content="https://proximax-storage.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://proximax-storage.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://proximax-storage.github.io/blog/atom.xml" title="Storage DFMS Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://proximax-storage.github.io/blog/feed.xml" title="Storage DFMS Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo-proximax.png" alt="Storage DFMS"/><h2 class="headerTitleWithLogo">Storage DFMS</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/getting_started/what_is" target="_self">Docs</a></li><li class=""><a href="/docs/doc4" target="_self">API</a></li><li class=""><a href="/help" target="_self">Help</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Built-In Features</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/getting_started/what_is">What is ProximaX storage?</a></li><li class="navListItem"><a class="navItem" href="/docs/getting_started/economy">External economy of the drive</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Built-In Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/built_in_features/drive">Drive</a></li><li class="navListItem"><a class="navItem" href="/docs/built_in_features/contract_prolongation">Contract prolongation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Roles<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/roles/replicator">Replicator</a></li><li class="navListItem"><a class="navItem" href="/docs/roles/verifier">Verifier</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Protocols<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/protocols/cross_block_protocol">Cross block protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/protocols/fair_streaming">Fair streaming</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/guides/create_drive">Create drive</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Drive</h1></header><article><div><span><p>A drive is a multisig account created by user that consist of cosigners (replicators, without owner not is user). Think of the disk account as the different boxes that contain copies of your file.</p>
+<h2><a class="anchor" aria-hidden="true" id="properties-br"></a><a href="#properties-br" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Properties <br></h2>
+<p>Drive have next properties:</p>
+<p><strong>Owner</strong><br>
+User, that creating this drive.</p>
+<p><strong>Duration</strong><br>
+How long will exist this drive (counted in blocks, required).</p>
+<p><strong>Billing period</strong><br>
+How often are payments made (counted in blocks, optional 1 month).</p>
+<blockquote>
+<p><strong>Note</strong> <br>
+Billing period must be a multiple to duration (duration mod billingPeriod = 0)</p>
+</blockquote>
+<p><strong>Billing price</strong><br>
+Reward to replicators for participation, which is paid once in billingPeriod (in storage units, optional replicas*driveSize).</p>
+<p><strong>Drive size</strong> <br>
+Size of drive (required).</p>
+<p><strong>Replicas</strong><br>
+How many replicas the user wants (required);</p>
+<p><strong>Min replicators</strong><br>
+Minimum count of replicators for starting execute drive (optional replicas);</p>
+<p><strong>Percent approvers</strong><br>
+How many signatures must be made for accept transaction (optional 100 or 66);</p>
+<h2><a class="anchor" aria-hidden="true" id="drive-lifecycle"></a><a href="#drive-lifecycle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Drive lifecycle</h2>
+<h3><a class="anchor" aria-hidden="true" id="create-the-drive-br"></a><a href="#create-the-drive-br" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create the drive <br></h3>
+<p>First of all, a user (later the owner) needs to create a new multisign account that will using like drive account. For creating drive owner should to define some field like drive size, amount of replicas, duration, price and other. When drive have created the owner should transfer the amount XPX to the balance that in future will be exchanged on storage unit for payments to replicators.</p>
+<blockquote>
+<p><strong>The example</strong>: <br>
+User wants to create a new 1000MB (driveSize) drive for 12 month (duration). To do this, he determines that he wants 4 replicas, but drive can start when 3 replicators joined. Also he determines that 100% signatures (percentApprovers) are needed for accepts the transaction. Every 1 month (billingPeriod) 100 (billingPrice) will be distributed between replicators (if drive have 4 replicators then every replicators obtain 25 (billingPrice / count of replicators).</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="join-to-the-drive-br"></a><a href="#join-to-the-drive-br" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Join to the drive <br></h3>
+<p>Any user can view and, if the conditions are satisfactory, join him. When user send join transaction to drive account all participants seeing it and sign it. When join transaction from the replicator have signed, he makes a storage units deposit and then he becomes part of multisig.</p>
+<blockquote>
+<p><strong>Note</strong><br>
+Replicator`s deposit equal to drive size.</p>
+</blockquote>
+<p>Drive will has pending status when minimal amount of replicators will have joined. The main replicator will be selected (most often this is the first joined replicator) and he must create transaction to exchange XPX to storage units on drive account. After XPX exchanged to storage units and if it amount on the balance enough drive contract starting up, the status of the disk will change to &quot;in progress&quot;. Replicators will obtain reward every billing period automatically and initiate new exchange XPX storage units after ending billing period.</p>
+<p>Over time, any number of replicators could join to replicators in drive storage contract. Group of nReliable replicators provide a better quality of Cross Verification. New replicator that joins when the drive has no file may move to the standby mode. In general case, at the time of joining replicator has to fill its memory with all files in the current state of the drive. For this purpose, it initiates the Dir command and downloads each file from Dir results. Payments for data transfer will be rewarded according to the use case Upload.</p>
+<p>Actually, drive preparation has no strict time bounds. It is just an initiation of the drive storage contract. If some replicator will join to drive storage contract later its final reward will be calculated considering its time of joining.</p>
+<h3><a class="anchor" aria-hidden="true" id="interacting-with-drive-br"></a><a href="#interacting-with-drive-br" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interacting with drive <br></h3>
+<p>During the execution of the drive contract owner can interact with drive like on other cloud storages. It is meaning that he can do uploading, removing, changing, renaming, moving, downloading files and can structuring them creating and removing directories.</p>
+<p>All commands above create new drive file system that have next properties:</p>
+<ul>
+<li><strong>Drive key</strong> <br>
+Key of drive, that will change.</li>
+<li><strong>New root hash</strong> <br>
+Hash sum of local drive.</li>
+<li><strong>Old root hash</strong> <br>
+Hash sum of local drive before change.</li>
+<li><strong>Add actions</strong> <br>
+New files that added. This is an array of a structure that consists of:
+<ul>
+<li><strong>File size</strong> <br></li>
+<li>size of file.</li>
+<li><strong>File hash</strong> <br></li>
+<li>hash sum of file.</li>
+</ul></li>
+<li><strong>Remove actions</strong> <br>
+An array of hash sum of each file that removed.</li>
+</ul>
+<p>The command above is the same for the following actions: upload, delete and modify files. Let's look at each action in more detail.
+In case uploading new file user pays streaming price (file size * (N of replicas - 1)) in streaming units.</p>
+<blockquote>
+<p><strong>Note</strong> <br>
+(N replicas - 1) because the user has shared this file with at least one replicator.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="end-drive-br"></a><a href="#end-drive-br" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>End drive <br></h3>
+<p>When duration of drive end starting so calling &quot;contract prolongation&quot;. In this period owner can decide if he need continuation of the drive contract or it is can finished.
+Also drive can end until deadline if owner decide that he no longer needs storing files.</p>
+<h2><a class="anchor" aria-hidden="true" id="status-of-drive"></a><a href="#status-of-drive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Status of drive</h2>
+<table>
+<thead>
+<tr><th>Status</th><th style="text-align:center">Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td><em>NotStarted</em></td><td style="text-align:center">Drive created but not generated in blockchain network</td></tr>
+<tr><td><em>Pending</em></td><td style="text-align:center">Drive wait for minimal replicators or enough amount of storage units on drive account</td></tr>
+<tr><td><em>InProgress</em></td><td style="text-align:center">Drive contact executing</td></tr>
+<tr><td><em>Finished</em></td><td style="text-align:center">Owner finished drive or drive duration is end</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/getting_started/economy"><span class="arrow-prev">← </span><span>External economy of the drive</span></a><a class="docs-next button" href="/docs/built_in_features/contract_prolongation"><span>Contract prolongation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#properties-br">Properties</a></li><li><a href="#drive-lifecycle">Drive lifecycle</a><ul class="toc-headings"><li><a href="#create-the-drive-br">Create the drive</a></li><li><a href="#join-to-the-drive-br">Join to the drive</a></li><li><a href="#interacting-with-drive-br">Interacting with drive</a></li><li><a href="#end-drive-br">End drive</a></li></ul></li><li><a href="#status-of-drive">Status of drive</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="Storage DFMS" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 ProximaX</section></footer></div></body></html>
