@@ -14,7 +14,7 @@ const siteConfig = {
   title: 'Storage DFMS', // Title for your website.
   tagline: 'Create your applications using Data File Management System as a backbone',
   url: 'https://proximax-storage.github.io', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  baseUrl: '/xpx-dfms-devportal-docs/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
