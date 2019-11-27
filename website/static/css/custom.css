@@ -9,7 +9,8 @@ strong{
 }
 blockquote {
     background-color: #f3faff;
-    border-left-color: #e1f0f9;
+    border-left-color: #79b6e4;
+    color: #24292e;
 }
 article p img {
     display: inline-block;

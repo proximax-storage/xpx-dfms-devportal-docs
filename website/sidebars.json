@@ -1,45 +1,24 @@
 {
   "docs": {
     "Getting Started": [
-	"getting_started_1"
-	],
+      "getting_started/what_is",
+      "getting_started/economy"
+	  ],
     "Built-In Features": [
-      "features_1",
-      "features_2",
-      "features_3",
-      "features_4",
-      "features_5",
-      "features_6",
-      "features_7",
-      "features_8",
-      "features_9",
-      "features_10",
-      "features_11"
+      "built_in_features/drive",
+      "built_in_features/contract_prolongation"
     ],
-    "REST API": [
-      "rest_api_1",
-      "rest_api_2",
-      "rest_api_3",
-      "rest_api_4"
+    "Roles":[
+      "roles/owner",
+      "roles/replicator",
+      "roles/verifier"
     ],
-    "SDKs": [
-      "sdk_1",
-      "sdk_2",
-      "sdk_3",
-      "sdk_4"
+    "Protocols":[
+      "protocols/cross_block_protocol",
+      "protocols/fair_streaming"
     ],
     "Guides": [
-      "guides_1",
-      "guides_2",
-      "guides_3",
-      "guides_4",
-      "guides_5",
-      "guides_6",
-      "guides_7"
-    ],
-    "Client": [
-	"client_1",
-	"client_2"
+      "guides/create_drive"
     ]
   },
   "docs-other": {

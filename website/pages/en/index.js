@@ -27,7 +27,7 @@ class HomeSplash extends React.Component {
             <img src="img/illustration-developer.png" className="jumbotron-img" />
             <h1>Develop your apps with ProximaX Distributed File Management System as a backbone.</h1>
             <h6>Providing you the maximum data security to protect your digital assets.</h6>
-            <a href="docs/getting_started_1" class="button button-filled">Getting Started &rarr;</a>
+            <a href="docs/getting_started/what_is" class="button button-filled">Getting Started &rarr;</a>
             <p>Storage V3 DFMS Guide &mdash; NEW UPDATE! <span>07.01.2019</span></p>
           </div>
           <div class="bg-diagonal"></div>
