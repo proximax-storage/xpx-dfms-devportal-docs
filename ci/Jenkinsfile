@@ -53,7 +53,7 @@ pipeline {
         s3Delete bucket: 'storagedocs.xpxsirius.io', path: './'
 
         echo 'Uploading new files'
-        s3Upload bucket: 'storagedocs.xpxsirius.io', acl: 'PublicRead', file: 'website/build/proximax-storage-docs/', sseAlgorithm: 'AES256'
+        s3Upload bucket: 'storagedocs.xpxsirius.io', acl: 'PublicRead', file: 'website/build/xpx-dfms-devportal-docs/', sseAlgorithm: 'AES256'
       }
 
         echo 'Managing CloudFront'
