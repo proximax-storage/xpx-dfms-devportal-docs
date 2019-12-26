@@ -10,7 +10,7 @@ sidebar_label: Create drive
 - Have one [owner](../roles/owner.md) node
 
 ## Example
-Prepare a new 1000MB [drive](../built_in_features/drive.md) for 12 months with 5 replicas, but the [drive](../built_in_features/drive.md) can start when 3 [replicators](../roles/replicator.md) joined. The reward will be 5000 SM every 1 month. To accept transactions needed 100% to approve.
+Prepare a new 1000MB [drive](../built_in_features/drive.md) for 12 months with 5 replicas, but the [drive](../built_in_features/drive/overview.md) can start when 3 [replicators](../roles/replicator.md) joined. The reward will be 5000 SM every 1 month. To accept transactions needed 100% to approve.
 
 ```go
 //create driveAccount
