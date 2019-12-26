@@ -1,22 +1,14 @@
 ---
 id: economy
-title: External economy of the drive
+title: The External Economy of the DFMS
+sidebar_label: The External Economy
 ---
 
-## Currency
-Storage layer used 3 types of mosaic that intended for different goals:
-
+## Mosaics
+The [DFMS](what_is.md) uses three types of [mosaics](https://bcdocs.xpxsirius.io/docs/built-in-features/mosaic/) that are intended for different goals.
 ### XPX
-General currency in ProximaX. It is possible to exchange it to any currency according with course in market.
-
-### Storage units
-Used in storage for to pay to replicators for participation in the drive drive. Also replicators makes deposit in storage units on drive account when they join to it.
-
-### Streaming units
-Used as currency for reward to replicators that's makes file transaction (upload, delete, modify, etc).
-
-## Exchange
-Any user may exchange his currency to other using ProximaX Exchange Market selected suitable offer. If the marker does not have offers for this currency, the user can always use ProximaX offers that are constantly on the market.
-
->**Note** <br>
-It is possible to exchange XPX to storage units or XPX to streaming units, but can not exchange storage units to streaming units and vice versa.
+XPX is the main currency in the [DFMS](what_is.md). It can be changed to any currency according to price on the market.
+### Storage units (SO)
+SO is the currency for participation in the [drive](../built_in_features/drive/overview.md). Each [replicator](../roles/replicator.md) should deposit SO to the [drive](../built_in_features/drive/overview.md) account to join it.
+### Streaming units (SM)
+SM is the currency for file transfer [rewards](../built_in_features/reward.md). Users receive these units for distributing files and pay for getting files.

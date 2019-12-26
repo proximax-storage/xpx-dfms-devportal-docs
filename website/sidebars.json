@@ -2,42 +2,85 @@
   "docs": {
     "Getting Started": [
       "getting_started/what_is",
-      "getting_started/economy"
+      "getting_started/economy",
+      "getting_started/setting_up"
     ],
     "Roles":[
       "roles/owner",
-      "roles/replicator",
-      "roles/verifier"
+      "roles/replicator"
     ],
     "Built-In Features": [
-      "built_in_features/exchange",
       {
         "type": "subcategory",
         "label": "Drive",
         "ids": [
           "built_in_features/drive/overview",
           "built_in_features/drive/lifecycle",
-          "built_in_features/drive/contract_prolongation",
           "built_in_features/drive/state"
         ]
       },
-      "built_in_features/challange"
+      {
+        "type": "subcategory",
+        "label": "Exchange Market",
+        "ids":[
+          "built_in_features/exchange"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Challenge",
+        "ids": [
+          "built_in_features/challenge"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Rewards",
+        "ids": [
+          "built_in_features/rewards"
+        ]
+      }
     ],
     "Protocols":[
       "protocols/cross_block_protocol",
       "protocols/fair_streaming"
     ],
-    "Guides": [
-      "guides/create_drive",
-      "guides/join_to_drive",
-      "guides/upload_file",
-      "guides/rename_move_file",
-      "guides/download_file",
-      "guides/remove_file",
-      "guides/end_drive_contract"
+    "Algorithms":[
+      "algorithms/verification",
+      "algorithms/consensus"
     ]
   },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+  "cli": {
+    "DFMS": [
+      "cli/dfms/dfms",
+      "cli/dfms/drive",
+      "cli/dfms/contract",
+      "cli/dfms/ledger",
+      "cli/dfms/net"
+    ],
+    "DFMSR": [
+      "cli/dfmsr/dfmsr",
+      "cli/dfmsr/contract",
+      "cli/dfmsr/ledger",
+      "cli/dfmsr/net"
+    ]
+  },
+  "Guides":{
+    "Contract": [
+      "guides/create_drive",
+      "guides/join_to_drive"
+    ],
+    "Drive": [
+      "guides/get_drive_info",
+      "guides/upload_file",
+      "guides/remove_file",
+      "guides/start_drive_verification",
+      "guides/end_drive_verification",
+      "guides/end_drive_contract",
+      "guides/drive_files_reward"
+    ],
+    "Exchange": [
+      "guides/exchange"
+    ]
   }
 }

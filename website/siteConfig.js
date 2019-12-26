@@ -29,9 +29,10 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'getting_started/what_is', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    {doc: 'cli/dfms/dfms', label: 'CLI'},
+    {doc: 'guides/create_drive', label: 'Guides'},
+    {page: 'help', label: 'Help'}
+    // {blog: true, label: 'Blog'},
   ],
 
   /* path to images for header/footer */
