@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>dfms drive · Storage DFMS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Allows interact with drive file system."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="dfms drive · Storage DFMS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/"/><meta property="og:description" content="Allows interact with drive file system."/><meta property="og:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><link rel="shortcut icon" href="/xpx-dfms-devportal-docs/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/xpx-dfms-devportal-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/xpx-dfms-devportal-docs/css/main.css"/><script src="/xpx-dfms-devportal-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/xpx-dfms-devportal-docs/"><img class="logo" src="/xpx-dfms-devportal-docs/img/logo-proximax.png" alt="Storage DFMS"/><h2 class="headerTitleWithLogo">Storage DFMS</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/xpx-dfms-devportal-docs/docs/getting_started/what_is" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/xpx-dfms-devportal-docs/docs/cli/dfms/dfms" target="_self">CLI</a></li><li class=""><a href="/xpx-dfms-devportal-docs/docs/guides/create_drive" target="_self">Guides</a></li><li class=""><a href="/xpx-dfms-devportal-docs/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DFMS</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMS<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/dfms">dfms (base command)</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/drive">dfms drive</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/contract">dfms contract</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/ledger">dfms ledger</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/net">dfms net</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMSR<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/dfmsr">dfmsr (base command)</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/contract">dfmsr contract</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/ledger">dfmsr ledger</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/net">dfmsr net</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">dfms drive</h1></header><article><div><span><p>Allows interact with drive file system.</p>
+<h2><a class="anchor" aria-hidden="true" id="child-commands"></a><a href="#child-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Child commands</h2>
+<table>
+<thead>
+<tr><th style="text-align:center">Command</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><a href="#dfms-drive-add">dfms drive add</a></td><td style="text-align:center">allows add a new file</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-get">dfms drive get</a></td><td style="text-align:center">allows get a file from the drive</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-copy">dfms drive cp</a></td><td style="text-align:center">allows to copy a file on the drive</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-ls">dfms drive ls</a></td><td style="text-align:center">allows list the drive content</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-mkdir">dfms drive mkdir</a></td><td style="text-align:center">allows to create a new folder</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-move">dfms drive mv</a></td><td style="text-align:center">allows move a file (also uses for renaming)</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-remove">dfms drive rm</a></td><td style="text-align:center">allows delete a file from the drive</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-stat">dfms drive stat</a></td><td style="text-align:center">allows get a file state</td></tr>
+<tr><td style="text-align:center"><a href="#dfms-drive-flush">dfms drive flush</a></td><td style="text-align:center">allows update remote drive</td></tr>
+</tbody>
+</table>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-add"></a><a href="#dfms-drive-add" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive add</code></h2>
+<p>Allows you to add a new file on the drive, returns a new drive's root hash. Makes changes only locally. To synchronize with the remote drive you can use the <code>-f</code> option.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments"></a><a href="#arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive id</td></tr>
+<tr><td style="text-align:center">src</td><td style="text-align:center">the local source path of the file to be added in the drive</td></tr>
+<tr><td style="text-align:center">dst</td><td style="text-align:center">the destination path of the adding file in the drive (defaults to root)</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>-f</code></td><td style="text-align:center">flushes changes to remote replicators after succeeding result</td></tr>
+<tr><td style="text-align:center"><code>-r</code></td><td style="text-align:center">add directory paths recursively</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample"></a><a href="#sample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<p>Let's add test file on the drive:</p>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive add baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 ~/forDfms/test.txt /</span>
+
+Hash: bafkreihhh73b5lecmgbk3ufy5qfgnheunxg6sfw3rrztq6bwfskgpufxu4 
+</code></pre>
+<p>With <code>-f</code> flag automatically update the remote drive.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-get"></a><a href="#dfms-drive-get" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive get</code></h2>
+<p>Allows get a file or a directory from the given path of the contract.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-1"></a><a href="#arguments-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+<tr><td style="text-align:center">src</td><td style="text-align:center">the drive's source path of the file</td></tr>
+<tr><td style="text-align:center">dst</td><td style="text-align:center">the local destination path of the getting file (default “/”)</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-1"></a><a href="#sample-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 /test.txt ~/localDrive/</span>
+ 14 B / 14 B [======================================================================] 100.00% 0s
+<span class="hljs-meta">$</span><span class="bash"> ls localDrive</span>
+test.txt
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-cp"></a><a href="#dfms-drive-cp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive cp</code></h2>
+<p>Allows copy a file or a directory from the source path to the given destination path. It does not make the full copy of the file or directory, it just copies the reference. Makes changes only locally. To synchronize with the remote drive you can use the <code>-f</code> option.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-2"></a><a href="#arguments-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+<tr><td style="text-align:center">src</td><td style="text-align:center">the source path of the file that will copy</td></tr>
+<tr><td style="text-align:center">dst</td><td style="text-align:center">the destination path of the file</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="options-1"></a><a href="#options-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>-f</code></td><td style="text-align:center">flushes changes to remote replicators after succeeding result</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-2"></a><a href="#sample-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive cp baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 /test.txt /copy_file.txt</span>
+</code></pre>
+<p>Check it:</p>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive ls baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 -v</span>
+file    test.txt        bafkreihhh73b5lecmgbk3ufy5qfgnheunxg6sfw3rrztq6bwfskgpufxu4     14
+file    copy_file.txt   bafkreihhh73b5lecmgbk3ufy5qfgnheunxg6sfw3rrztq6bwfskgpufxu4     14
+
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-ls"></a><a href="#dfms-drive-ls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive ls</code></h2>
+<p>Allows return information about files and directories under the given path.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-3"></a><a href="#arguments-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+<tr><td style="text-align:center">path</td><td style="text-align:center">the path to list (default “/”)</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="options-2"></a><a href="#options-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>-v</code></td><td style="text-align:center">return verbose information of files/directories</td></tr>
+<tr><td style="text-align:center"><code>-s</code></td><td style="text-align:center">sorts the results</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-3"></a><a href="#sample-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive ls baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 -v</span>
+
+file    test.txt        bafkreihhh73b5lecmgbk3ufy5qfgnheunxg6sfw3rrztq6bwfskgpufxu4     14
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-mkdir"></a><a href="#dfms-drive-mkdir" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive mkdir</code></h2>
+<p>Allows create a new directory on the given path. Makes changes only locally. To synchronize with the remote drive you can use the <code>-f</code> option.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-4"></a><a href="#arguments-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+<tr><td style="text-align:center">path</td><td style="text-align:center">the path of the directory to be created</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="options-3"></a><a href="#options-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>-f</code></td><td style="text-align:center">flushes changes to remote replicators after succeeding result</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-4"></a><a href="#sample-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive mkdir baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 /sampleDir</span>
+</code></pre>
+<p>Check if the directory is created:</p>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive ls baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 -v</span>
+
+dir     sampleDir       QmUv7FuyKPrDzkDoiHon9qKaFmasfXToRbxHEyd9DQiWLG  np
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-mv"></a><a href="#dfms-drive-mv" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive mv</code></h2>
+<p>Move moves a file or a directory from the given source path to the given destination path (use also to rename). Makes changes only locally. To synchronize with the remote drive you can use the <code>-f</code> option.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-5"></a><a href="#arguments-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+<tr><td style="text-align:center">src</td><td style="text-align:center">the source path of the file that will move</td></tr>
+<tr><td style="text-align:center">dst</td><td style="text-align:center">the destination path of the file</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="options-4"></a><a href="#options-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
+<p>f - flush; flushes changes to remote replicators after succeeding result;</p>
+<h3><a class="anchor" aria-hidden="true" id="sample-5"></a><a href="#sample-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive mv baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 /test.txt /sampleDir</span>
+</code></pre>
+<p>And now get content of <code>/sampleDir</code></p>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive ls baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 /sampleDir</span>
+
+test.txt
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-rm"></a><a href="#dfms-drive-rm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive rm</code></h2>
+<p>Allows remove a file or a directory from the given source path. Makes changes only locally. To synchronize with the remote drive you can use the <code>-f</code> option.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-6"></a><a href="#arguments-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+<tr><td style="text-align:center">path</td><td style="text-align:center">the path to the file to be removed</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="options-5"></a><a href="#options-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>-f</code></td><td style="text-align:center">flushes changes to remote replicators after succeeding result</td></tr>
+<tr><td style="text-align:center"><code>-l</code></td><td style="text-align:center">delete the file from local drive only</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-6"></a><a href="#sample-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash">&gt; dfms drive rm baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 /sampleDir/test.txt</span>
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-stat"></a><a href="#dfms-drive-stat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive stat</code></h2>
+<p>Allows return information about a file or a directory under the given path.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-7"></a><a href="#arguments-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+<tr><td style="text-align:center">path</td><td style="text-align:center">the path to the file to get the stat</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-7"></a><a href="#sample-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive <span class="hljs-built_in">stat</span> baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5 /sampleDir</span>
+
+dir     sampleDir       QmUv7FuyKPrDzkDoiHon9qKaFmasfXToRbxHEyd9DQiWLG  np
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="dfms-drive-flush"></a><a href="#dfms-drive-flush" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms drive flush</code></h2>
+<p>Allows pushing the state of the local drive to the remote one.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-8"></a><a href="#arguments-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">contract</td><td style="text-align:center">the drive ID</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-8"></a><a href="#sample-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h3>
+<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms drive flush baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/xpx-dfms-devportal-docs/docs/cli/dfms/dfms"><span class="arrow-prev">← </span><span>dfms (base command)</span></a><a class="docs-next button" href="/xpx-dfms-devportal-docs/docs/cli/dfms/contract"><span>dfms contract</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#child-commands">Child commands</a></li><li><a href="#dfms-drive-add"><code>dfms drive add</code></a><ul class="toc-headings"><li><a href="#arguments">Arguments</a></li><li><a href="#options">Options</a></li><li><a href="#sample">Sample</a></li></ul></li><li><a href="#dfms-drive-get"><code>dfms drive get</code></a><ul class="toc-headings"><li><a href="#arguments-1">Arguments</a></li><li><a href="#sample-1">Sample</a></li></ul></li><li><a href="#dfms-drive-cp"><code>dfms drive cp</code></a><ul class="toc-headings"><li><a href="#arguments-2">Arguments</a></li><li><a href="#options-1">Options</a></li><li><a href="#sample-2">Sample</a></li></ul></li><li><a href="#dfms-drive-ls"><code>dfms drive ls</code></a><ul class="toc-headings"><li><a href="#arguments-3">Arguments</a></li><li><a href="#options-2">Options</a></li><li><a href="#sample-3">Sample</a></li></ul></li><li><a href="#dfms-drive-mkdir"><code>dfms drive mkdir</code></a><ul class="toc-headings"><li><a href="#arguments-4">Arguments</a></li><li><a href="#options-3">Options</a></li><li><a href="#sample-4">Sample</a></li></ul></li><li><a href="#dfms-drive-mv"><code>dfms drive mv</code></a><ul class="toc-headings"><li><a href="#arguments-5">Arguments</a></li><li><a href="#options-4">Options</a></li><li><a href="#sample-5">Sample</a></li></ul></li><li><a href="#dfms-drive-rm"><code>dfms drive rm</code></a><ul class="toc-headings"><li><a href="#arguments-6">Arguments</a></li><li><a href="#options-5">Options</a></li><li><a href="#sample-6">Sample</a></li></ul></li><li><a href="#dfms-drive-stat"><code>dfms drive stat</code></a><ul class="toc-headings"><li><a href="#arguments-7">Arguments</a></li><li><a href="#sample-7">Sample</a></li></ul></li><li><a href="#dfms-drive-flush"><code>dfms drive flush</code></a><ul class="toc-headings"><li><a href="#arguments-8">Arguments</a></li><li><a href="#sample-8">Sample</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/xpx-dfms-devportal-docs/" class="nav-home"><img src="/xpx-dfms-devportal-docs/img/favicon.png" alt="Storage DFMS" width="66" height="58"/></a><div><h5>Roles</h5><a href="/xpx-dfms-devportal-docs/docs/roles/Owner">Owner</a><a href="/xpx-dfms-devportal-docs/docs/roles/replicator">Replicator</a><a href="/xpx-dfms-devportal-docs/docs/roles/verifier">Verifier</a></div><div><h5>Built-in Features</h5><a href="/xpx-dfms-devportal-docs/docs/built_in_features/exchange">Exchange</a><a href="/xpx-dfms-devportal-docs/docs/built_in_features/drive/overview">Drive</a><a href="/xpx-dfms-devportal-docs/docs/built_in_features/challenge">Challenge</a></div><div><h5>Protocol</h5><a href="/xpx-dfms-devportal-docs/docs/protocols/cross_block_protocol">Cross-block protocol</a><a href="/xpx-dfms-devportal-docs/docs/protocols/fair_streaming">Fair streaming</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/xpx-dfms-devportal-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 ProximaX</section></footer></div></body></html>
