@@ -25,10 +25,10 @@ class HomeSplash extends React.Component {
         <div className="home jumbotron gap">
           <div className="inner">
             <img src="img/illustration-developer.png" className="jumbotron-img" />
-            <h1>Develop your apps with ProximaX Distributed File Management System as a backbone.</h1>
-            <h6>Providing you the maximum data security to protect your digital assets.</h6>
+            <h1>Start integrating your apps with Sirius Storage.</h1>
+            <h6>Providing you with maximum data security, privacy, and scalability</h6>
             <a href="docs/getting_started/what_is" class="button button-filled">Getting Started &rarr;</a>
-            <p>Storage V3 DFMS Guide &mdash; NEW UPDATE! <span>07.01.2019</span></p>
+            <p>Sirius Storage Version<span>0.0.1</span></p>
           </div>
           <div class="bg-diagonal"></div>
         </div>
@@ -75,6 +75,14 @@ class Index extends React.Component {
       </Container>
     );
 
+    const CardBlock_twoColumn = props => (
+      <Container
+        id={props.id}
+        background={props.background}>
+        <RenderCards cardsData={props.children} />
+      </Container>
+    );
+
     const CardBlock_threeColumn = props => (
       <Container
         id={props.id}
@@ -112,32 +120,67 @@ class Index extends React.Component {
     }
 
     const Cards_firstRow = () => (
-      <CardBlock_threeColumn>
+      <CardBlock_twoColumn>
         {[
           {
-            content: 'The Quick Brown Fox Jumps Over The Lazy Dog.',
+            content: 'Install the development kit and start coding your first blockchain app.',
+            image: `${baseUrl}img/home-getting-started.png`,
+            imageAlign: 'top',
+            link: `${baseUrl + docsUrl}/getting_started/what_is`,
+            title: 'Getting started',
+          },
+          {
+            content: 'Easy-to-follow step by step guides with code examples.',
             image: `${baseUrl}img/home-guides.png`,
             imageAlign: 'top',
-            link: `${baseUrl}`,
+            link: `${baseUrl + docsUrl}/cli/dfms/dfms`,
             title: 'Guides',
           },
           {
-            content: 'The Quick Brown Fox Jumps Over The Lazy Dog.',
+            content: 'Architecture your solution connecting decentralized file management system',
             image: `${baseUrl}img/home-built-in-features.png`,
             imageAlign: 'top',
-            link: `${baseUrl}`,
+            link: `${baseUrl + docsUrl}/built_in_features/drive/overview`,
             title: 'Built-in Features',
           },
           {
-            content: 'The Quick Brown Fox Jumps Over The Lazy Dog.',
+            content: 'From libraries to extensions that make web 3.0 development easier.',
             image: `${baseUrl}img/home-references.png`,
             imageAlign: 'top',
-            link: `${baseUrl}`,
+            link: '#',//`${baseUrl}references`,
             title: 'References',
           },
         ]}
-      </CardBlock_threeColumn>
+      </CardBlock_twoColumn>
     );
+    
+    // const Cards_firstRow = () => (
+    //   <CardBlock_threeColumn>
+    //     {[
+    //       {
+    //         content: '',
+    //         image: `${baseUrl}img/home-guides.png`,
+    //         imageAlign: 'top',
+    //         link: `${baseUrl}`,
+    //         title: 'Guides',
+    //       },
+    //       {
+    //         content: '',
+    //         image: `${baseUrl}img/home-built-in-features.png`,
+    //         imageAlign: 'top',
+    //         link: `${baseUrl}`,
+    //         title: 'Built-in Features',
+    //       },
+    //       {
+    //         content: '',
+    //         image: `${baseUrl}img/home-references.png`,
+    //         imageAlign: 'top',
+    //         link: `${baseUrl}`,
+    //         title: 'References',
+    //       },
+    //     ]}
+    //   </CardBlock_threeColumn>
+    // );
 
     return (
       <div>

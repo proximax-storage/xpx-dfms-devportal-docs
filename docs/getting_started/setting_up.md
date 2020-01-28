@@ -2,9 +2,9 @@
 id: setting_up
 title: Setting Up
 ---
-This guide explains what you need to install the software and how to start using the [DFMS](what_is.md).
+This guide explains what software you need to install and how to start using the [Sirius Storage](what_is.md).
 ## DFMS node
-First of all, you need to download the [DFMS](what_is.md) binary file according to your OS. Then you can run it.
+First of all, you need to download the [Sirius Storage](what_is.md) binary file according to your OS. Then you can run it.
 ## CLI
 There are two types of CLI:
 - [dfms](../cli/dfms/dfms.md) - used by the client ([owner](../roles/owner.md));
