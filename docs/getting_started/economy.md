@@ -7,7 +7,7 @@ sidebar_label: The External Economy
 ## Mosaics
 The [DFMS](what_is.md) uses three types of [mosaics](https://bcdocs.xpxsirius.io/docs/built-in-features/mosaic/) that are intended for different goals.
 ### XPX
-XPX is the main currency in the [DFMS](what_is.md). It can be changed to any currency according to price on the market.
+XPX is the main currency in the [DFMS](what_is.md). It can be changed to any currency according to market price.
 ### Storage units (SO)
 SO is the currency for participation in the [drive](../built_in_features/drive/overview.md). Each [replicator](../roles/replicator.md) should deposit SO to the [drive](../built_in_features/drive/overview.md) account to join it.
 ### Streaming units (SM)
