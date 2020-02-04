@@ -9,4 +9,4 @@ The [Challenge](challenge.md) is the process when the [verifier](../roles/replic
 2. The [replicator](../roles/replicator.md) generates blocks of passed file indexes and sends them to the [verifier](../roles/replicator.md).
 3. The [verifier](../roles/replicator.md) compares its blocks with the [replicator](../roles/replicator.md)'s blocks.
 
-If there are any differences between the [verifier](../roles/replicator.md)'s and the [replicator](../roles/replicator.md)'s blocks, the [replicator](../roles/replicator.md) fails the [Challenge](challenge.md), and it is banned by all signers of the contract. After that, the [verifier](../roles/replicator.md) searches for other [replicators](../roles/replicator.md) and asks them to send file data.
+If there are any differences between the [verifier's](../roles/replicator.md) and the [replicator's](../roles/replicator.md) blocks, the [replicator](../roles/replicator.md) fails the [Challenge](challenge.md), and it is banned by all signers of the contract. After that, the [verifier](../roles/replicator.md) searches for other [replicators](../roles/replicator.md) and asks them to send file data.

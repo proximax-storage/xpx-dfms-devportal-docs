@@ -101,7 +101,7 @@ $ dfms contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisri
 ```
 ----------------------
 ### `dfms contract ammends`
-Create a subscription for the drive contract corrections for the contract in local storage and/or in the Blockchain.
+Create a subscription for the drive contract corrections for the contract in local storage and/or in the blockchain.
 #### Arguments
 | Name | Description  |
 |:-:|:-:|

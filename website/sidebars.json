@@ -21,13 +21,6 @@
       },
       {
         "type": "subcategory",
-        "label": "Exchange Market",
-        "ids":[
-          "built_in_features/exchange"
-        ]
-      },
-      {
-        "type": "subcategory",
         "label": "Challenge",
         "ids": [
           "built_in_features/challenge"
@@ -43,11 +36,12 @@
     ],
     "Protocols":[
       "protocols/cross_block_protocol",
-      "protocols/fair_streaming"
+      "protocols/verification",
+      "protocols/fair_streaming",
+      "protocols/consensus"
     ],
     "Algorithms":[
-      "algorithms/verification",
-      "algorithms/consensus"
+      "algorithms/cpor"
     ]
   },
   "cli": {
@@ -67,20 +61,27 @@
   },
   "Guides":{
     "Contract": [
-      "guides/create_drive",
-      "guides/join_to_drive"
+      "guides/contract/create",
+      "guides/contract/join",
+      "guides/contract/get_info"
     ],
-    "Drive": [
-      "guides/get_drive_info",
-      "guides/upload_file",
-      "guides/remove_file",
-      "guides/start_drive_verification",
-      "guides/end_drive_verification",
-      "guides/end_drive_contract",
-      "guides/drive_files_reward"
+    "Drive File System": [
+      "guides/drive_fs/add",
+      "guides/drive_fs/mkdir",
+      "guides/drive_fs/copy",
+      "guides/drive_fs/rename_move",
+      "guides/drive_fs/get",
+      "guides/drive_fs/ls",
+      "guides/drive_fs/stat",
+      "guides/drive_fs/remove",
+      "guides/drive_fs/flush"
     ],
-    "Exchange": [
-      "guides/exchange"
+    "Network": [
+      "guides/network/id",
+      "guides/network/addrs",
+      "guides/network/connect",
+      "guides/network/peers",
+      "guides/network/disconnect"
     ]
   }
 }

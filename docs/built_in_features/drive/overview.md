@@ -15,15 +15,15 @@ This value contains the time of [drive](overview.md) existing (counted in blocks
 ### Billing period
 Payout frequency to [replicators](../../roles/replicator.md) (counted in blocks, recommended 1 month).
 > Note \
-*Billing period* must be a multiple of the *duration* (*duration* mod *billingPeriod* = 0)
+*Billing period* must be a multiple of the *duration* (*duration mod billingPeriod = 0*)
 ### Billing price
-The reward for participation. Paid once in billingPeriod (in SO; recommended replicas*driveSize) and is divided between all [replicators](../../roles/replicator.md).
+The reward for participation. Paid once in *billing period* (in [SO](../../getting_started/economy.md#so); recommended *replicas \* driveSize*) and is divided between all [replicators](../../roles/replicator.md).
 ### Drive size
 A [drive](overview.md) space in MB (required).
 ### Replicas
 The count of [drive](overview.md) copies (required);
 > Note \
-Amount of [replicators](../../roles/replicator.md) is not limited. Any [replicator](../../roles/replicator.md) can join to [drive](overview.md) even if it has the required amount of [replicators](../../roles/replicator.md).
+Amount of [replicators](../../roles/replicator.md) is limited by the number of replicas.
 ### Min replicators
 The minimum count of [replicators](../../roles/replicator.md) for starting to execute [drive](overview.md) (recommended to be equal to replicas);
 ### Percent approvers

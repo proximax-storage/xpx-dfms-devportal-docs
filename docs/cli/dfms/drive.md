@@ -39,7 +39,7 @@ $ dfms drive add baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrg
 
 Hash: bafkreihhh73b5lecmgbk3ufy5qfgnheunxg6sfw3rrztq6bwfskgpufxu4 
 ```
-With `-f` flag automatically update the remote drive.
+With `-f` flag automatically update the remote drive. Use the flag `-r` for directories.
 
 -----------------------
 ## `dfms drive get`

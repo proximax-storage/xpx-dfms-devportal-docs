@@ -30,9 +30,8 @@ const siteConfig = {
   headerLinks: [
     {doc: 'getting_started/what_is', label: 'Docs'},
     {doc: 'cli/dfms/dfms', label: 'CLI'},
-    {doc: 'guides/create_drive', label: 'Guides'},
+    {doc: 'guides/contract/create', label: 'Guides'},
     {page: 'help', label: 'Help'}
-    // {blog: true, label: 'Blog'},
   ],
 
   /* path to images for header/footer */
