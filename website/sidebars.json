@@ -55,14 +55,14 @@
       "cli/dfms/dfms",
       "cli/dfms/drive",
       "cli/dfms/contract",
-      "cli/dfms/ledger",
-      "cli/dfms/net"
+      "cli/dfms/net",
+      "cli/dfms/version"
     ],
     "DFMSR": [
       "cli/dfmsr/dfmsr",
       "cli/dfmsr/contract",
-      "cli/dfmsr/ledger",
-      "cli/dfmsr/net"
+      "cli/dfmsr/net",
+      "cli/dfmsr/version"
     ]
   },
   "Guides":{
