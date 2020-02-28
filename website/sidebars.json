@@ -67,20 +67,33 @@
   },
   "Guides":{
     "Contract": [
-      "guides/create_drive",
-      "guides/join_to_drive"
+      "guides/contract/compose",
+      "guides/contract/get",
+      "guides/contract/ls",
+      "guides/contract/ammends",
+      "guides/contract/verify",
+      "guides/contract/accept",
+      "guides/contract/accepted",
+      "guides/contract/invites",
+      "guides/contract/finish"
     ],
     "Drive": [
-      "guides/get_drive_info",
-      "guides/upload_file",
-      "guides/remove_file",
-      "guides/start_drive_verification",
-      "guides/end_drive_verification",
-      "guides/end_drive_contract",
-      "guides/drive_files_reward"
+      "guides/drive/add",
+      "guides/drive/get",
+      "guides/drive/cp",
+      "guides/drive/mv",
+      "guides/drive/mkdir",
+      "guides/drive/stat",
+      "guides/drive/ls",
+      "guides/drive/rm",
+      "guides/drive/flush"
     ],
-    "Exchange": [
-      "guides/exchange"
+    "Net": [
+      "guides/net/id",
+      "guides/net/addrs",
+      "guides/net/connect",
+      "guides/net/peers",
+      "guides/net/disconnect"
     ]
   }
 }
