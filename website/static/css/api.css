@@ -1,0 +1,177 @@
+/* This css file rewrites #redoc css template */
+
+body{
+    overflow-x: unset;
+    position: initial;
+    margin: 0;
+    padding: 0;
+}
+
+#redoc * {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+}
+
+#redoc h1,
+#redoc h2,
+#redoc h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important  ;
+    font-weight: 300 !important;
+    line-height: 1.1;
+    color: #333 !important;
+}
+
+#redoc h1{
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+#redoc h2{
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+#redoc h3{
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+#redoc a{
+    color: #1fb4ac !important;
+}
+#redoc a:hover{
+    color: #f06623 !important;
+    text-decoration: underline;
+}
+
+/* Layout */
+
+#redoc .background{
+    display: none;
+}
+
+#redoc blockquote{
+    background: #5fe2ea !important;
+    color: #fff !important;
+    padding: 10px !important;
+    margin: 20px 0px 20px 0px !important;
+    border: 0px !important;
+}
+
+#redoc pre{
+    color: #fff;
+}
+
+#redoc ul li{
+    text-indent: 0 !important;
+}
+#redoc ul li::before{
+    display: none;
+}
+
+/* Sidebar */
+
+#redoc .menu-content ul li {
+    padding-left: 0 !important;
+}
+
+#redoc .menu-content .operation-type{
+    font-size: 8px !important;
+    margin-top: 7px !important;
+}
+
+#redoc .menu-content label.active,
+#redoc .menu-content label.active:hover,
+#redoc .menu-content label:hover {
+    color: #24292e !important;
+    background-color: rgba(255,255,255,0) !important;
+}
+.bbzwOW,
+.eZVMgt,
+#redoc .hsnYXF {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.dBdWcW.active,
+.cpeKUl.active,
+.hJjUAi {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+.hJjUAi,
+.cpeKUl {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.hJjUAi {
+    opacity: 0.6;
+}
+
+.dBdWcW.active,
+.cpeKUl.active {
+    opacity: 1;
+}
+
+.bbzwOW, .hJjUAi,
+#redoc .menu-content label.-depth1.active > span,
+#redoc .menu-content label.-depth1:hover > span {
+    color: #24292e !important;
+}
+.bbzwOW, .hJjUAi,
+#redoc .menu-content label.-depth1.active > span,
+#redoc .menu-content label.-depth1:hover > span,
+#redoc .menu-content li .bbzwOW .iYFoHM {
+    font-weight: 600 !important;
+}
+#redoc .menu-content li .fJsPqZ {
+    font-size: 14px !important;
+}
+#redoc .menu-content li ul {
+    padding-bottom: 20px;
+}
+#redoc .dYkZdi,
+.bbzwOW .sc-1g5rdgs-0 polygon,
+.dBdWcW.active .sc-1g5rdgs-0 polygon {
+    fill: #24292e !important
+}
+#redoc .flpwnc {
+    width: 100% !important;
+    margin: 0 !important;
+}
+#redoc .bbzwOW {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 8px;
+}
+#redoc .hsnYXF .search-input {
+    padding: 20px 25px;
+}
+#redoc .dYkZdi {
+    top: 21px;
+    left: 30px;
+}
+#redoc .dtDRcF {
+    padding-left: 0;
+    padding-right: 0;
+}
+#redoc .eZVMgt a {
+    border-top-color: rgba(255,255,255,0.1) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #24292e !important;
+}
+#redoc .flpwnc {
+    border-bottom: 1px solid #e1e6e9 !important;
+    margin-bottom: 20px !important;
+}
+
+@media screen and (max-width: 800px){
+
+    .content{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
