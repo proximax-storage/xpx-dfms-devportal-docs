@@ -27,8 +27,8 @@ Connects to given set of peers. Accepts only Multiadresses in the form of: \
 
 ### Arguments
 
-|    Name     |         Description         |
-| :---------: | :-------------------------: |
+| Name        | Description                 |
+| :---------- | :-------------------------- |
 | **address** | Peer address for connection |
 
 ### Examples
@@ -55,8 +55,8 @@ Drops connections to given set of addresses. Accepts only Multiadresses in the f
 
 ### Arguments
 
-|    Name     |          Description           |
-| :---------: | :----------------------------: |
+| Name        | Description                    |
+| :---------- | :----------------------------- |
 | **address** | Peer address for disconnection |
 
 ### Examples

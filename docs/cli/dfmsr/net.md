@@ -10,13 +10,13 @@ title: dfmsr net
 It manages networking related commands.
 
 ## Child commands
-|                     Command                     |           Description            |
-| :---------------------------------------------: | :------------------------------: |
-|    [`dfmsr net connect`](#dfmsr-net-connect)    | open connection to given address |
-| [`dfmsr net disconnect`](#dfmsr-net-disconnect) |  disconnect from given address   |
-|      [`dfmsr net peers`](#dfmsr-net-peers)      |     show all connected peers     |
-|         [`dfmsr net id`](#dfmsr-net-id)         |          Show identity           |
-|      [`dfmsr net addrs`](#dfmsr-net-addrs)      |      Show all p2p addresses      |
+| Command                                         | Description                      |
+| :---------------------------------------------- | :------------------------------- |
+| [`dfmsr net connect`](#dfmsr-net-connect)       | open connection to given address |
+| [`dfmsr net disconnect`](#dfmsr-net-disconnect) | disconnect from given address    |
+| [`dfmsr net peers`](#dfmsr-net-peers)           | show all connected peers         |
+| [`dfmsr net id`](#dfmsr-net-id)                 | Show identity                    |
+| [`dfmsr net addrs`](#dfmsr-net-addrs)           | Show all p2p addresses           |
 
 ---
 
@@ -27,8 +27,8 @@ Connects to given set of peers. Accepts only Multiadresses in the form of: \
 
 #### Arguments
 
-|    Name     |         Description         |
-| :---------: | :-------------------------: |
+| Name        | Description                 |
+| :---------- | :-------------------------- |
 | **address** | Peer address for connection |
 
 #### Examples
@@ -55,8 +55,8 @@ Drops connections to given set of addresses. Accepts only Multiadresses in the f
 
 #### Arguments
 
-|    Name     |          Description           |
-| :---------: | :----------------------------: |
+| Name        | Description                    |
+| :---------- | :----------------------------- |
 | **address** | Peer address for disconnection |
 
 #### Examples

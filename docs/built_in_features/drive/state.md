@@ -5,12 +5,12 @@ sidebar_label: State
 ---
 
 
-|     State    |     Meaning   |
-|--------------|:-------------:|
-| [**NotStarted**](state.md#notstarted) | The [drive](overview.md) waits for the minimal count of [replicators](../../roles/replicator.md) |
-| [**Pending**](state.md#pending) | The [drive](overview.md) waits for the end of the [drive](overview.md) or the payment next billing period. |
-| [**InProgress**](state.md#inprogress) | The [drive](overview.md) contract is being executed |
-| [**Finished**](state.md#finished) | The [drive](overview.md) is terminated or it is over. |
+| State                                 | Meaning                                                                                                    |
+| :------------------------------------ | :--------------------------------------------------------------------------------------------------------- |
+| [**NotStarted**](state.md#notstarted) | The [drive](overview.md) waits for the minimal count of [replicators](../../roles/replicator.md)           |
+| [**Pending**](state.md#pending)       | The [drive](overview.md) waits for the end of the [drive](overview.md) or the payment next billing period. |
+| [**InProgress**](state.md#inprogress) | The [drive](overview.md) contract is being executed                                                        |
+| [**Finished**](state.md#finished)     | The [drive](overview.md) is terminated or it is over.                                                      |
 
 ## NotStarted
 The [drive](overview.md) waits for the minimal count of [replicators](../../roles/replicator.md). Its state changes to [**Pending**](state.md#pending) when a minimum count of [replicators](../../roles/replicator.md) has occurred.
