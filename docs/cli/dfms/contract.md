@@ -11,12 +11,12 @@ title: dfms contract
 
 ## Child commands
 
-|                      Command                      |                              Description                              |
-| :-----------------------------------------------: | :-------------------------------------------------------------------: |
-| [`dfms contract compose`](#dfms-contract-compose) |                      compose new [Drive Contract](../../built_in_features/drive/overview.md)                       |
-|      [`dfms contract ls`](#dfms-contract-ls)      | lists all the Drives in which Node participates as an owner or member |
-|     [`dfms contract get`](#dfms-contract-get)     |             get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network             |
-| [`dfms contract ammends`](#dfms-contract-ammends) |                 subscribe for [Drive Contract](../../built_in_features/drive/overview.md) updates                  |
+| Command                                           | Description                                                                                |
+| :------------------------------------------------ | :----------------------------------------------------------------------------------------- |
+| [`dfms contract compose`](#dfms-contract-compose) | compose new [Drive Contract](../../built_in_features/drive/overview.md)                    |
+| [`dfms contract ls`](#dfms-contract-ls)           | lists all the Drives in which Node participates as an owner or member                      |
+| [`dfms contract get`](#dfms-contract-get)         | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network |
+| [`dfms contract ammends`](#dfms-contract-ammends) | subscribe for [Drive Contract](../../built_in_features/drive/overview.md) updates          |
 
 ---
 
@@ -28,22 +28,22 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 ### Arguments
 
-|     Name     |        Description        |
-| :----------: | :-----------------------: |
-|  **space**   |  required space (in MB)   |
+| Name         | Description               |
+| :----------- | :------------------------ |
+| **space**    | required space (in MB)    |
 | **duration** | drive duration (in month) |
 
 ### Options
 
-|                  Name                   |                                            Description                                             |
-| :-------------------------------------: | :------------------------------------------------------------------------------------------------: |
-|           **--replicas(_r_)**           |        to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one replicator. The default is 3         |
-|       **--min-replicators(_mr_)**       |      to set a minimum amount of joined replicators for composing to succeed. The default is 3      |
-|      **--subscription-price(_p_)**      |     to set a price in tokens for one subscription period. The default is `space` * `replicas`      |
-| **--number-subscription-periods(_sn_)** |                      to set number of desired subscriptions. The default is 3                      |
-|      **--percent-approvers(_pa_)**      | to set % of replicators needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
-|        **--private-key(_key_)**         |                     to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                     |
-|               **--help**                |                                  to see description with examples                                  |
+| Name                                    | Description                                                                                                                                     |
+| :-------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **--replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one replicator. The default is 3                |
+| **--min-replicators(_mr_)**             | to set a minimum amount of joined replicators for composing to succeed. The default is 3                                                        |
+| **--subscription-price(_p_)**           | to set a price in tokens for one subscription period. The default is `space` * `replicas`                                                       |
+| **--number-subscription-periods(_sn_)** | to set number of desired subscriptions. The default is 3                                                                                        |
+| **--percent-approvers(_pa_)**           | to set % of replicators needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
+| **--private-key(_key_)**                | to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                                         |
+| **--help**                              | to see description with examples                                                                                                                |
 
 ### Examples
 
@@ -109,9 +109,9 @@ Lists all the Drives in which Node participates as an owner or member.
 
 ### Arguments
 
-|   Name    | Description |
-| :-------: | :---------: |
-| **drive** |  [Drive](../../built_in_features/drive/overview.md) ID   |
+| Name      | Description                                           |
+| :-------- | :---------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID |
 
 ### Examples
 
@@ -147,9 +147,9 @@ Lists all the Drives in which Node participates as an owner or member.
 
 ### Arguments
 
-|   Name    | Description |
-| :-------: | :---------: |
-| **drive** |  [Drive](../../built_in_features/drive/overview.md) ID   |
+| Name      | Description                                           |
+| :-------- | :---------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID |
 
 ### Examples
 

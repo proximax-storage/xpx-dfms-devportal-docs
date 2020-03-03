@@ -9,16 +9,16 @@ in the network with an ability to alter it with write access.
 
 ## Subcommands
 
-|                 Command                 |                        Description                         |
-| :-------------------------------------: | :--------------------------------------------------------: |
-|   [`dfms drive add`](#dfms-drive-add)   |            Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).             |
-|   [`dfms drive get`](#dfms-drive-get)   |          Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).           |
-|  [`dfms drive rm`](#dfms-drive-rm)  |          Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).          |
-|   [`dfms drive mv`](#dfms-drive-mv)   |     Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).     |
-|   [`dfms drive cp`](#dfms-drive-cp)   |            Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).            |
-| [`dfms drive mkdir`](#dfms-drive-mkdir) |                 Make directory in a [Drive](../../built_in_features/drive/overview.md).                 |
-|    [`dfms drive ls`](#dfms-drive-ls)    |           List files under directory in a [Drive](../../built_in_features/drive/overview.md).           |
-|  [`dfms drive stat`](#dfms-drive-stat)  |      Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).      |
+| Command                                 | Description                                                                                             |
+| :-------------------------------------- | :------------------------------------------------------------------------------------------------------ |
+| [`dfms drive add`](#dfms-drive-add)     | Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).                        |
+| [`dfms drive get`](#dfms-drive-get)     | Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).                    |
+| [`dfms drive rm`](#dfms-drive-rm)       | Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).                   |
+| [`dfms drive mv`](#dfms-drive-mv)       | Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).         |
+| [`dfms drive cp`](#dfms-drive-cp)       | Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).                       |
+| [`dfms drive mkdir`](#dfms-drive-mkdir) | Make directory in a [Drive](../../built_in_features/drive/overview.md).                                 |
+| [`dfms drive ls`](#dfms-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                     |
+| [`dfms drive stat`](#dfms-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).           |
 | [`dfms drive flush`](#dfms-drive-flush) | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
 
 ---
@@ -34,18 +34,18 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Arguments
 
-|   Name    |                             Description                             |
-| :-------: | :-----------------------------------------------------------------: |
-| **drive** |                              [Drive](../../built_in_features/drive/overview.md) ID.                              |
-|  **src**  |                   The file to be added to [Drive](../../built_in_features/drive/overview.md).                    |
-|  **dst**  | The destination in [Drive](../../built_in_features/drive/overview.md) of the file to be added. Defaults to root. |
+| Name      | Description                                                                                                      |
+| :-------- | :--------------------------------------------------------------------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID.                                                           |
+| **src**   | The file to be added to [Drive](../../built_in_features/drive/overview.md).                                      |
+| **dst**   | The destination in [Drive](../../built_in_features/drive/overview.md) of the file to be added. Defaults to root. |
 
 ### Options
 
-|        Name        |                        Description                         |
-| :----------------: | :--------------------------------------------------------: |
-| **recursive(_r_)** |              Add directory paths recursively.              |
-|   **flush(_f_)**   | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Name               | Description                                                                                             |
+| :----------------- | :------------------------------------------------------------------------------------------------------ |
+| **recursive(_r_)** | Add directory paths recursively.                                                                        |
+| **flush(_f_)**     | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
 
@@ -88,11 +88,11 @@ copies cached content from [Drive](../../built_in_features/drive/overview.md) to
 
 ### Arguments
 
-|   Name    |                             Description                             |
-| :-------: | :-----------------------------------------------------------------: |
-| **drive** |                              [Drive](../../built_in_features/drive/overview.md) ID.                              |
-|  **src**  |        The source path of the file to be gotten from [Drive](../../built_in_features/drive/overview.md).         |
-|  **dst**  | The destination path for the file to be outputted. Defaults to '/'. |
+| Name      | Description                                                                                       |
+| :-------- | :------------------------------------------------------------------------------------------------ |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID.                                            |
+| **src**   | The source path of the file to be gotten from [Drive](../../built_in_features/drive/overview.md). |
+| **dst**   | The destination path for the file to be outputted. Defaults to '/'.                               |
 
 ### Examples
 
@@ -120,17 +120,17 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Arguments
 
-|   Name    |                  Description                   |
-| :-------: | :--------------------------------------------: |
-| **drive** |                   [Drive](../../built_in_features/drive/overview.md) ID.                    |
+| Name      | Description                                                                                 |
+| :-------- | :------------------------------------------------------------------------------------------ |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID.                                      |
 | **path**  | The path of the file in a [Drive](../../built_in_features/drive/overview.md) to be removed. |
 
 ### Options
 
-|       Name       |                        Description                         |
-| :--------------: | :--------------------------------------------------------: |
-| **locally(_l_)** |       Clean file only locally and keep it on track.        |
-|  **flush(_f_)**  | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Name             | Description                                                                                             |
+| :--------------- | :------------------------------------------------------------------------------------------------------ |
+| **locally(_l_)** | Clean file only locally and keep it on track.                                                           |
+| **flush(_f_)**   | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
 
@@ -173,16 +173,16 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Arguments
 
-|   Name    |                      Description                      |
-| :-------: | :---------------------------------------------------: |
-| **drive** |                       [Drive](../../built_in_features/drive/overview.md) ID.                       |
-|  **src**  |   The source path of the file to be moved/renamed.    |
-|  **dst**  | The destination path of the file to be moved/renamed. |
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
+| **src**   | The source path of the file to be moved/renamed.       |
+| **dst**   | The destination path of the file to be moved/renamed.  |
 
 ### Options
 
-|      Name      |                        Description                         |
-| :------------: | :--------------------------------------------------------: |
+| Name           | Description                                                                                             |
+| :------------- | :------------------------------------------------------------------------------------------------------ |
 | **flush(_f_)** | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
@@ -220,16 +220,16 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Arguments
 
-|   Name    |                  Description                   |
-| :-------: | :--------------------------------------------: |
-| **drive** |                   [Drive](../../built_in_features/drive/overview.md) ID.                    |
-|  **src**  |   The source path of the file to be copied.    |
-|  **dst**  | The destination path of the file to be copied. |
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
+| **src**   | The source path of the file to be copied.              |
+| **dst**   | The destination path of the file to be copied.         |
 
 ### Options
 
-|      Name      |                        Description                         |
-| :------------: | :--------------------------------------------------------: |
+| Name           | Description                                                                                             |
+| :------------- | :------------------------------------------------------------------------------------------------------ |
 | **flush(_f_)** | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
@@ -270,15 +270,15 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Arguments
 
-|   Name    |               Description                |
-| :-------: | :--------------------------------------: |
-| **drive** |                [Drive](../../built_in_features/drive/overview.md) ID.                 |
-| **path**  | The path to the directory to be created. |
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
+| **path**  | The path to the directory to be created.               |
 
 ### Options
 
-|      Name      |                        Description                         |
-| :------------: | :--------------------------------------------------------: |
+| Name           | Description                                                                                             |
+| :------------- | :------------------------------------------------------------------------------------------------------ |
 | **flush(_f_)** | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Example
@@ -303,17 +303,17 @@ Use `--sort(s)` to sort list lexicographically.
 
 ### Arguments
 
-|   Name    |                      Description                       |
-| :-------: | :----------------------------------------------------: |
-| **drive** |                       [Drive](../../built_in_features/drive/overview.md) ID.                        |
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
 | **path**  | The path to a directory to be listed. Defaults to '/'. |
 
 ### Options
 
-|       Name       |       Description        |
-| :--------------: | :----------------------: |
+| Name             | Description              |
+| :--------------- | :----------------------- |
 | **verbose(_v_)** | Use long listing format. |
-|  **sort(_s_)**   |    Sort list entries.    |
+| **sort(_s_)**    | Sort list entries.       |
 
 ---
 
@@ -323,10 +323,10 @@ Shows stats about a file or directory under `path` in a specific `drive`.
 
 ### Arguments
 
-|   Name    |               Description                |
-| :-------: | :--------------------------------------: |
-| **drive** |                [Drive](../../built_in_features/drive/overview.md) ID.                 |
-| **path**  | The path of the file to get stats about. |
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
+| **path**  | The path of the file to get stats about.               |
 
 ---
 
@@ -341,6 +341,6 @@ Uploads all local reference changes with data to replicators of `drive`. Require
 
 ### Arguments
 
-|   Name    | Description |
-| :-------: | :---------: |
-| **drive** |  [Drive](../../built_in_features/drive/overview.md) ID.  |
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
