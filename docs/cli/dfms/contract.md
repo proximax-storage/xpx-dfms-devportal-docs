@@ -50,9 +50,9 @@ First of all, a Contract invitation is built from configured arguments and optio
 - _Create a new contract with the needed parameters:_
 
   ```shell
-  $ dfms contract compose 1000 1 \        # size & duration 
-                  --replicas=5 \        
-                  --min-replicators=3 \ 
+  $ dfms contract compose 1000 1 \        # size & duration
+                  --replicas=5 \
+                  --min-replicators=3 \
                   --billing-price=5000 \
                   --billing-period=1 \  
                   --percent-approvers=67

@@ -4,6 +4,7 @@ title: Connect to Node
 ---
 
 ## Requirements
+
 - IDE or text editor
 - Have two or more nodes
 

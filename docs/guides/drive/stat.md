@@ -4,6 +4,7 @@ title: Stat of File or Dir
 ---
 
 ## Requirements
+
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
 - Have one [drive](../../built_in_features/drive/overview.md) contract
@@ -33,6 +34,6 @@ if err != nil {
 
 st, ok := fi.Sys().(*fs.Stat)
 if !ok {
-	panic()
+	panic(err)
 }
 ```

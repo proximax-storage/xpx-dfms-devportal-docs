@@ -188,6 +188,7 @@ Joins `drive` by it's id. Can join only Drives awaiting new members.
 Subscribes for newly accepted Driver Contracts of the node, either accepted automatically or manually.
 
 ### Examples
+
 - _Show accepted contracts:_
   
   ```shell
@@ -219,14 +220,16 @@ Subscribes for new invitations and accepts them automatically, ALL OF THEM WITHO
 ### Examples
 
 - _Start accepting:_
- 
+
   ```shell
   $ dfmsr contract accepting
   "Accepting started."
   ```
+
 - _Stop accepting:_
- 
+
   ```shell
   $ dfmsr contract accepting
   "Accepting stoped."
   ```
+  

@@ -5,6 +5,7 @@ sidebar_label: Overview
 ---
 
 The [Challenge](challenge.md) is the process when the [verifier](../roles/replicator.md) checks that the [replicator](../roles/replicator.md) is storing the expected file. [Challenge](challenge.md) process includes the following steps:
+
 1. The [verifier](../roles/replicator.md) requests some amount of randomly placed file blocks from the [replicator](../roles/replicator.md).
 2. The [replicator](../roles/replicator.md) generates blocks of passed file indexes and sends them to the [verifier](../roles/replicator.md).
 3. The [verifier](../roles/replicator.md) compares its blocks with the [replicator](../roles/replicator.md)'s blocks.

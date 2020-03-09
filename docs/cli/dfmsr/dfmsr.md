@@ -13,7 +13,6 @@ The dfmsr command allows interacting with storage as the [replicator](../../role
 | [dfmsr version](version.md)   | allows interact with the version      |
 | [dfmsr net](net.md)           | allows interact with the network      |
 
-
 ## Global options
 
 | Name                | Description                                                                             |

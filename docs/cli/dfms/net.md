@@ -32,6 +32,7 @@ Connects to given set of peers. Accepts only Multiadresses in the form of: \
 | **address** | Peer address for connection |
 
 ### Examples
+
 - _Connect to a node:_
   
   ```shell
@@ -60,6 +61,7 @@ Drops connections to given set of addresses. Accepts only Multiadresses in the f
 | **address** | Peer address for disconnection |
 
 ### Examples
+
 - _Disconnect from a node:_
 
   ```shell
@@ -69,10 +71,13 @@ Drops connections to given set of addresses. Accepts only Multiadresses in the f
 ---
 
 ## `dfms net peers`
+
 Lists Multiadresses network have connection to.
 
 ### Examples
+
 - _Lists connected nodes:_
+
   ```shell
   $ dfms net peers
   1: /ip4/192.168.88.106/tcp/64666/p2p/12D3L7AV4YzCg2foDgWqFxqWoSs35JJem7Zo9t75UbQTSzZH1WZh
@@ -115,3 +120,4 @@ Prints all multiaddresses current node is listen to and dials from.
   /ip4/172.19.0.1/tcp/63666/p2p/12D3L7AUwnPXj7odaWGzWcWwWD1mGrB5d5yr6zLrimHcyiZLVWcH
   /ip6/::1/tcp/63666/p2p/12D3L7AUwnPXj7odaWGzWcWwWD1mGrB5d5yr6zLrimHcyiZLVWcH
   ```
+  
