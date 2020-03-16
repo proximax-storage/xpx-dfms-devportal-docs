@@ -7,11 +7,11 @@ title: Compose Contract
 
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
-- Have one [drive](../../built_in_features/drive/overview.md) contract
+- Have one [Drive](../../built_in_features/drive/overview.md) contract
 
 ## Example
 
-Prepare a new 1000MB [drive](../../built_in_features/drive/overview.md) for 12 months with 5 replicas, but the [drive](../../built_in_features/drive/overview.md) can start when 3 [replicators](../../roles/replicator.md) joined. The reward will be 5000 SM every 1 month. To accept transactions needed 100% to approve.
+Prepare a new 1000MB [Drive](../../built_in_features/drive/overview.md) for 12 months with 5 replicas, but the [Drive](../../built_in_features/drive/overview.md) can start when 3 [replicators](../../roles/replicator.md) joined. The reward will be 5000 SM every 1 month. To accept transactions needed 100% to approve.
 
 ```go
 //Some enviroment

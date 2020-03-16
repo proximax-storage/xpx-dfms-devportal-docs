@@ -1,6 +1,7 @@
 ---
 id: version
-title: dfms version
+title: Version
+sidebar_label: dfms version
 ---
 
 ## Description

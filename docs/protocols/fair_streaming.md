@@ -10,6 +10,7 @@ The [fair streaming protocol](fair_streaming) is used to transfer blocks of the 
 ### Description
 
 When the recipient wants to get a block, it initiates streaming. When the recipient received the block's hash, it starts to search for the sender that has it. When it has been found, the recipient requests this block. The sender transfers it to the recipient and waits for confirmation. At this time, the recipient compares the hash of the obtained block and the expected hash. If they are equal, it sends the confirmed and signed transaction with the private key. In case when the sender did not receive confirmation, it cannot send other blocks. When the sender gets approval, it checks the validity and, if everything is correct, the sender confirms it. Subsequently, the sender uses this confirmed transaction (receipts) to receive a reward, so it would be good to save receipts in a safe place. All of these transactions are sent from node to node on [DFMS](../getting_started/what_is.md#sm) layer, not in the Blockchain.
+
 > **Note** \
 Only the [replicator](../roles/replicator.md) that deposited [SO](../getting_started/economy.md#so) or a node that has paid a fee in [SM](../getting_started/economy.md#sm) can download the file.
 
@@ -24,4 +25,4 @@ Only the [replicator](../roles/replicator.md) that deposited [SO](../getting_sta
 
 When the receiving process is completed, every user gets a reward. Every user has a history of how many bytes it received and sent to other users. Every file has a total price.
 
-Let’s imagine that we have N users in the contract, the total streaming will be equal *N * file size* (the deposit will be returned when the drive ends). We can find out the percent of participation of every user in transferring files by formula *P = sent byte/total streaming*. Thus, the final reward for the user will be equal to *file deposit \* P*.
+Let’s imagine that we have N users in the contract, the total streaming will be equal *N * file size* (the deposit will be returned when the [Drive](../built_in_features/drive/overview.md) ends). We can find out the percent of participation of every user in transferring files by formula *P = sent byte/total streaming*. Thus, the final reward for the user will be equal to *file deposit \* P*.

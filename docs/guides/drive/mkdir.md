@@ -7,7 +7,7 @@ title: Make Dir
 
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
-- Have one [drive](../../built_in_features/drive/overview.md) contract
+- Have one [Drive](../../built_in_features/drive/overview.md) contract
 
 ## Example
 
@@ -15,7 +15,7 @@ title: Make Dir
 //Some enviroment
 var env cmds.Environment
 
-//New drive api
+//New Drive api
 drive, err := APIDriveFS(e)
 if err != nil {
 	return err

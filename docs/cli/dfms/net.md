@@ -1,6 +1,7 @@
 ---
 id: net
-title: dfms net
+title: Interface with Network
+sidebar_label: dfms net
 ---
 
 **WARNING**: The API is not stable yet and is subject to change.
@@ -10,20 +11,21 @@ title: dfms net
 It manages networking related commands.
 
 ## Child commands
-|                    Command                    |           Description            |
-| :-------------------------------------------: | :------------------------------: |
-|    [`dfms net connect`](#dfms-net-connect)    | open connection to given address |
-| [`dfms net disconnect`](#dfms-net-disconnect) |  disconnect from given address   |
-|      [`dfms net peers`](#dfms-net-peers)      |     show all connected peers     |
-|         [`dfms net id`](#dfms-net-id)         |          Show identity           |
-|      [`dfms net addrs`](#dfms-net-addrs)      |      Show all p2p addresses      |
+
+| Command                                       | Description                      |
+| :-------------------------------------------- | :------------------------------- |
+| [`dfms net connect`](#dfms-net-connect)       | open connection to given address |
+| [`dfms net disconnect`](#dfms-net-disconnect) | disconnect from given address    |
+| [`dfms net peers`](#dfms-net-peers)           | show all connected peers         |
+| [`dfms net id`](#dfms-net-id)                 | Show identity                    |
+| [`dfms net addrs`](#dfms-net-addrs)           | Show all p2p addresses           |
 
 ---
 
 ## `dfms net connect`
 
 Connects to given set of peers. Accepts only Multiadresses in the form of: \
-/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f
+`/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f`
 
 ### Arguments
 
@@ -52,7 +54,7 @@ Connects to given set of peers. Accepts only Multiadresses in the form of: \
 ## `dfms net disconnect`
 
 Drops connections to given set of addresses. Accepts only Multiadresses in the form of: \
-/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f
+`/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f`
 
 ### Arguments
 

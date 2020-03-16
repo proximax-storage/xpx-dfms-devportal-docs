@@ -1,6 +1,7 @@
 ---
 id: dfmsr
-title: dfmsr (base command)
+title: The Replicator Base Command
+sidebar_label: dfmsr (base command)
 ---
 
 The dfmsr command allows interacting with storage as the [replicator](../../roles/replicator.md) node.
@@ -30,4 +31,4 @@ The dfmsr command allows interacting with storage as the [replicator](../../role
 | **offline**         | disables all node's p2p networking. Useful for disk access only operations and testing  |
 | **bootstrap**       | bootstraps nodes on the network                                                         |
 | **ledger-addr**     | sets remote Ledger address. Addresses set in the config will be ignored                 |
-| **ledger**          | turns ledger mode on, means that node will work with blockchain                         |
+| **ledger**          | turns ledger mode on, means that node will work with Blockchain                         |

@@ -14,8 +14,12 @@ XPX is the main currency in the [DFMS](what_is.md). It can be changed to any cur
 
 ### Storage units (SO)
 
-SO is the currency for participation in the [drive](../built_in_features/drive/overview.md). Each [replicator](../roles/replicator.md) should deposit SO to the [drive](../built_in_features/drive/overview.md) account to join it.
+SO is the currency for participation in the [Drive](../built_in_features/drive/overview.md). Each [replicator](../roles/replicator.md) should deposit SO to the [Drive](../built_in_features/drive/overview.md) account to join it.
 
 ### Streaming units (SM)
 
 SM is the currency for file transfer [rewards](../built_in_features/reward.md). Users receive these units for distributing files and pay for getting files.
+
+### SuperContract units (GAS)
+
+GAS is the currency for executing SC.

@@ -1,6 +1,7 @@
 ---
 id: net
-title: dfmsr net
+title: Interface with Network
+sidebar_label: dfmsr net
 ---
 
 **WARNING**: The API is not stable yet and is subject to change.
@@ -24,7 +25,7 @@ It manages networking related commands.
 ### `dfmsr net connect`
 
 Connects to given set of peers. Accepts only Multiadresses in the form of: \
-/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f
+`/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f`
 
 #### Arguments
 
@@ -53,7 +54,7 @@ Connects to given set of peers. Accepts only Multiadresses in the form of: \
 ### `dfmsr net disconnect`
 
 Drops connections to given set of addresses. Accepts only Multiadresses in the form of: \
-/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f
+`/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f`
 
 #### Arguments
 

@@ -7,7 +7,7 @@ title: Verify Contract
 
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
-- Have one [drive](../../built_in_features/drive/overview.md) contract
+- Have one [Drive](../../built_in_features/drive/overview.md) contract
 
 ## Example
 

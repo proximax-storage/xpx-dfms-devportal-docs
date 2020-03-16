@@ -21,7 +21,7 @@ To run as the client you need to run:
 $ dfms --key=<your_private_key>
 ```
 
-To run as the [replicator](../roles/replicator.md) you need to run 
+To run as the [replicator](../roles/replicator.md) you need to run
 
 ```console
 $ dfmsr --key=<your_private_key>
