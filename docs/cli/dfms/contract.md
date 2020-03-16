@@ -121,21 +121,21 @@ Lists all the Drives in which Node participates as an owner or member.
   $ dfms contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   {
     	"drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
-        "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
-        "replicators": [
-                "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
-                "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
-                "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
-        ],
-        "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
-        "created": 741,
-        "duration": 1,
-        "space": 1000,
-        "replicas": 3,
-        "minReplicators": 3,
-        "percentApprovers": 67,
-        "billingPrice": 5000,
-        "billingPeriod": 1
+      "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
+      "replicators": [
+              "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+              "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+              "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+      ],
+      "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
+      "created": 741,
+      "duration": 1,
+      "space": 1000,
+      "replicas": 3,
+      "minReplicators": 3,
+      "percentApprovers": 67,
+      "billingPrice": 5000,
+      "billingPeriod": 1
   }
   ```
 
