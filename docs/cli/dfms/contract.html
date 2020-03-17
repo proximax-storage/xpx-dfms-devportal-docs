@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>dfms contract · Storage DFMS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Description"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="dfms contract · Storage DFMS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/"/><meta property="og:description" content="## Description"/><meta property="og:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><link rel="shortcut icon" href="/xpx-dfms-devportal-docs/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/xpx-dfms-devportal-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/xpx-dfms-devportal-docs/css/main.css"/><script src="/xpx-dfms-devportal-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/xpx-dfms-devportal-docs/"><img class="logo" src="/xpx-dfms-devportal-docs/img/logo-proximax.png" alt="Storage DFMS"/><h2 class="headerTitleWithLogo">Storage DFMS</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/xpx-dfms-devportal-docs/docs/getting_started/what_is" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/xpx-dfms-devportal-docs/docs/cli/dfms/dfms" target="_self">CLI</a></li><li class=""><a href="/xpx-dfms-devportal-docs/docs/guides/create_drive" target="_self">Guides</a></li><li class=""><a href="/xpx-dfms-devportal-docs/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DFMS</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMS<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/dfms">dfms (base command)</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/drive">dfms drive</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/contract">dfms contract</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/ledger">dfms ledger</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfms/net">dfms net</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMSR<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/dfmsr">dfmsr (base command)</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/contract">dfmsr contract</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/ledger">dfmsr ledger</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docs/docs/cli/dfmsr/net">dfmsr net</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Interface with a Client Contract · Storage DFMS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="**WARNING**: The API is not stable yet and is subject to change."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Interface with a Client Contract · Storage DFMS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://proximax-storage.github.io/xpx-dfms-devportal-docsindex"/><meta property="og:description" content="**WARNING**: The API is not stable yet and is subject to change."/><meta property="og:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><link rel="shortcut icon" href="/xpx-dfms-devportal-docsimg/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/xpx-dfms-devportal-docsjs/scrollSpy.js"></script><link rel="stylesheet" href="/xpx-dfms-devportal-docscss/main.css"/><script src="/xpx-dfms-devportal-docsjs/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/xpx-dfms-devportal-docs"><img class="logo" src="/xpx-dfms-devportal-docsimg/logo-proximax.png" alt="Storage DFMS"/><h2 class="headerTitleWithLogo">Storage DFMS</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/xpx-dfms-devportal-docsdocs/getting_started/what_is" target="_self">Getting Started</a></li><li class="siteNavGroupActive"><a href="/xpx-dfms-devportal-docsdocs/cli/dfms/dfms" target="_self">CLI</a></li><li class=""><a href="/xpx-dfms-devportal-docsdocs/guides/contract/compose" target="_self">Guides</a></li><li class=""><a href="/xpx-dfms-devportal-docsendpoints" target="_self">API Endpoints</a></li><li class=""><a href="/xpx-dfms-devportal-docshelp" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DFMS</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMS<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/dfms">dfms (base command)</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/drive">dfms drive</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/contract">dfms contract</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/sc">dfms sc</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/net">dfms net</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/version">dfms version</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMSR<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/dfmsr">dfmsr (base command)</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/contract">dfmsr contract</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/net">dfmsr net</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/version">dfmsr version</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -54,127 +54,151 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">dfms contract</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
-<p>Allows interact with drive file system.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Interface with a Client Contract</h1></header><article><div><span><p><strong>WARNING</strong>: The API is not stable yet and is subject to change.</p>
+<h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
+<p><code>contract</code> is the command set implementing ContractClientAPI which is a part of <a href="/xpx-dfms-devportal-docsdocs/getting_started/what_is">DFMS</a> API that is responsible for creating and managing Drives and their state, contracts, etc.</p>
 <h2><a class="anchor" aria-hidden="true" id="child-commands"></a><a href="#child-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Child commands</h2>
 <table>
 <thead>
-<tr><th style="text-align:center">Command</th><th style="text-align:center">Description</th></tr>
+<tr><th style="text-align:left">Command</th><th style="text-align:left">Description</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align:center"><a href="#dfms-contract-compose">dfms contract compose</a></td><td style="text-align:center">allows create a new contract</td></tr>
-<tr><td style="text-align:center"><a href="#dfms-contract-ls">dfms contract ls</a></td><td style="text-align:center">allows getting a list of contracts where node participates as an owner</td></tr>
-<tr><td style="text-align:center"><a href="#dfms-contract-get">dfms contract get</a></td><td style="text-align:center">allows return information about contract by id</td></tr>
-<tr><td style="text-align:center"><a href="#dfms-contract-ammends">dfms contract ammends</a></td><td style="text-align:center">allows create a subscription for the drive contract corrections</td></tr>
+<tr><td style="text-align:left"><a href="#dfms-contract-compose"><code>dfms contract compose</code></a></td><td style="text-align:left">compose new <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive Contract</a></td></tr>
+<tr><td style="text-align:left"><a href="#dfms-contract-ls"><code>dfms contract ls</code></a></td><td style="text-align:left">lists all the <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drives</a> Contract in which Node participates as an owner or member</td></tr>
+<tr><td style="text-align:left"><a href="#dfms-contract-get"><code>dfms contract get</code></a></td><td style="text-align:left">get Contract body of any <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> in the network</td></tr>
+<tr><td style="text-align:left"><a href="#dfms-contract-ammends"><code>dfms contract ammends</code></a></td><td style="text-align:left">subscribe for <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive Contract</a> updates</td></tr>
 </tbody>
 </table>
 <hr>
-<h3><a class="anchor" aria-hidden="true" id="dfms-contract-compose"></a><a href="#dfms-contract-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract compose</code></h3>
-<p>Allows you to create a new drive with the specified parameters. Also synchronously announces invites to the Network with the current node as an owner and tries to find members who agree on specified parameters and options.</p>
-<h4><a class="anchor" aria-hidden="true" id="arguments"></a><a href="#arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h4>
+<h2><a class="anchor" aria-hidden="true" id="dfms-contract-compose"></a><a href="#dfms-contract-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract compose</code></h2>
+<p>This command composes Contract for new <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> between current <a href="/xpx-dfms-devportal-docsdocs/getting_started/what_is">DFMS</a> node and multiple <a href="/xpx-dfms-devportal-docsdocs/getting_started/what_is">DFMSR</a> nodes with conditions to store <code>space</code> amount of data for <code>subscription</code> time period.</p>
+<p>First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, <a href="/xpx-dfms-devportal-docsdocs/roles/replicator">replicator</a> receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of <a href="/xpx-dfms-devportal-docsdocs/roles/replicator">replicator</a> to accept invitations. If throughout 10 minutes the minimal amount of <a href="/xpx-dfms-devportal-docsdocs/roles/replicator">replicator</a> do not accept the invitation - composing fails. In another case, it succeeds. From that moment new <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> is considered to be created.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments"></a><a href="#arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
 <table>
 <thead>
-<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align:center">space</td><td style="text-align:center">required space (in MB)</td></tr>
-<tr><td style="text-align:center">duration</td><td style="text-align:center">drive duration (in month)</td></tr>
+<tr><td style="text-align:left"><strong>space</strong></td><td style="text-align:left">required space (in MB)</td></tr>
+<tr><td style="text-align:left"><strong>duration</strong></td><td style="text-align:left">Drive duration (in month)</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h4>
+<h3><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h3>
 <table>
 <thead>
-<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align:center"><code>--replicas</code></td><td style="text-align:center">count of replicas</td></tr>
-<tr><td style="text-align:center"><code>--min-replicators</code></td><td style="text-align:center">minimal count of replicas</td></tr>
-<tr><td style="text-align:center"><code>--billing-price</code></td><td style="text-align:center">billing price (in storage units)</td></tr>
-<tr><td style="text-align:center"><code>--billing-period</code></td><td style="text-align:center">billing period (in month)</td></tr>
-<tr><td style="text-align:center"><code>--percent-approvers</code></td><td style="text-align:center">percent of approvers (67)</td></tr>
+<tr><td style="text-align:left"><strong>replicas(<em>r</em>)</strong></td><td style="text-align:left">to set the amount of <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> replicas. One replica = one <a href="/xpx-dfms-devportal-docsdocs/roles/replicator">replicator</a>. The default is 3</td></tr>
+<tr><td style="text-align:left"><strong>min-replicators(<em>mr</em>)</strong></td><td style="text-align:left">to set a minimum amount of joined <a href="/xpx-dfms-devportal-docsdocs/roles/replicator">replicator</a> for composing to succeed. The default is 3</td></tr>
+<tr><td style="text-align:left"><strong>subscription-price(<em>p</em>)</strong></td><td style="text-align:left">to set a price in tokens for one subscription period. The default is <code>space</code> * <code>replicas</code></td></tr>
+<tr><td style="text-align:left"><strong>number-subscription-periods(<em>sn</em>)</strong></td><td style="text-align:left">to set number of desired subscriptions. The default is 3</td></tr>
+<tr><td style="text-align:left"><strong>percent-approvers(<em>pa</em>)</strong></td><td style="text-align:left">to set percent of <a href="/xpx-dfms-devportal-docsdocs/roles/replicator">replicator</a> needed to come up to consensus to proceed any <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> account related action</td></tr>
+<tr><td style="text-align:left"><strong>private-key(<em>key</em>)</strong></td><td style="text-align:left">to set a custom private key to generate <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> account from</td></tr>
+<tr><td style="text-align:left"><strong>help</strong></td><td style="text-align:left">to see description with examples</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="sample"></a><a href="#sample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h4>
-<p>Let's create a new contract with the needed parameters:</p>
-<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms contract compose 1000 1 \               <span class="hljs-comment"># size &amp; duration </span></span>
-                        --replicas=5 \        
-                        --min-replicators=3 \ 
-                        --billing-price=5000 \
-                        --billing-period=1 \  
-                        --percent-approvers=67
-
+<h3><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Create a new contract with the needed parameters:</em></p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms contract compose 1000 1 \        <span class="hljs-comment"># size &amp; duration</span></span>
+                --replicas=5 \
+                --min-replicators=3 \
+                --billing-price=5000 \
+                --billing-period=1 \  
+                --percent-approvers=67
 {
-        "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
-        "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
-        "replicators": [
-                "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
-                "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
-                "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
-        ],
-        "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
-        "created": 741,
-        "duration": 1,
-        "space": 1000,
-        "replicas": 5,
-        "minReplicators": 3,
-        "percentApprovers": 67,
-        "billingPrice": 5000,
-        "billingPeriod": 1
+  "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
+  "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
+  "replicators": [
+          "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+          "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+          "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+  ],
+  "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
+  "created": 741,
+  "duration": 1,
+  "space": 1000,
+  "replicas": 5,
+  "minReplicators": 3,
+  "percentApprovers": 67,
+  "billingPrice": 5000,
+  "billingPeriod": 1
 }
-</code></pre>
+</code></pre></li>
+</ul>
 <hr>
-<h3><a class="anchor" aria-hidden="true" id="dfms-contract-ls"></a><a href="#dfms-contract-ls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract ls</code></h3>
-<p>Lists all the contracts in which a node participates as an owner or member.</p>
-<h4><a class="anchor" aria-hidden="true" id="sample-1"></a><a href="#sample-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h4>
-<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms contract ls</span>
-baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
-</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="dfms-contract-ls"></a><a href="#dfms-contract-ls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract ls</code></h2>
+<p>Lists all the Drives in which Node participates as an <a href="/xpx-dfms-devportal-docsdocs/roles/owner">owner</a> or member.</p>
+<h3><a class="anchor" aria-hidden="true" id="examples-1"></a><a href="#examples-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Get client drives:</em></p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms contract ls</span>
+baegaajaiaqjca7fnnbv2od5i3uo2zdvruvp2uvbiaoqhnbwqv7tpy6qkbmip7622
+baegaajaiaqjcaedinbn4fbtawhvbgmuxv2uklfxabf5ughaii2jbp2vtw2z34cb5
+baegaajaiaqjcafssfchukjl77zijwpneyrv5wec7u4yj6f5fqiusqwlas5f4unpd
+baegaajaiaqjcah6g44hvl2dcdi7dt4bmlv6uus44eqemz7xdsyy7nrwvm5zormk7
+baegaajaiaqjcahzmkrwaftgj47wnao4xqtwjvlizj3ujhz7sd42jhnapjqkc3hmv
+baegaajaiaqjcan6rv7ozao7uujwruvm2savlnqyzrb2zq6w2kyvb3djluxnkwh4x
+baegaajaiaqjcapacmgyuibklcyxxpkae53fyqsi4fz2ijyfcugl5ze4nvnsscw7z
+baegaajaiaqjcat75mpp2lein7cpnu2lw6tho2fn22seasqpzentlnzwpuhz5a4s3
+baegaajaiaqjcatslsbbgzdzdx7pdcyawnyrefhsn3s6bwbunrp53xggsifs6yat7
+baegaajaiaqjcb47kcxrlqf2lef633v2biondhhje3pguoxtfj22rkkmyvlf43jxn
+baegaajaiaqjcb4c53l5t3gcnjehbgvkptb3gnw3qbwq5l2uzuzmarm5snihrz5s2
+</code></pre></li>
+</ul>
 <hr>
-<h3><a class="anchor" aria-hidden="true" id="dfms-contract-get"></a><a href="#dfms-contract-get" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract get</code></h3>
-<p>Returns contract info by drive id.</p>
-<h4><a class="anchor" aria-hidden="true" id="arguments-1"></a><a href="#arguments-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h4>
+<h2><a class="anchor" aria-hidden="true" id="dfms-contract-get"></a><a href="#dfms-contract-get" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract get</code></h2>
+<p><code>get</code> prints a Contract body of any <code>drive</code> from the network. Takes it from local storage or fetches from the network.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-1"></a><a href="#arguments-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
 <table>
 <thead>
-<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align:center">drive id</td><td style="text-align:center">id of required drive</td></tr>
+<tr><td style="text-align:left"><strong>drive</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> ID</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="sample-2"></a><a href="#sample-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h4>
-<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash"> dfms contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5</span>
+<h3><a class="anchor" aria-hidden="true" id="examples-2"></a><a href="#examples-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Get contact by Drive ID:</em></p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5</span>
 {
-        "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
-        "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
-        "replicators": [
-                "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
-                "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
-                "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
-        ],
-        "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
-        "created": 741,
-        "duration": 1,
-        "space": 1000,
-        "replicas": 3,
-        "minReplicators": 3,
-        "percentApprovers": 67,
-        "billingPrice": 5000,
-        "billingPeriod": 1
+  "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
+  "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
+  "replicators": [
+          "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+          "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+          "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+  ],
+  "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
+  "created": 741,
+  "duration": 1,
+  "space": 1000,
+  "replicas": 3,
+  "minReplicators": 3,
+  "percentApprovers": 67,
+  "billingPrice": 5000,
+  "billingPeriod": 1
 }
-</code></pre>
+</code></pre></li>
+</ul>
 <hr>
-<h3><a class="anchor" aria-hidden="true" id="dfms-contract-ammends"></a><a href="#dfms-contract-ammends" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract ammends</code></h3>
-<p>Create a subscription for the drive contract corrections for the contract in local storage and/or in the Blockchain.</p>
-<h4><a class="anchor" aria-hidden="true" id="arguments-2"></a><a href="#arguments-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h4>
+<h2><a class="anchor" aria-hidden="true" id="dfms-contract-ammends"></a><a href="#dfms-contract-ammends" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms contract ammends</code></h2>
+<p><code>contract ammends</code> subscribes for Contract amendments of <code>drive</code>. Produced either from owner or <a href="/xpx-dfms-devportal-docsdocs/roles/replicator">replicator</a> consensus.</p>
+<h3><a class="anchor" aria-hidden="true" id="arguments-2"></a><a href="#arguments-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
 <table>
 <thead>
-<tr><th style="text-align:center">Name</th><th style="text-align:center">Description</th></tr>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align:center">drive id</td><td style="text-align:center">id of required drive</td></tr>
+<tr><td style="text-align:left"><strong>drive</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> ID</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="sample-3"></a><a href="#sample-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample</h4>
-<pre><code class="hljs css language-console"><span class="hljs-meta">$</span><span class="bash">&gt; dfms contract ammends baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5</span>
-</code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/xpx-dfms-devportal-docs/docs/cli/dfms/drive"><span class="arrow-prev">← </span><span>dfms drive</span></a><a class="docs-next button" href="/xpx-dfms-devportal-docs/docs/cli/dfms/ledger"><span>dfms ledger</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#description">Description</a></li><li><a href="#child-commands">Child commands</a><ul class="toc-headings"><li><a href="#dfms-contract-compose"><code>dfms contract compose</code></a></li><li><a href="#dfms-contract-ls"><code>dfms contract ls</code></a></li><li><a href="#dfms-contract-get"><code>dfms contract get</code></a></li><li><a href="#dfms-contract-ammends"><code>dfms contract ammends</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/xpx-dfms-devportal-docs/" class="nav-home"><img src="/xpx-dfms-devportal-docs/img/favicon.png" alt="Storage DFMS" width="66" height="58"/></a><div><h5>Roles</h5><a href="/xpx-dfms-devportal-docs/docs/roles/Owner">Owner</a><a href="/xpx-dfms-devportal-docs/docs/roles/replicator">Replicator</a><a href="/xpx-dfms-devportal-docs/docs/roles/verifier">Verifier</a></div><div><h5>Built-in Features</h5><a href="/xpx-dfms-devportal-docs/docs/built_in_features/exchange">Exchange</a><a href="/xpx-dfms-devportal-docs/docs/built_in_features/drive/overview">Drive</a><a href="/xpx-dfms-devportal-docs/docs/built_in_features/challenge">Challenge</a></div><div><h5>Protocol</h5><a href="/xpx-dfms-devportal-docs/docs/protocols/cross_block_protocol">Cross-block protocol</a><a href="/xpx-dfms-devportal-docs/docs/protocols/fair_streaming">Fair streaming</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/xpx-dfms-devportal-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 ProximaX</section></footer></div></body></html>
+<h3><a class="anchor" aria-hidden="true" id="examples-3"></a><a href="#examples-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Start listen to amendments of some drive:</em></p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms contract ammends baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5</span>
+</code></pre></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/xpx-dfms-devportal-docsdocs/cli/dfms/drive"><span class="arrow-prev">← </span><span>dfms drive</span></a><a class="docs-next button" href="/xpx-dfms-devportal-docsdocs/cli/dfms/sc"><span>dfms sc</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#description">Description</a></li><li><a href="#child-commands">Child commands</a></li><li><a href="#dfms-contract-compose"><code>dfms contract compose</code></a><ul class="toc-headings"><li><a href="#arguments">Arguments</a></li><li><a href="#options">Options</a></li><li><a href="#examples">Examples</a></li></ul></li><li><a href="#dfms-contract-ls"><code>dfms contract ls</code></a><ul class="toc-headings"><li><a href="#examples-1">Examples</a></li></ul></li><li><a href="#dfms-contract-get"><code>dfms contract get</code></a><ul class="toc-headings"><li><a href="#arguments-1">Arguments</a></li><li><a href="#examples-2">Examples</a></li></ul></li><li><a href="#dfms-contract-ammends"><code>dfms contract ammends</code></a><ul class="toc-headings"><li><a href="#arguments-2">Arguments</a></li><li><a href="#examples-3">Examples</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/xpx-dfms-devportal-docs" class="nav-home"><img src="/xpx-dfms-devportal-docsimg/favicon.png" alt="Storage DFMS" width="66" height="58"/></a><div><h5>Roles</h5><a href="/xpx-dfms-devportal-docsdocs/roles/Owner">Owner</a><a href="/xpx-dfms-devportal-docsdocs/roles/replicator#replicator">Replicator</a><a href="/xpx-dfms-devportal-docsdocs/roles/replicator#verifier">Verifier</a><a href="/xpx-dfms-devportal-docsdocs/roles/executor">Executor</a></div><div><h5>Built-in Features</h5><a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a><a href="/xpx-dfms-devportal-docsdocs/built_in_features/Supercontract/overview">SuperContract</a><a href="/xpx-dfms-devportal-docsdocs/built_in_features/challenge">Challenge</a><a href="/xpx-dfms-devportal-docsdocs/built_in_features/rewards">Rewards</a></div><div><h5>Protocols</h5><a href="/xpx-dfms-devportal-docsdocs/protocols/cross_block_protocol">Cross-block protocol</a><a href="/xpx-dfms-devportal-docsdocs/protocols/fair_streaming">Fair streaming</a></div><div><h5>Algorithms</h5><a href="/xpx-dfms-devportal-docsdocs/algorithms/verification">Verification</a><a href="/xpx-dfms-devportal-docsdocs/algorithms/consensus">Consensus</a></div><div><h5>CLI</h5><a href="/xpx-dfms-devportal-docsdocs/cli/dfms/dfms">DFMS</a><a href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/dfmsr">DFMSR</a></div><div><h5>Giudes</h5><a href="/xpx-dfms-devportal-docsdocs/giudes/contract/compose">Contract</a><a href="/xpx-dfms-devportal-docsdocs/giudes/drive/add">Drive</a><a href="/xpx-dfms-devportal-docsdocs/giudes/supercontract/deploy">SuperContract</a><a href="/xpx-dfms-devportal-docsdocs/giudes/net/id">Network</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/xpx-dfms-devportal-docsimg/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 ProximaX</section></footer></div></body></html>

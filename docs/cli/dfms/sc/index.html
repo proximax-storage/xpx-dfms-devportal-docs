@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Interface with SuperContracts · Storage DFMS</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Description"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Interface with SuperContracts · Storage DFMS"/><meta property="og:type" content="website"/><meta property="og:url" content="https://proximax-storage.github.io/xpx-dfms-devportal-docsindex"/><meta property="og:description" content="## Description"/><meta property="og:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://proximax-storage.github.io/xpx-dfms-devportal-docs/img/docusaurus.png"/><link rel="shortcut icon" href="/xpx-dfms-devportal-docsimg/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/xpx-dfms-devportal-docsjs/scrollSpy.js"></script><link rel="stylesheet" href="/xpx-dfms-devportal-docscss/main.css"/><script src="/xpx-dfms-devportal-docsjs/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/xpx-dfms-devportal-docs"><img class="logo" src="/xpx-dfms-devportal-docsimg/logo-proximax.png" alt="Storage DFMS"/><h2 class="headerTitleWithLogo">Storage DFMS</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/xpx-dfms-devportal-docsdocs/getting_started/what_is" target="_self">Getting Started</a></li><li class="siteNavGroupActive"><a href="/xpx-dfms-devportal-docsdocs/cli/dfms/dfms" target="_self">CLI</a></li><li class=""><a href="/xpx-dfms-devportal-docsdocs/guides/contract/compose" target="_self">Guides</a></li><li class=""><a href="/xpx-dfms-devportal-docsendpoints" target="_self">API Endpoints</a></li><li class=""><a href="/xpx-dfms-devportal-docshelp" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DFMS</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMS<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/dfms">dfms (base command)</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/drive">dfms drive</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/contract">dfms contract</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/sc">dfms sc</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/net">dfms net</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfms/version">dfms version</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DFMSR<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/dfmsr">dfmsr (base command)</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/contract">dfmsr contract</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/net">dfmsr net</a></li><li class="navListItem"><a class="navItem" href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/version">dfmsr version</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Interface with SuperContracts</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
+<p>This command allows interacting with <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SC</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="child-commands"></a><a href="#child-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Child commands</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">Command</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><a href="#dfms-net-deploy"><code>dfms sc deploy</code></a></td><td style="text-align:left">Deploys <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a> to <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a></td></tr>
+<tr><td style="text-align:left"><a href="#dfms-net-exec"><code>dfms sc exec</code></a></td><td style="text-align:left">Executes <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a></td></tr>
+<tr><td style="text-align:left"><a href="#dfms-net-get"><code>dfms sc get</code></a></td><td style="text-align:left">Gets <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a></td></tr>
+<tr><td style="text-align:left"><a href="#dfms-net-ls"><code>dfms sc ls</code></a></td><td style="text-align:left">Lists all <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContracts</a> for <a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a></td></tr>
+<tr><td style="text-align:left"><a href="#dfms-net-results"><code>dfms sc results</code></a></td><td style="text-align:left">Lists <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContracts</a> results for specific Execution transaction hash</td></tr>
+<tr><td style="text-align:left"><a href="#dfms-net-executions"><code>dfms sc executions</code></a></td><td style="text-align:left">Lists <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContracts</a> result Execution hashes</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="dfms-sc-deploy"></a><a href="#dfms-sc-deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms sc deploy</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="arguments"></a><a href="#arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><strong>contract</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> Contract CID</td></tr>
+<tr><td style="text-align:left"><strong>file</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> path to <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a> WAT source file</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Deploy a new <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SC</a>:</em></p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms sc deploy baegaajaiaqjcacr4daqz4bcjw67md3dws6rtjqklxeyeetjxzputgpgrg6ivzabg newSC.wat</span>
+
+[SuperContract](../../built_in_features/supercontract/overview.md) ID: baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dfms-sc-exec"></a><a href="#dfms-sc-exec" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms sc exec</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="arguments-1"></a><a href="#arguments-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><strong>superContract</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a> CID</td></tr>
+<tr><td style="text-align:left"><strong>gas</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a> <a href="/xpx-dfms-devportal-docsdocs/getting_started/economy#supercontract-units-gas">GAS</a> units for execution</td></tr>
+<tr><td style="text-align:left"><strong>func</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a> function</td></tr>
+<tr><td style="text-align:left"><strong>params</strong></td><td style="text-align:left">Execution function parameters (if required)</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="examples-1"></a><a href="#examples-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Execute some func from the <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SC</a>:</em></p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms sc <span class="hljs-built_in">exec</span> baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem 1000 <span class="hljs-built_in">test</span></span>
+
+Started execution [SuperContract](../../built_in_features/supercontract/overview.md)(baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem)
+txID: bafybeifbqukufovlk5oyjujzgev6t7co2ygtfcavcgvj5onph6v2mvwujm
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dfms-sc-get"></a><a href="#dfms-sc-get" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms sc get</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="arguments-2"></a><a href="#arguments-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><strong>superContract</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a> CID</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="examples-2"></a><a href="#examples-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Show <a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SC</a> info</em>:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">  $</span><span class="bash"> dfms sc get baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem</span>
+  {
+      "id": "baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem",
+      "drive": {
+          "drive": "baegaajaiaqjcacr4daqz4bcjw67md3dws6rtjqklxeyeetjxzputgpgrg6ivzabg",
+          "owner": "08041220ad54820387c3e27c7ecb97c8d69866aa5917bb9c0b675e18f9506c9697f8dddb",
+          "replicators": [
+              "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
+              "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+              "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+              "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+          ],
+          "root": "bafybeif6nnag4e3fsgmc5bli3if2sfdjmtz3tflz2dzmohuj2cwbj7j26e",
+          "created": 340,
+          "duration": 518400,
+          "space": 1000000000,
+          "replicas": 5,
+          "minReplicators": 3,
+          "percentApprovers": 66,
+          "billingPrice": 1,
+          "billingPeriod": 172800
+      },
+      "file": "bafybeicx4cqljrdbjlzdohdumds7vfsm4jpuvijsv4hqbltztpdkgx2hme",
+      "vmversion": 1,
+      "functions": null
+  }
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dfms-sc-ls"></a><a href="#dfms-sc-ls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms sc ls</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="arguments-3"></a><a href="#arguments-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><strong>drive</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a> CID</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="examples-3"></a><a href="#examples-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Show all drive's SC</em>:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms sc ls baegaajaiaqjcb62j535f4p6ukuo5pagrdq2r2dcxvinxrn2u7rs7mh3lo5h3ph3w</span>
+baegqajaiaqjca6p6kxxvuz4uw4ftf2e6emdmgj3i3peoyh277kz3dzzlfitsyqdj
+baegqajaiaqjcbaeg5bvbkp6m4zqvavvfrsklf6nuxcrooj6coywpiffs2wdvqxcf
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dfms-sc-results"></a><a href="#dfms-sc-results" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms sc results</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="arguments-4"></a><a href="#arguments-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><strong>hash</strong></td><td style="text-align:left">Execution transaction hash</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="examples-4"></a><a href="#examples-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Show results of some execute transaction</em>:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms sc results bafybeiblduyqqlpuvwfl4dotuxebexqdhjzcovi4537ytxttl5ppvxwy6y</span>
+/supercontracts/data32.txt bafybeihx52ggdr7izy6upoo4leackhoqogvbpu3ytufgpstesshpuulgli
+</code></pre></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dfms-sc-executions"></a><a href="#dfms-sc-executions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>dfms sc executions</code></h2>
+<h3><a class="anchor" aria-hidden="true" id="arguments-5"></a><a href="#arguments-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arguments</h3>
+<table>
+<thead>
+<tr><th style="text-align:left">Name</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left"><strong>superContract</strong></td><td style="text-align:left"><a href="/xpx-dfms-devportal-docsdocs/built_in_features/supercontract/overview">SuperContract</a> CID</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="examples-5"></a><a href="#examples-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<ul>
+<li><p><em>Show all results of some SC</em>:</p>
+<pre><code class="hljs css language-shell"><span class="hljs-meta">$</span><span class="bash"> dfms sc executions baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem</span>
+bafybeihx52ggdr7izy6upoo4leackhoqogvbpu3ytufgpstesshpuulgli
+</code></pre></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/xpx-dfms-devportal-docsdocs/cli/dfms/contract"><span class="arrow-prev">← </span><span>dfms contract</span></a><a class="docs-next button" href="/xpx-dfms-devportal-docsdocs/cli/dfms/net"><span>dfms net</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#description">Description</a></li><li><a href="#child-commands">Child commands</a></li><li><a href="#dfms-sc-deploy"><code>dfms sc deploy</code></a><ul class="toc-headings"><li><a href="#arguments">Arguments</a></li><li><a href="#examples">Examples</a></li></ul></li><li><a href="#dfms-sc-exec"><code>dfms sc exec</code></a><ul class="toc-headings"><li><a href="#arguments-1">Arguments</a></li><li><a href="#examples-1">Examples</a></li></ul></li><li><a href="#dfms-sc-get"><code>dfms sc get</code></a><ul class="toc-headings"><li><a href="#arguments-2">Arguments</a></li><li><a href="#examples-2">Examples</a></li></ul></li><li><a href="#dfms-sc-ls"><code>dfms sc ls</code></a><ul class="toc-headings"><li><a href="#arguments-3">Arguments</a></li><li><a href="#examples-3">Examples</a></li></ul></li><li><a href="#dfms-sc-results"><code>dfms sc results</code></a><ul class="toc-headings"><li><a href="#arguments-4">Arguments</a></li><li><a href="#examples-4">Examples</a></li></ul></li><li><a href="#dfms-sc-executions"><code>dfms sc executions</code></a><ul class="toc-headings"><li><a href="#arguments-5">Arguments</a></li><li><a href="#examples-5">Examples</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/xpx-dfms-devportal-docs" class="nav-home"><img src="/xpx-dfms-devportal-docsimg/favicon.png" alt="Storage DFMS" width="66" height="58"/></a><div><h5>Roles</h5><a href="/xpx-dfms-devportal-docsdocs/roles/Owner">Owner</a><a href="/xpx-dfms-devportal-docsdocs/roles/replicator#replicator">Replicator</a><a href="/xpx-dfms-devportal-docsdocs/roles/replicator#verifier">Verifier</a><a href="/xpx-dfms-devportal-docsdocs/roles/executor">Executor</a></div><div><h5>Built-in Features</h5><a href="/xpx-dfms-devportal-docsdocs/built_in_features/drive/overview">Drive</a><a href="/xpx-dfms-devportal-docsdocs/built_in_features/Supercontract/overview">SuperContract</a><a href="/xpx-dfms-devportal-docsdocs/built_in_features/challenge">Challenge</a><a href="/xpx-dfms-devportal-docsdocs/built_in_features/rewards">Rewards</a></div><div><h5>Protocols</h5><a href="/xpx-dfms-devportal-docsdocs/protocols/cross_block_protocol">Cross-block protocol</a><a href="/xpx-dfms-devportal-docsdocs/protocols/fair_streaming">Fair streaming</a></div><div><h5>Algorithms</h5><a href="/xpx-dfms-devportal-docsdocs/algorithms/verification">Verification</a><a href="/xpx-dfms-devportal-docsdocs/algorithms/consensus">Consensus</a></div><div><h5>CLI</h5><a href="/xpx-dfms-devportal-docsdocs/cli/dfms/dfms">DFMS</a><a href="/xpx-dfms-devportal-docsdocs/cli/dfmsr/dfmsr">DFMSR</a></div><div><h5>Giudes</h5><a href="/xpx-dfms-devportal-docsdocs/giudes/contract/compose">Contract</a><a href="/xpx-dfms-devportal-docsdocs/giudes/drive/add">Drive</a><a href="/xpx-dfms-devportal-docsdocs/giudes/supercontract/deploy">SuperContract</a><a href="/xpx-dfms-devportal-docsdocs/giudes/net/id">Network</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/xpx-dfms-devportal-docsimg/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 ProximaX</section></footer></div></body></html>
