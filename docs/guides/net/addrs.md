@@ -4,6 +4,7 @@ title: Get Node Addresses
 ---
 
 ## Requirements
+
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) or [replicator](../../roles/replicator.md) node
 

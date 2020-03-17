@@ -4,6 +4,7 @@ title: Get Connected Peers
 ---
 
 ## Requirements
+
 - IDE or text editor
 - Have at least one connected node
 
