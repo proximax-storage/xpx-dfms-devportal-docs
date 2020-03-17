@@ -35,7 +35,7 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
     ```shell
     $ dfms sc deploy baegaajaiaqjcacr4daqz4bcjw67md3dws6rtjqklxeyeetjxzputgpgrg6ivzabg newSC.wat
 
-    [SuperContract](../../built_in_features/supercontract/overview.md) ID: baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem
+    SuperContract ID: baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem
     ```
 
 ## `dfms sc exec`
@@ -56,7 +56,7 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
     ```shell
     $ dfms sc exec baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem 1000 test
 
-    Started execution [SuperContract](../../built_in_features/supercontract/overview.md)(baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem)
+    Started execution SuperContract(baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem)
     txID: bafybeifbqukufovlk5oyjujzgev6t7co2ygtfcavcgvj5onph6v2mvwujm
     ```
 

@@ -37,7 +37,7 @@ It is worth noting that the version of [WasmVM](vm.md) automatically writes in t
 
 ## Results of SC execution
 
-All results should be recorded in a file, there is the [`save_result`](https://docs.rs/xpx-supercontracts-sdk/0.2.0/xpx_supercontracts_sdk/storage/fn.save_result.html) for this. After [SC](overview.md) finishes the [owner](../../roles/owner.md) can get files for a particular execute transaction.
+All results should be recorded in a file, there is the [`save_result`](https://docs.rs/xpx-supercontracts-sdk/0.2.0/xpx_supercontracts_sdk/storage/fn.save_result.html) for this. After [SC](overview.md) finishes the [owner](../../roles/owner.md) can get files for a particular `execute transaction`.
 
 ## Operations for sending transactions to Blockchain
 
