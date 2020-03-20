@@ -9,17 +9,17 @@ in the network with an ability to alter it with write access.
 
 ## Subcommands
 
-| Command                                 | Description                                                                                             |
-| :-------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| [`dfms drive add`](#dfms-drive-add)     | Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).                        |
-| [`dfms drive get`](#dfms-drive-get)     | Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).                    |
-| [`dfms drive rm`](#dfms-drive-rm)       | Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).                   |
-| [`dfms drive mv`](#dfms-drive-mv)       | Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).         |
-| [`dfms drive cp`](#dfms-drive-cp)       | Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).                       |
-| [`dfms drive mkdir`](#dfms-drive-mkdir) | Make directory in a [Drive](../../built_in_features/drive/overview.md).                                 |
-| [`dfms drive ls`](#dfms-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                     |
-| [`dfms drive stat`](#dfms-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).           |
-| [`dfms drive flush`](#dfms-drive-flush) | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Command                                 | Description                                                                                                                          |
+| :-------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| [`dfms drive add`](#dfms-drive-add)     | Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).                                                     |
+| [`dfms drive get`](#dfms-drive-get)     | Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).                                                 |
+| [`dfms drive rm`](#dfms-drive-rm)       | Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).                                                |
+| [`dfms drive mv`](#dfms-drive-mv)       | Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                      |
+| [`dfms drive cp`](#dfms-drive-cp)       | Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                    |
+| [`dfms drive mkdir`](#dfms-drive-mkdir) | Make directory in a [Drive](../../built_in_features/drive/overview.md).                                                              |
+| [`dfms drive ls`](#dfms-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                                                  |
+| [`dfms drive stat`](#dfms-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                        |
+| [`dfms drive flush`](#dfms-drive-flush) | Upload local changes from cache to [replicators](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ---
 
@@ -42,10 +42,10 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Options
 
-| Name               | Description                                                                                             |
-| :----------------- | :------------------------------------------------------------------------------------------------------ |
-| **recursive(_r_)** | Add directory paths recursively.                                                                        |
-| **flush(_f_)**     | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Name               | Description                                                                                                                          |
+| :----------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| **recursive(_r_)** | Add directory paths recursively.                                                                                                     |
+| **flush(_f_)**     | Upload local changes from cache to [replicators](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
 
@@ -83,7 +83,7 @@ Use `--flush(f)` to flush after execution immediately.
 ## `dfms drive get`
 
 Gets a referenced file or directory under `src` to `dst` of any `drive`. If some or all requested content
-is not cached locally, 'get' retrieves it from replicators, caches locally and saves to `dst`. In the opposite case,
+is not cached locally, 'get' retrieves it from [replicators](../../roles/replicator.md), caches locally and saves to `dst`. In the opposite case,
 copies cached content from [Drive](../../built_in_features/drive/overview.md) to `dst`.
 
 ### Arguments
@@ -127,10 +127,10 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Options
 
-| Name             | Description                                                                                             |
-| :--------------- | :------------------------------------------------------------------------------------------------------ |
-| **locally(_l_)** | Clean file only locally and keep it on track.                                                           |
-| **flush(_f_)**   | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Name             | Description                                                                                                                          |
+| :--------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| **locally(_l_)** | Clean file only locally and keep it on track.                                                                                        |
+| **flush(_f_)**   | Upload local changes from cache to [replicators](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
 
@@ -161,7 +161,7 @@ Use `--flush(f)` to flush after execution immediately.
   ```
 
   > **NOTE:**  
-  > Files are removed from a local cache, but they still can be accessed from replicators as if their content is stored locally.
+  > Files are removed from a local cache, but they still can be accessed from [replicators](../../roles/replicator.md) as if their content is stored locally.
 
 ---
 
@@ -181,9 +181,9 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Options
 
-| Name           | Description                                                                                             |
-| :------------- | :------------------------------------------------------------------------------------------------------ |
-| **flush(_f_)** | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Name           | Description                                                                                                                          |
+| :------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| **flush(_f_)** | Upload local changes from cache to [replicators](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
 
@@ -228,9 +228,9 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Options
 
-| Name           | Description                                                                                             |
-| :------------- | :------------------------------------------------------------------------------------------------------ |
-| **flush(_f_)** | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Name           | Description                                                                                                                          |
+| :------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| **flush(_f_)** | Upload local changes from cache to [replicators](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
 
@@ -277,9 +277,9 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Options
 
-| Name           | Description                                                                                             |
-| :------------- | :------------------------------------------------------------------------------------------------------ |
-| **flush(_f_)** | Upload local changes from cache to replicators of a [Drive](../../built_in_features/drive/overview.md). |
+| Name           | Description                                                                                                                          |
+| :------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| **flush(_f_)** | Upload local changes from cache to [replicators](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Example
 
@@ -332,7 +332,7 @@ Shows stats about a file or directory under `path` in a specific `drive`.
 
 ## `dfms drive flush`
 
-Uploads all local reference changes with data to replicators of `drive`. Require write access.
+Uploads all local reference changes with data to [replicators](../../roles/replicator.md) of `drive`. Require write access.
 
 > **NOTE:**  
 > Flushing is not done automatically to aggregate multiple changes in the cache allowing uploading them at once and to

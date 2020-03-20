@@ -31,7 +31,7 @@ const siteConfig = {
     {doc: 'getting_started/what_is', label: 'Getting Started'},
     {doc: 'cli/dfms/dfms', label: 'CLI'},
     {doc: 'guides/contract/compose', label: 'Guides'},
-    { page: 'endpoints', label: 'API Endpoints' },
+    {page: 'endpoints', label: 'API Endpoints'},
     {page: 'help', label: 'Help'}
     // {blog: true, label: 'Blog'},
   ],

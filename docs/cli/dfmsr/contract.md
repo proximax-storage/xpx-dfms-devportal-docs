@@ -1,80 +1,83 @@
 ---
 id: contract
-title: dfmsr contract
+title: Interface with a Replicator Contract
+sidebar_label: dfmsr contract
 ---
 
 **WARNING**: The API is not stable yet and is subject to change.
 
 ## Description
-Is command set implementing ContractReplicator which is a part of DFMSR API which is responsible for creating and managing Drives and their state, contracts, etc. The API extends DFMS ContractClient API with features related to replicating [Drive](../../built_in_features/drive/overview.md) and accepting [Drive](../../built_in_features/drive/overview.md) contracts.
+
+Is command set implementing ContractReplicator which is a part of [DFMSR](../../getting_started/what_is.md) API which is responsible for creating and managing [SuperContracts](../../built_in_features/supercontract/overview.md) and their state, contracts, etc. The API extends [DFMS](../../getting_started/what_is.md) ContractClient API with features related to replicating [Drive](../../built_in_features/drive/overview.md) and accepting [Drive](../../built_in_features/drive/overview.md) contracts.
 
 ## Child commands
-| Command                                                 | Description                                                                                           |
-| :------------------------------------------------------ | :---------------------------------------------------------------------------------------------------- |
-| [`dfmsr contract compose`](#dfmsr-contract-compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                               |
-| [`dfmsr contract ls`](#dfmsr-contract-ls)               | lists all the Drives in which Node participates as an owner or member                                 |
-| [`dfmsr contract get`](#dfmsr-contract-get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network            |
-| [`dfmsr contract ammends`](#dfmsr-contract-ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                     |
-| [`dfmsr contract accept`](#dfmsr-contract-accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                    |
-| [`dfmsr contract accepted`](#dfmsr-contract-accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node |
-| [`dfmsr contract invites`](#dfmsr-contract-invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                     |
-| [`dfmsr contract accepting`](#dfmsr-contract-accepting) | automatically accept every received invitation                                                        |
+
+| Command                                                 | Description                                                                                                                        |
+| :------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
+| [`dfmsr contract compose`](#dfmsr-contract-compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                                                            |
+| [`dfmsr contract ls`](#dfmsr-contract-ls)               | lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member |
+| [`dfmsr contract get`](#dfmsr-contract-get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                         |
+| [`dfmsr contract ammends`](#dfmsr-contract-ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                                                  |
+| [`dfmsr contract accept`](#dfmsr-contract-accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                                                 |
+| [`dfmsr contract accepted`](#dfmsr-contract-accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node                              |
+| [`dfmsr contract invites`](#dfmsr-contract-invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                                                  |
+| [`dfmsr contract accepting`](#dfmsr-contract-accepting) | automatically accept every received invitation                                                                                     |
 
 ---
 
 ## `dfmsr contract compose`
 
-This command composes Contract for new [Drive](../../built_in_features/drive/overview.md) between current DFMS node and multiple DFMSR nodes with conditions to store `space` amount of data for `subscription` time period.
+This command composes Contract for new [Drive](../../built_in_features/drive/overview.md) between current [DFMS](../../getting_started/what_is.md) node and multiple [DFMSR](../../getting_started/what_is.md) nodes with conditions to store `space` amount of data for `subscription` time period.
 
-First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, replicators receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of replicators to accept invitations. If throughout 15 minutes the minimal amount of replicators do not accept the invitation - composing fails. In another case, it succeeds. From that moment new [Drive](../../built_in_features/drive/overview.md) is considered to be created.
+First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, [replicators](../../roles/replicator.md) receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of [replicators](../../roles/replicator.md) to accept invitations. If throughout 10 minutes the minimal amount of [replicators](../../roles/replicator.md) do not accept the invitation - composing fails. In another case, it succeeds. From that moment new [Drive](../../built_in_features/drive/overview.md) is considered to be created.
 
 ### Arguments
 
 | Name         | Description               |
 | :----------- | :------------------------ |
 | **space**    | required space (in MB)    |
-| **duration** | drive duration (in month) |
+| **duration** | Drive duration (in month) |
 
 ### Options
 
-| Name                                    | Description                                                                                                                                     |
-| :-------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **--replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one replicator. The default is 3                |
-| **--min-replicators(_mr_)**             | to set a minimum amount of joined replicators for composing to succeed. The default is 3                                                        |
-| **--subscription-price(_p_)**           | to set a price in tokens for one subscription period. The default is `space` * `replicas`                                                       |
-| **--number-subscription-periods(_sn_)** | to set number of desired subscriptions. The default is 3                                                                                        |
-| **--percent-approvers(_pa_)**           | to set % of replicators needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
-| **--private-key(_key_)**                | to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                                         |
-| **--help**                              | to see description with examples                                                                                                                |
+| Name                                  | Description                                                                                                                                                                       |
+| :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one [replicator](../../roles/replicator.md#replicator). The default is 3          |
+| **min-replicators(_mr_)**             | to set a minimum amount of joined [replicator](../../roles/replicator.md) for composing to succeed. The default is 3                                                              |
+| **subscription-price(_p_)**           | to set a price in tokens for one subscription period. The default is `space` * `replicas`                                                                                         |
+| **number-subscription-periods(_sn_)** | to set number of desired subscriptions. The default is 3                                                                                                                          |
+| **percent-approvers(_pa_)**           | to set percent of [replicator](../../roles/replicator.md) needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
+| **private-key(_key_)**                | to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                                                                           |
+| **help**                              | to see description with examples                                                                                                                                                  |
 
 ### Examples
 
 - _Create a new contract with the needed parameters:_
 
   ```shell
-  $ dfmsr contract compose 1000 1 \        # size & duration 
-                  --replicas=5 \        
-                  --min-replicators=3 \ 
+  $ dfmsr contract compose 1000 1 \        # size & duration
+                  --replicas=5 \
+                  --min-replicators=3 \
                   --billing-price=5000 \
                   --billing-period=1 \  
                   --percent-approvers=67
   {
-          "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
-          "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
-          "replicators": [
-                  "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
-                  "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
-                  "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
-          ],
-          "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
-          "created": 741,
-          "duration": 1,
-          "space": 1000,
-          "replicas": 5,
-          "minReplicators": 3,
-          "percentApprovers": 67,
-          "billingPrice": 5000,
-          "billingPeriod": 1
+    "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
+    "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
+    "replicators": [
+            "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+            "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+            "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+    ],
+    "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
+    "created": 741,
+    "duration": 1,
+    "space": 1000,
+    "replicas": 5,
+    "minReplicators": 3,
+    "percentApprovers": 67,
+    "billingPrice": 5000,
+    "billingPeriod": 1
   }
   ```
 
@@ -82,7 +85,7 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 ## `dfmsr contract ls`
 
-Lists all the Drives in which Node participates as an owner or member.
+Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member.
 
 ### Examples
 
@@ -117,27 +120,27 @@ Lists all the Drives in which Node participates as an owner or member.
 
 ### Examples
 
-- _Get contact by drive ID:_
+- _Get contact by Drive ID:_
   
   ```shell
   $ dfmsr contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   {
-    	"drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
-        "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
-        "replicators": [
-                "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
-                "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
-                "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
-        ],
-        "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
-        "created": 741,
-        "duration": 1,
-        "space": 1000,
-        "replicas": 3,
-        "minReplicators": 3,
-        "percentApprovers": 67,
-        "billingPrice": 5000,
-        "billingPeriod": 1
+    "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
+    "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
+    "replicators": [
+            "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+            "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+            "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+    ],
+    "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
+    "created": 741,
+    "duration": 1,
+    "space": 1000,
+    "replicas": 3,
+    "minReplicators": 3,
+    "percentApprovers": 67,
+    "billingPrice": 5000,
+    "billingPeriod": 1
   }
   ```
 
@@ -145,7 +148,7 @@ Lists all the Drives in which Node participates as an owner or member.
 
 ## `dfmsr contract ammends`
 
-`contract ammends` subscribes for Contract amendments of `drive`. Produced either from owner or replicator consensus.
+`contract ammends` subscribes for Contract amendments of `drive`. Produced either from owner or [replicator](../../roles/replicator.md#replicator) consensus.
 
 ### Arguments
 
@@ -165,7 +168,7 @@ Lists all the Drives in which Node participates as an owner or member.
 
 ## `dfmsr contract accept`
 
-Joins `drive` by it's id. Can join only Drives awaiting new members.
+Joins `drive` by it's id. Can join only [SuperContracts](../../built_in_features/supercontract/overview.md) awaiting new members.
 
 ### Arguments
 
@@ -188,6 +191,7 @@ Joins `drive` by it's id. Can join only Drives awaiting new members.
 Subscribes for newly accepted Driver Contracts of the node, either accepted automatically or manually.
 
 ### Examples
+
 - _Show accepted contracts:_
   
   ```shell
@@ -219,14 +223,16 @@ Subscribes for new invitations and accepts them automatically, ALL OF THEM WITHO
 ### Examples
 
 - _Start accepting:_
- 
+
   ```shell
   $ dfmsr contract accepting
   "Accepting started."
   ```
+
 - _Stop accepting:_
- 
+
   ```shell
   $ dfmsr contract accepting
   "Accepting stoped."
   ```
+  

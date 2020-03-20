@@ -4,6 +4,7 @@ title: Disconnect from Node
 ---
 
 ## Requirements
+
 - IDE or text editor
 - Have connected nodes
 

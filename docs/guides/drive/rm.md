@@ -4,10 +4,11 @@ title: Remove File or Dir
 ---
 
 ## Requirements
+
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
-- Have one [drive](../../built_in_features/drive/overview.md) contract
-- At least one file on the [drive](../../built_in_features/drive/overview.md)
+- Have one [Drive](../../built_in_features/drive/overview.md) contract
+- At least one file on the [Drive](../../built_in_features/drive/overview.md)
 
 ## Example
 
@@ -15,7 +16,7 @@ title: Remove File or Dir
 //Some enviroment
 var env cmds.Environment
 
-//New drive api
+//New Drive api
 drive, err := APIDriveFS(e)
 if err != nil {
 	return err
