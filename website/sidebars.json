@@ -99,7 +99,8 @@
       "guides/supercontract/results",
       "guides/supercontract/ls",
       "guides/supercontract/get",
-      "guides/supercontract/executions"
+      "guides/supercontract/executions",
+      "guides/supercontract/deactivate"
     ],
     "Network": [
       "guides/net/id",
