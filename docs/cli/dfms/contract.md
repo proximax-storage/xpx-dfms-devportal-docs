@@ -18,6 +18,8 @@ sidebar_label: dfms contract
 | [`dfms contract ls`](#dfms-contract-ls)           | lists all the [Drives](../../built_in_features/drive/overview.md) Contract in which Node participates as an owner or member |
 | [`dfms contract get`](#dfms-contract-get)         | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                  |
 | [`dfms contract ammends`](#dfms-contract-ammends) | subscribe for [Drive Contract](../../built_in_features/drive/overview.md) updates                                           |
+| [`dfms contract verify`](#dfms-contract-ammends)  | verify Contract execution of the [Drive](../../built_in_features/drive/overview.md)                                         |
+| [`dfms contract finish`](#dfms-contract-finish)   | finish Contract of any owned [Drive Contract](../../built_in_features/drive/overview.md) updates.                           |
 
 ---
 
@@ -29,10 +31,10 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 ### Arguments
 
-| Name         | Description               |
-| :----------- | :------------------------ |
-| **space**    | required space (in MB)    |
-| **duration** | Drive duration (in month) |
+| Name             | Description                                      |
+| :--------------- | :----------------------------------------------- |
+| **space**        | required space (in MB)                           |
+| **subscription** | Required subscription period of time. (in month) |
 
 ### Options
 
@@ -51,7 +53,7 @@ First of all, a Contract invitation is built from configured arguments and optio
 - _Create a new contract with the needed parameters:_
 
   ```shell
-  $ dfms contract compose 1000 1 \        # size & duration
+  $ dfms contract compose 1000 1 \        # size & duration of one subscribe period
                   --replicas=5 \
                   --min-replicators=3 \
                   --billing-price=5000 \
@@ -61,9 +63,9 @@ First of all, a Contract invitation is built from configured arguments and optio
     "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
     "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
     "replicators": [
-            "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
-            "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
-            "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+      "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+      "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+      "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
     ],
     "root": "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn",
     "created": 741,
@@ -144,7 +146,7 @@ Lists all the Drives in which Node participates as an [owner](../../roles/owner.
 
 ## `dfms contract ammends`
 
-`contract ammends` subscribes for Contract amendments of `drive`. Produced either from owner or [replicator](../../roles/replicator.md) consensus.
+Subscribes for Contract amendments of `drive`. Produced either from owner or [replicator](../../roles/replicator.md) consensus.
 
 ### Arguments
 
@@ -158,4 +160,59 @@ Lists all the Drives in which Node participates as an [owner](../../roles/owner.
 
   ```shell
   $ dfms contract ammends baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  ```
+
+## `dfms contract verify`
+
+Verifies that the [Drive](../../built_in_features/drive/overview.md) Contract specifications of `drive` are fulfilled. Runs verification protocol between [replicators](../../roles/replicator.md) in which they check each other regarding the replicated data retrievability of the Drive.
+
+### Arguments
+
+| Name      | Description                                           |
+| :-------- | :---------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID |
+
+### Examples
+
+- _Verify some drive:_
+
+  ```shell
+  $ dfms contract verify baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  ```
+
+## `dfms contract finish`
+
+Finishes [Drive](../../built_in_features/drive/overview.md) Contract. Removes obligation for replicators to store data and act on the given [Drive](../../built_in_features/drive/overview.md). Only owner is allowed to finish [Drive](../../built_in_features/drive/overview.md) Contract before original agreement.
+
+### Arguments
+
+| Name      | Description                                           |
+| :-------- | :---------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID |
+
+### Examples
+
+- Finish some drive:_
+
+  ```shell
+  $ dfms contract baegaajaiaqjcbchywf5stwzhovu7bqfezrfpjzfrvgfttc4pmamzo5wy7zlfl2jb finish
+  {
+    "drive": "baegaajaiaqjcbchywf5stwzhovu7bqfezrfpjzfrvgfttc4pmamzo5wy7zlfl2jb",
+    "owner": "08041220ad54820387c3e27c7ecb97c8d69866aa5917bb9c0b675e18f9506c9697f8dddb",
+    "replicators": [
+      "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
+      "0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b",
+      "0804122073472a2e9dcea5c2a36eb7f6a34a634010391ec89e883d67360db16f28b9443c",
+      "08041220d03918e35573c66578b5a0eed723fe2a46208783e13498751d9315115ca06d4b"
+    ],
+    "root": "bafybeihhcet2yrpsc5usns3gz3mv4a5bdevxefphzqkzaqfpeteycqhtti",
+    "created": 671,
+    "duration": 0,
+    "space": 1000000000,
+    "replicas": 5,
+    "minReplicators": 3,
+    "percentApprovers": 66,
+    "billingPrice": 1,
+    "billingPeriod": 172800
+  }
   ```

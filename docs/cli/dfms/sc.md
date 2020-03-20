@@ -10,16 +10,19 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
 
 ## Child commands
 
-| Command                                      | Description                                                                                                                          |
-| :------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| [`dfms sc deploy`](#dfms-net-deploy)         | Deploys [SuperContract](../../built_in_features/supercontract/overview.md) to [Drive](../../built_in_features/drive/overview.md)     |
-| [`dfms sc exec`](#dfms-net-exec)             | Executes [SuperContract](../../built_in_features/supercontract/overview.md)                                                          |
-| [`dfms sc get`](#dfms-net-get)               | Gets [SuperContract](../../built_in_features/supercontract/overview.md)                                                              |
-| [`dfms sc ls`](#dfms-net-ls)                 | Lists all [SuperContracts](../../built_in_features/supercontract/overview.md) for [Drive](../../built_in_features/drive/overview.md) |
-| [`dfms sc results`](#dfms-net-results)       | Lists [SuperContracts](../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash            |
-| [`dfms sc executions`](#dfms-net-executions) | Lists [SuperContracts](../../built_in_features/supercontract/overview.md) result Execution hashes                                    |
+| Command                                      | Description                                                                                                                                                                                    |
+| :------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`dfms sc deploy`](#dfms-net-deploy)         | Deploys [SuperContract](../../built_in_features/supercontract/overview.md) to [Drive](../../built_in_features/drive/overview.md)                                                               |
+| [`dfms sc exec`](#dfms-net-exec)             | Executes [SuperContract](../../built_in_features/supercontract/overview.md)                                                                                                                    |
+| [`dfms sc get`](#dfms-net-get)               | Gets [SuperContract](../../built_in_features/supercontract/overview.md)                                                                                                                        |
+| [`dfms sc ls`](#dfms-net-ls)                 | Lists all [SuperContracts](../../built_in_features/supercontract/overview.md) for [Drive](../../built_in_features/drive/overview.md)                                                           |
+| [`dfms sc results`](#dfms-net-results)       | Lists [SuperContracts](../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash                                                                      |
+| [`dfms sc executions`](#dfms-net-executions) | Lists [SuperContracts](../../built_in_features/supercontract/overview.md) result Execution hashes                                                                                              |
+| [`dfms sc deactivate`](#dfms-sc-deactivate)  | Deactivates [SuperContracts](../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../built_in_features/supercontract/overview.md) will be impossible to execute |
 
 ## `dfms sc deploy`
+
+Deploys [SuperContract](../../built_in_features/supercontract/overview.md) to [Drive](../../built_in_features/drive/overview.md).
 
 ### Arguments
 
@@ -39,6 +42,8 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
     ```
 
 ## `dfms sc exec`
+
+Executes [SuperContract](../../built_in_features/supercontract/overview.md).
 
 ### Arguments
 
@@ -61,6 +66,8 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
     ```
 
 ## `dfms sc get`
+
+Gets [SuperContract](../../built_in_features/supercontract/overview.md).
 
 ### Arguments
 
@@ -103,6 +110,8 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
 
 ## `dfms sc ls`
 
+Lists all [SuperContracts](../../built_in_features/supercontract/overview.md) for [Drive](../../built_in_features/drive/overview.md).
+
 ### Arguments
 
 | Name      | Description                                            |
@@ -121,6 +130,8 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
 
 ## `dfms sc results`
 
+Lists [SuperContracts](../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash.
+
 ### Arguments
 
 | Name     | Description                |
@@ -138,6 +149,8 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
 
 ## `dfms sc executions`
 
+Lists [SuperContracts](../../built_in_features/supercontract/overview.md) result Execution hashes.
+
 ### Arguments
 
 | Name              | Description                                                            |
@@ -151,4 +164,19 @@ This command allows interacting with [SC](../../built_in_features/supercontract/
     ```shell
     $ dfms sc executions baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem
     bafybeihx52ggdr7izy6upoo4leackhoqogvbpu3ytufgpstesshpuulgli
+    ```
+
+## `dfms sc deactivate`
+
+Deactivates [SuperContracts](../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../built_in_features/supercontract/overview.md) will be impossible to execute.
+
+### Arguments
+
+### Examples
+
+- _Deactivate some SC_:
+  
+    ```shell
+    $ dfms sc deactivate baegqajaiaqjcbgiy66ue6nlrzwmvfni5ad77qj5xyblazeg3rqgrfdapvjysw5ir
+    Deactivated SuperContract ID: baegqajaiaqjcbgiy66ue6nlrzwmvfni5ad77qj5xyblazeg3rqgrfdapvjysw5ir
     ```
