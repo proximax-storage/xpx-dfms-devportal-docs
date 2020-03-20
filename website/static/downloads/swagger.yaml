@@ -700,6 +700,20 @@ paths:
                   $ref: '#/components/schemas/cid'
         '400': 
           $ref: '#/components/responses/errorResp'
+  /supercontract/deactivate:
+    post:
+      tags:
+      - SuperContract
+      summary: Deactivate SuperContract
+      description: Deactivate some SuperContract by its ID.
+      operationId: deactivate
+      parameters:
+        - $ref: '#/components/parameters/cidParam'
+      responses:
+        '200':
+          description: Success
+        '400': 
+          $ref: '#/components/responses/errorResp'
 components:
   responses:
     errorResp:
