@@ -1,6 +1,6 @@
 ---
 id: replicator
-title: Storage Node Replicator and Verifier
+title: Replicator and Verifier
 ---
 
 The [replicator](replicator.md) and the [verifier](replicator.md) are the same node with different roles. It stores the [owner's](owner.md) data for payment and verifies other replicators. The [replicator](replicator.md) can become the [verifier](replicator.md) when another [replicator](replicator.md) or the [owner](owner.md) sends the start [Drive](../built_in_features/drive/overview.md) [verification](../algorithms/verification.md) transaction.
