@@ -1,6 +1,6 @@
 ---
 id: executor
-title: Storage Node Executor
+title: Executor
 ---
 
 One key role of a Sirius Storage node is being a Supercontract [executor](executor.md). In Supercontracts, all contract files are stored on Sirius Storage, when a contract code is called upon for execution, the group of replicators who handles or stores the contract code becomes [executors](executor.md). The execution run through a consensus and in the end, the replicator who accepts to sign the execution will be the one running the contract code.

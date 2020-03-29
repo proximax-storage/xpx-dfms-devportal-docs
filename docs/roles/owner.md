@@ -1,6 +1,6 @@
 ---
 id: owner
-title: Storage Node Drive Owner
+title: Drive Owner
 ---
 
 The [owner](owner.md) is a [DFMS](../getting_started/what_is.md) role that initiates files storage in the network. To create a new [Drive](../built_in_features/drive/overview.md), the [owner](owner.md) should prepare and create a new [Drive](../built_in_features/drive/overview.md) account.
