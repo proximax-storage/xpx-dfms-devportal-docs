@@ -1,14 +1,18 @@
 ---
 id: setting_up
-title: Setting Up
+title: Participate
 ---
 This guide explains what software you need to install and how to start using the [Sirius Storage](what_is.md).
 
-## DFMS node
+## Sirius Storage nodes
 
-First of all, you need to download the [Sirius Storage](what_is.md) binary file according to your OS. Then you can run it.
+It's important to understand that there are two types of storage nodes, Client and a Replicator in which the latter can have multiple roles, e.i verifier and executor. This two types are all in the same binary but each has it's own purpose.
 
-## CLI
+- Storage Node Client is primarily used by the client to access different Sirius Storage file management commands. This is an intermediary tool to allow users to manage files on Sirius Storage platform which are then pushed (flushed) to replicators.
+
+- Storage Node Replicators are primarily the replication node where content uploaded by the Sirius Storage node client is propagated. Replicators are inherintly verifiers and executors as well.
+
+## Command Line Interface
 
 There are two types of CLI:
 
@@ -36,3 +40,5 @@ Both have similar commands to interact with the network. For more details, see t
 
 - For [dfms](../cli/dfms/dfms.md)
 - For [dfmsr](../cli/dfmsr/dfmsr.md)
+
+
