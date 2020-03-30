@@ -13,7 +13,7 @@ The dfms command allows interacting with storage as the client ([owner](../../ro
 | [`dfms drive`](drive.md)       | interface with [Drive](../../built_in_features/drive/overview.md) file system             |
 | [`dfms contract`](contract.md) | manage [Drive](../../built_in_features/drive/overview.md) Contracts                       |
 | [`dfms net`](net.md)           | interact with the network                                                                 |
-| [`dfms sc`](sc.md)             | interact with drive's [SuperContracts](../../built_in_features/supercontract/overview.md) |
+| [`dfms sc`](sc/sc.md)             | interact with drive's [SuperContracts](../../built_in_features/supercontract/overview.md) |
 | [`dfms version`](version.md)   | show version                                                                              |
 
 ## Global options
