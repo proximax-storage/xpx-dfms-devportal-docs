@@ -27,6 +27,7 @@
           "built_in_features/supercontract/overview",
           "built_in_features/supercontract/lifecycle",
           "built_in_features/supercontract/state",
+          "built_in_features/supercontract/sc_files",
           "built_in_features/supercontract/vm"
         ]
       },
@@ -59,7 +60,7 @@
       "cli/dfms/dfms",
       "cli/dfms/drive",
       "cli/dfms/contract",
-      "cli/dfms/sc",
+      "cli/dfms/sc/sc",
       "cli/dfms/net",
       "cli/dfms/version"
     ],
@@ -68,6 +69,11 @@
       "cli/dfmsr/contract",
       "cli/dfmsr/net",
       "cli/dfmsr/version"
+    ],
+    "More examples": [
+      "cli/dfms/sc/create_wasm",
+      "cli/dfms/sc/create_wat",
+      "cli/dfms/sc/sc_flow_example"
     ]
   },
   "Guides":{

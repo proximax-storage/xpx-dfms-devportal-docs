@@ -11,6 +11,8 @@ title: Get SuperContract
 - One [Drive](../../built_in_features/drive/overview.md) with executors
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 
+At any time you can get info about any [SC](../../built_in_features/supercontract/overview.md).
+
 ## Example
 
 ```go
@@ -18,7 +20,7 @@ title: Get SuperContract
 var env cmds.Environment
 
 //New Supercontract api
-sc, err := APISupercontract(e)
+sContract, err := APISupercontract(e)
 if err != nil {
 	return err
 }

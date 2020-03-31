@@ -10,6 +10,8 @@ title: Deploy SuperContract
 - One [Drive](../../built_in_features/drive/overview.md) with executors
 - [SuperContract](../../built_in_features/supercontract/overview.md) API
 
+Before we can execute any [SC](../../built_in_features/supercontract/overview.md) it should be deployed. After deploy you will get the SC ID than can be used for execution. Technically we just marked some file as the [SC](../../built_in_features/supercontract/overview.md).
+
 ## Example
 
 ```go
@@ -17,7 +19,7 @@ title: Deploy SuperContract
 var env cmds.Environment
 
 //New Supercontract api
-sc, err := APISupercontract(e)
+sContract, err := APISupercontract(e)
 if err != nil {
 	return err
 }
@@ -26,7 +28,7 @@ if err != nil {
 contractId := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
 
 //Deploy a new SC
-scId, err := sc.Deploy(context.Background(), contractId, "test.wat")
+scId, err := sContract.Deploy(context.Background(), contractId, "test.wat")
 if err != nil {
 	return err
 }

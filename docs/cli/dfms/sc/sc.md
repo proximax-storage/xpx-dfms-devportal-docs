@@ -6,34 +6,34 @@ sidebar_label: dfms sc
 
 ## Description
 
-This command allows interacting with [SC](../../built_in_features/supercontract/overview.md).
+This command allows interacting with [SC](../../../built_in_features/supercontract/overview.md).
 
 ## Child commands
 
 | Command                                      | Description                                                                                                                                                                                    |
 | :------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`dfms sc deploy`](#dfms-net-deploy)         | Deploys [SuperContract](../../built_in_features/supercontract/overview.md) to [Drive](../../built_in_features/drive/overview.md)                                                               |
-| [`dfms sc exec`](#dfms-net-exec)             | Executes [SuperContract](../../built_in_features/supercontract/overview.md)                                                                                                                    |
-| [`dfms sc get`](#dfms-net-get)               | Gets [SuperContract](../../built_in_features/supercontract/overview.md)                                                                                                                        |
-| [`dfms sc ls`](#dfms-net-ls)                 | Lists all [SuperContracts](../../built_in_features/supercontract/overview.md) for [Drive](../../built_in_features/drive/overview.md)                                                           |
-| [`dfms sc results`](#dfms-net-results)       | Lists [SuperContracts](../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash                                                                      |
-| [`dfms sc executions`](#dfms-net-executions) | Lists [SuperContracts](../../built_in_features/supercontract/overview.md) result Execution hashes                                                                                              |
-| [`dfms sc deactivate`](#dfms-sc-deactivate)  | Deactivates [SuperContracts](../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../built_in_features/supercontract/overview.md) will be impossible to execute |
+| [`dfms sc deploy`](#dfms-net-deploy)         | Deploys [SuperContract](../../../built_in_features/supercontract/overview.md) to [Drive](../../../built_in_features/drive/overview.md)                                                               |
+| [`dfms sc exec`](#dfms-net-exec)             | Executes [SuperContract](../../../built_in_features/supercontract/overview.md)                                                                                                                    |
+| [`dfms sc get`](#dfms-net-get)               | Gets [SuperContract](../../../built_in_features/supercontract/overview.md)                                                                                                                        |
+| [`dfms sc ls`](#dfms-net-ls)                 | Lists all [SuperContracts](../../../built_in_features/supercontract/overview.md) for [Drive](../../../built_in_features/drive/overview.md)                                                           |
+| [`dfms sc results`](#dfms-net-results)       | Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash                                                                      |
+| [`dfms sc executions`](#dfms-net-executions) | Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) result Execution hashes                                                                                              |
+| [`dfms sc deactivate`](#dfms-sc-deactivate)  | Deactivates [SuperContracts](../../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../../built_in_features/supercontract/overview.md) will be impossible to execute |
 
 ## `dfms sc deploy`
 
-Deploys [SuperContract](../../built_in_features/supercontract/overview.md) to [Drive](../../built_in_features/drive/overview.md).
+Deploys [SuperContract](../../../built_in_features/supercontract/overview.md) to [Drive](../../../built_in_features/drive/overview.md).
 
 ### Arguments
 
 | Name         | Description                                                                                                                                   |
 | :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
-| **contract** | [Drive](../../built_in_features/drive/overview.md) Contract CID                                                                               |
-| **file**     | [Drive](../../built_in_features/drive/overview.md) path to [SuperContract](../../built_in_features/supercontract/overview.md) WAT source file |
+| **contract** | [Drive](../../../built_in_features/drive/overview.md) Contract CID                                                                               |
+| **file**     | [Drive](../../../built_in_features/drive/overview.md) path to [SuperContract](../../../built_in_features/supercontract/overview.md) WAT source file |
 
 ### Examples
 
-- _Deploy a new [SC](../../built_in_features/supercontract/overview.md):_
+- _Deploy a new [SC](../../../built_in_features/supercontract/overview.md):_
   
     ```shell
     $ dfms sc deploy baegaajaiaqjcacr4daqz4bcjw67md3dws6rtjqklxeyeetjxzputgpgrg6ivzabg newSC.wat
@@ -43,20 +43,20 @@ Deploys [SuperContract](../../built_in_features/supercontract/overview.md) to [D
 
 ## `dfms sc exec`
 
-Executes [SuperContract](../../built_in_features/supercontract/overview.md).
+Executes [SuperContract](../../../built_in_features/supercontract/overview.md).
 
 ### Arguments
 
 | Name              | Description                                                                                                                                            |
 | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **superContract** | [SuperContract](../../built_in_features/supercontract/overview.md) CID                                                                                 |
-| **gas**           | [SuperContract](../../built_in_features/supercontract/overview.md) [GAS](../../getting_started/economy.md#supercontract-units-gas) units for execution |
-| **func**          | [SuperContract](../../built_in_features/supercontract/overview.md) function                                                                            |
+| **superContract** | [SuperContract](../../../built_in_features/supercontract/overview.md) CID                                                                                 |
+| **gas**           | [SuperContract](../../../built_in_features/supercontract/overview.md) [GAS](../../../getting_started/economy.md#supercontract-units-gas) units for execution |
+| **func**          | [SuperContract](../../../built_in_features/supercontract/overview.md) function                                                                            |
 | **params**        | Execution function parameters (if required)                                                                                                            |
 
 ### Examples
 
-- _Execute some func from the [SC](../../built_in_features/supercontract/overview.md):_
+- _Execute some func from the [SC](../../../built_in_features/supercontract/overview.md):_
   
     ```shell
     $ dfms sc exec baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem 1000 test
@@ -67,17 +67,17 @@ Executes [SuperContract](../../built_in_features/supercontract/overview.md).
 
 ## `dfms sc get`
 
-Gets [SuperContract](../../built_in_features/supercontract/overview.md).
+Gets [SuperContract](../../../built_in_features/supercontract/overview.md).
 
 ### Arguments
 
 | Name              | Description                                                            |
 | :---------------- | :--------------------------------------------------------------------- |
-| **superContract** | [SuperContract](../../built_in_features/supercontract/overview.md) CID |
+| **superContract** | [SuperContract](../../../built_in_features/supercontract/overview.md) CID |
 
 ### Examples
 
-- _Show [SC](../../built_in_features/supercontract/overview.md) info_:
+- _Show [SC](../../../built_in_features/supercontract/overview.md) info_:
   
   ```shell
     $ dfms sc get baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem
@@ -110,13 +110,13 @@ Gets [SuperContract](../../built_in_features/supercontract/overview.md).
 
 ## `dfms sc ls`
 
-Lists all [SuperContracts](../../built_in_features/supercontract/overview.md) for [Drive](../../built_in_features/drive/overview.md).
+Lists all [SuperContracts](../../../built_in_features/supercontract/overview.md) for [Drive](../../../built_in_features/drive/overview.md).
 
 ### Arguments
 
 | Name      | Description                                            |
 | :-------- | :----------------------------------------------------- |
-| **drive** | [Drive](../../built_in_features/drive/overview.md) CID |
+| **drive** | [Drive](../../../built_in_features/drive/overview.md) CID |
 
 ### Examples
 
@@ -130,7 +130,7 @@ Lists all [SuperContracts](../../built_in_features/supercontract/overview.md) fo
 
 ## `dfms sc results`
 
-Lists [SuperContracts](../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash.
+Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash.
 
 ### Arguments
 
@@ -149,26 +149,20 @@ Lists [SuperContracts](../../built_in_features/supercontract/overview.md) result
 
 ## `dfms sc executions`
 
-Lists [SuperContracts](../../built_in_features/supercontract/overview.md) result Execution hashes.
-
-### Arguments
-
-| Name              | Description                                                            |
-| :---------------- | :--------------------------------------------------------------------- |
-| **superContract** | [SuperContract](../../built_in_features/supercontract/overview.md) CID |
+Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) result Execution hashes.
 
 ### Examples
 
 - _Show all results of some SC_:
   
     ```shell
-    $ dfms sc executions baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem
+    $ dfms sc executions
     bafybeihx52ggdr7izy6upoo4leackhoqogvbpu3ytufgpstesshpuulgli
     ```
 
 ## `dfms sc deactivate`
 
-Deactivates [SuperContracts](../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../built_in_features/supercontract/overview.md) will be impossible to execute.
+Deactivates [SuperContracts](../../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../../built_in_features/supercontract/overview.md) will be impossible to execute.
 
 ### Arguments
 

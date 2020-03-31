@@ -13,14 +13,14 @@ title: Execute SuperContract
 
 ## Example
 
-Let's imagine that there is some func that add to 100 some number.
+Let's imagine that there is some [SC](../../built_in_features/supercontract/overview.md) with func that add to 100 some number.
 
 ```go
 //Some enviroment
 var env cmds.Environment
 
 //New Supercontract api
-sc, err := APISupercontract(e)
+sContract, err := APISupercontract(e)
 if err != nil {
 	return err
 }

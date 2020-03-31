@@ -11,6 +11,8 @@ title: List SuperContracts
 - One [Drive](../../built_in_features/drive/overview.md) with executors
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 
+At any time you can get a list of a user's [SC](../../built_in_features/supercontract/overview.md).
+
 ## Example
 
 ```go
@@ -18,7 +20,7 @@ title: List SuperContracts
 var env cmds.Environment
 
 //New Supercontract api
-sc, err := APISupercontract(e)
+sContract, err := APISupercontract(e)
 if err != nil {
 	return err
 }

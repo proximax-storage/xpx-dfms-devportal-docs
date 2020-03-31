@@ -12,6 +12,8 @@ title: SuperContract Results
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 - One finished execution
 
+If a [SC](../../built_in_features/supercontract/overview.md) function saves results to drive you can get it by transaction ID.
+
 ## Example
 
 ```go
@@ -19,7 +21,7 @@ title: SuperContract Results
 var env cmds.Environment
 
 //New Supercontract api
-sc, err := APISupercontract(e)
+sContract, err := APISupercontract(e)
 if err != nil {
 	return err
 }

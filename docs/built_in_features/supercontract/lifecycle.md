@@ -13,13 +13,13 @@ Any [SC](overview.md) lifecycle contains the next steps:
 
 ## Preparation
 
-To work with any [SC](overview.md), you need a [Drive](../drive/overview.md). When it will be done the [owner](../../roles/owner.md) must have some [SC](overview.md) file with **_\*.wat_** extension that will be uploaded to the [Drive](../drive/overview.md). When the file is uploaded on a [Drive](../drive/overview.md) and downloaded by [replicators](../../roles/replicator.md) the [client](../../roles/owner.md) can deploy it.
+To work with any [SC](overview.md), you need a [Drive](../drive/overview.md). When it will be done the [owner](../../roles/owner.md) must have some [SC](overview.md) file with [**_\*.wat_**](sc_files.md) extension that will be uploaded to the [Drive](../drive/overview.md). When the file is uploaded on a [Drive](../drive/overview.md) and downloaded by [replicators](../../roles/replicator.md) the [client](../../roles/owner.md) can deploy it.
 
 ## The main steps of execution
 
 ### Deploy
 
-[SC](overview.md) should be deployed before it can be executed. The [client](../../roles/owner.md) should make a new `deploy transaction` that notifies Blockchain and [executors](../../roles/executor.md) about the new [SC](overview.md). Further, this [SC](overview.md) will be compiled from the **_\*.wat_** file to **_\*.wasm_** file and can be invoked and executed by [executors](../../roles/executor.md)' [VM](vm.md).
+[SC](overview.md) should be deployed before it can be executed. The [client](../../roles/owner.md) should make a new `deploy transaction` that notifies Blockchain and [executors](../../roles/executor.md) about the new [SC](overview.md). Further, this [SC](overview.md) will be compiled from the [**_\*.wat_**](sc_files.md) file to [**_\*.wasm_**](sc_files.md) file and can be invoked and executed by [executors](../../roles/executor.md)' [VM](vm.md).
 
 ### Execution
 

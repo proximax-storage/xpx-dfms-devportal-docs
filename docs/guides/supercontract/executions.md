@@ -12,6 +12,8 @@ title: SuperContract Executions
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 - One finished execution
 
+You can get all user's [SC](../../built_in_features/supercontract/overview.md) executions.
+
 ## Example
 
 ```go
@@ -19,16 +21,13 @@ title: SuperContract Executions
 var env cmds.Environment
 
 //New Supercontract api
-sc, err := APISupercontract(e)
+sContract, err := APISupercontract(e)
 if err != nil {
 	return err
 }
 
-// ID of some superContract
-scID := "baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem"
-
 //List executions
-hashes, err := sContract.GetSuperContractExecutionsHash(context.Background(), scId)
+hashes, err := sContract.GetSuperContractExecutionsHash(context.Background())
 if err != nil {
 	return err
 }
