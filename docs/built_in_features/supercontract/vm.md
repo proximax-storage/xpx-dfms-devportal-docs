@@ -1,6 +1,6 @@
 ---
 id: vm
-title: DFMS WasmVM
+title: Supercontract WasmVM
 sidebar_label: WasmVM
 ---
 

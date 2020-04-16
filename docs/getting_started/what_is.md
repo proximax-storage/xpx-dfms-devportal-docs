@@ -3,8 +3,6 @@ id: what_is
 title: What is Distributed File Management System (DFMS)?
 ---
 
-## Distributed File Management System (DFMS)
-
 [DFMS](what_is.md) is a distributed file management platform that enables autonomous distribution of storage network capability, providing open disk space usability to multiple level consumers and a virtual execution machine for [Supercontracts]() using peer-to-peer architecture. Given it's open and autonomical nature, multiple level of usage, applicability and participation can be achieved.
 
 ## Multiple Participation
