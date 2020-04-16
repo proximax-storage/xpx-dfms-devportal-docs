@@ -1,17 +1,13 @@
 ---
 id: executor
-title: Executor
+title: Supercontract Executor
 ---
 
-One key role of a Sirius Storage node is being a Supercontract [executor](executor.md). In Supercontracts, all contract files are stored on Sirius Storage, when a contract code is called upon for execution, the group of replicators who handles or stores the contract code becomes [executors](executor.md). The execution run through a consensus and in the end, the replicator who accepts to sign the execution will be the one running the contract code.
+One key role of a Sirius Storage node is being a Supercontract [executor](executor.md). In Supercontracts, all contract files are stored on Sirius Storage, when a contract code is called upon for execution, the group of replicators who handles or stores the contract code becomes [executors](executor.md). The execution run through a consensus and in the end, the replicator who accepts to sign the execution will be the one assigned to execute the digital contract code.
 
-<!--
-The [executor](executor.md) is a [DFMS](../getting_started/what_is.md) role, that is responsible for [SC](../built_in_features/supercontract/overview.md) execution. In the current version of the [DFMS](../getting_started/what_is.md) all [Drive](../built_in_features/drive/overview.md) participants are [executors](executor.md). It means that all replicators become executors during an [SC](../built_in_features/supercontract/overview.md) executing.
--->
+**Here are the steps in contract execution:**
 
-Here are the steps in contract execution:
-
-1. An [owner](owner.md) deploys [SC](../built_in_features/supercontract/overview.md).
+1. A [Drive owner](owner.md) uses the command line interface or the availabe tools to deploy [SC](../built_in_features/supercontract/overview.md).
 2. Any DFMS user that is interested in the [SC](../built_in_features/supercontract/overview.md) function execution publishes to Blockchain the `execute transaction`.
 3. [Executors](executor.md) get this transaction and automatically start the [SC](../built_in_features/supercontract/overview.md) execution.
 4. When the function is finished all [Drive](../built_in_features/drive/overview.md) participants sign the execution result.

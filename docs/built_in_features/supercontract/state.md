@@ -1,6 +1,6 @@
 ---
 id: state
-title: SuperContract State
+title: Supercontract State
 sidebar_label: State
 ---
 

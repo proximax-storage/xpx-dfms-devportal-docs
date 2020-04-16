@@ -1,6 +1,6 @@
 ---
 id: lifecycle
-title: SuperContract Lifecycle
+title: Supercontract Lifecycle
 sidebar_label: Lifecycle
 ---
 
