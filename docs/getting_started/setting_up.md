@@ -4,10 +4,6 @@ title: Participate
 ---
 This guide explains what software you need to install and how to start using the [Sirius Storage](what_is.md).
 
-## PubSub
-
-Before running the DFMS node the [PubSub lib](https://crypto.stanford.edu/pbc/howto.html) should be installed. Otherwise, you cannot use the DFMS.
-
 ## Sirius Storage nodes
 
 It's important to understand that there are two types of storage nodes, Client and a Replicator in which the latter can have multiple roles, e.i verifier and executor. This two types are all in the same binary but each has it's own purpose.
@@ -15,6 +11,10 @@ It's important to understand that there are two types of storage nodes, Client a
 - Storage Node Client is primarily used by the client to access different Sirius Storage file management commands. This is an intermediary tool to allow users to manage files on Sirius Storage platform which are then pushed (flushed) to replicators.
 
 - Storage Node Replicators are primarily the replication node where content uploaded by the Sirius Storage node client is propagated. Replicators are inherintly verifiers and executors as well.
+
+## Publish and Subscribe (PubSub)
+
+Before running the DFMS node the [PubSub lib](https://crypto.stanford.edu/pbc/howto.html) should be installed. Otherwise, you cannot use the DFMS.
 
 ## Command Line Interface
 
