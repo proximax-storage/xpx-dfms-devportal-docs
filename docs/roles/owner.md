@@ -6,7 +6,6 @@ title: Drive Owner
 The [Drive owner](owner.md) is a [DFMS](../getting_started/what_is.md) role that initiates files storage in the network. It is essentially the client that uses the network to store files. To create a new [Drive](../built_in_features/drive/overview.md), the [owner](owner.md) should prepare and create a new [Drive](../built_in_features/drive/overview.md) account.
 
 
-
 ## Drive Owner Responsibilities
 
 * The [owner](owner.md) creates a [Drive](../built_in_features/drive/overview.md) account and prepares it with desired properties. When the [Drive](../built_in_features/drive/overview.md) is prepared, the [owner](owner.md) must transfer [XPX](../getting_started/economy.md#xpx) to [Drive](../built_in_features/drive/overview.md) balance that equals at least one billing period.
