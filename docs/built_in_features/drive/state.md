@@ -4,6 +4,7 @@ title: Drive State
 sidebar_label: State
 ---
 
+The drive instance can have different states in its lifecycle. Here are the following of each state of the drive.
 
 | State                                 | Meaning                                                                                                    |
 | :------------------------------------ | :--------------------------------------------------------------------------------------------------------- |

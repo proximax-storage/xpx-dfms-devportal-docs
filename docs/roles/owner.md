@@ -3,8 +3,12 @@ id: owner
 title: Drive Owner
 ---
 
-The [Drive owner](owner.md) is a [DFMS](../getting_started/what_is.md) role that initiates files storage in the network. It is essentially the client that uses the network to store files. To create a new [Drive](../built_in_features/drive/overview.md), the [owner](owner.md) should prepare and create a new [Drive](../built_in_features/drive/overview.md) account.
+The [Drive owner](owner.md) is a [DFMS](../getting_started/what_is.md) role that initiates files storage in the network. It is essentially the client that accepts the files and pushes them to replicators. When initiating a drive, a virtual drive is created for the customers to manage their files and directories. To create a new [Drive](../built_in_features/drive/overview.md), the [owner](owner.md) should prepare and create a new [Drive](../built_in_features/drive/overview.md) account.
 
+In an autonomous storage network, customers usually access their acquired storage via an easy to use interface. The inner workings of this interface is programmatically designed to accept files or even directories from the customer. The role of the drive owner is to provide an easy way for their customers to access the storage they provided.
+
+## Price and Token Economy
+Drive Owner as storage providers accepts the payment from customers which in turn they'll use to pay for replicators on the network. Drive will need to have XPX before it can push files to replicators. Exchange protocol kicks in that will convert XPX to Service Units which will then be accepted by the replicators that participates on the contract.
 
 ## Drive Owner Responsibilities
 
