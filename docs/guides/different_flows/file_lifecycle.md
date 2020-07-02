@@ -7,18 +7,24 @@ title: Guide of file lifecycle
 
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
+- Have at least one running [replicator](../../roles/replicator.md) node
 
 ## Example
+
+The guides shows possible file system flow: add, move/rename, copy, get, remove, make directory and flush.
 
 ```go
 import (
     "context"
-    "crypto/rand"
+    "fmt"
     "io/ioutil"
+    "time"
 
     files "github.com/ipfs/go-ipfs-files"
 
     api "github.com/proximax-storage/go-xpx-dfms-api"
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    "github.com/proximax-storage/go-xpx-dfms/crypto"
 )
 
 func main() {
@@ -26,13 +32,7 @@ func main() {
     client := apihttp.NewClientAPI("127.0.0.1:63666")
 
     //Not required. Generate your own private key if you want
-    private, pub, err := crypto.GenerateEd25519CatapultKey()
-    if err != nil {
-        panic(err)
-    }
-
-    //Compose a new drive ID from generated public key
-    newDriveID, err := idrive.IDFromPubKey(pub)
+    private, _, err := crypto.GenerateEd25519CatapultKey()
     if err != nil {
         panic(err)
     }
@@ -46,15 +46,16 @@ func main() {
         time.Hour*24*30,
         // Optional. Genarated private key that will use for drive
         api.PrivateKey(private),
-        // Optional. The namber of SO units that will be dived between replicators at the end of
+        // Optional. The number of SO units that will be dived between replicators at the end of
         // billing period. Default valu equals to driveSize*PayedReplicas
         api.SubscriptionPrice(5000),
-        // Optional. The number of billing (subscripion) periods
+        // Optional. The number of billing (subscription) periods
         api.NumberSubscriptionPeriods(12),
-        // Optional. The minimal amount of replicators for starting billing (subscripion) periods
+        // Optional. The minimal amount of replicators for starting billing (subscription) periods
         // Default value 3
         api.MinReplicators(3),
         // Optional. The count of wanted (and payed) replicas
+        // Default 3
         api.Replicas(5),
         // Optional. The percent for approving any transaction sent by contract account
         // Default 66
@@ -67,21 +68,22 @@ func main() {
 
     // Add some file
     testFile := []byte("content of some file")
-    // Add file to the create drive. If success case returns hash of this file.
+    // Add file to the created drive. In success case returns hash of this file.
     fileHash, err := client.FS().Add(
-                                    context.TODO(),
-                                    // a drive to which the file will be added
-                                    contract.Drive,
-                                    // file path on the drive
-                                    "/testFile",
-                                    // file converted to needed type
-                                    files.NewBytesFile(testFile),
-                                    // optional, without flush changes will be applied only local
-                                    api.Flush(true),
-                                )
+        context.TODO(),
+        // a drive to which the file will be added
+        contract.Drive,
+        // file path on the drive
+        "/testFile",
+        // file converted to needed type
+        files.NewBytesFile(testFile),
+        // optional, without flush changes will be applied only local
+        api.Flush(true),
+    )
     if err != nil {
         panic(err)
     }
+    println(fileHash.String())
 
     // Move or rename the file. According to Linux philosophy, this the same actions
     err = client.FS().Move(context.TODO(), contract.Drive, "/testFile", "/renamedFile")
@@ -91,19 +93,19 @@ func main() {
 
     // Copy the file to another folder
     // Create new folder
-    err = client.FS().MakeDir(ctx, contract.Drive, "helpDir")
+    err = client.FS().MakeDir(context.TODO(), contract.Drive, "helpDir")
     if err != nil {
         panic(err)
     }
 
     // Than make a file copy
-    err = client.FS().Copy(ctx, fixtures.Drive, "/renamedFile", "/helpDir/cpiedFile")
+    err = client.FS().Copy(context.TODO(), contract.Drive, "/renamedFile", "/helpDir/fileCopy")
     if err != nil {
         panic(err)
     }
 
     // Get the file info by its path
-    stat, err := client.FS().Stat(context.TODO(), contract.Drive, "/helpDir/cpiedFile")
+    stat, err := client.FS().Stat(context.TODO(), contract.Drive, "/helpDir/fileCopy")
     if err != nil {
         panic(err)
     }
@@ -120,7 +122,7 @@ func main() {
 
     // Publishes changes to blockchain and replicators
     // In 7.0.2 and lowest vesions doen't block till changes will have been replicated
-    err = client.FS().Flush(context.TODO(), driveID)
+    err = client.FS().Flush(context.TODO(), contract.Drive)
     if err != nil {
         panic(err)
     }
@@ -142,7 +144,7 @@ func main() {
     fmt.Println(data)
 
     // Remove file locally and remotely. Replicators will not save this file anymore
-    err = client.FS().Remove(ctx, contract.Drive, "/helpDir/cpiedFile")
+    err = client.FS().Remove(context.TODO(), contract.Drive, "/helpDir/fileCopy")
     if err != nil {
         panic(err)
     }
