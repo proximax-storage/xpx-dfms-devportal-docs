@@ -12,22 +12,35 @@ title: List Path
 
 ## Example
 
+The simple example of getting a list of client drives.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Drive api
-drive, err := APIDriveFS(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some contract
-contractId := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//List path
-infos, err := drive.Ls(context.Background(), contractId, "/path")
-if err != nil {
-	return err
+    // ID of some contract
+    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+
+    contractId, err := drive.IDFromString(idStr)
+    if err != nil {
+        panic(err)
+    }
+
+    // List path
+    infos, err := client.FS().Ls(context.Background(), contractId, "/path")
+    if err != nil {
+        panic(err)
+    }
+    for _, i := range infos {
+        println(i.Name())
+    }
 }
 ```

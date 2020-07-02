@@ -12,21 +12,31 @@ title: Flush File or Dir
 
 ## Example
 
+The simple example of flush changes.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Drive api
-drive, err := APIDriveFS(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some contract
-contractId := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-err := drive.Flush(context.Background(), contractId)
-if err != nil {
-	return err
+    // ID of some contract
+    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+
+    contractId, err := drive.IDFromString(idStr)
+    if err != nil {
+        panic(err)
+    }
+
+    err = client.FS().Flush(context.Background(), contractId)
+    if err != nil {
+        panic(err)
+    }
 }
 ```

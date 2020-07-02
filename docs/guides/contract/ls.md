@@ -11,19 +11,27 @@ title: List contracts
 
 ## Example
 
+List all client contracts where it is an owner or takes participant.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
+    "fmt"
 
-//New api
-cnt, err := APIContractClient(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+)
 
-//Show all contracts
-ids, err := cnt.List(context.Background())
-if err != nil {
-	return err
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
+
+    //Show all contracts
+    ids, err := client.Contract().List(context.Background())
+    if err != nil {
+        panic(err)
+    }
+    for _, id := range ids {
+        fmt.Println(id.String())
+    }
 }
 ```

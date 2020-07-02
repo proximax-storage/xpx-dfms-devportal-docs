@@ -11,24 +11,45 @@ title: Add File or Dir
 
 ## Example
 
+The simple example of adding a new file.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
+    files "github.com/ipfs/go-ipfs-files"
 
-//New Drive api
-drive, err := APIDriveFS(e)
-if err != nil {
-	return err
-}
+    api "github.com/proximax-storage/go-xpx-dfms-api"
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some contract
-contractId := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-//Flush changes or not
-flush := true
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Add file
-fcid, err := drive.Add(context.Background(), contractId, "/filepath", it.Node(), api.Flush(flush))
-if err != nil {
-	return err
+    // ID of some contract
+    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+
+    contractId, err := drive.IDFromString(idStr)
+    if err != nil {
+        panic(err)
+    }
+
+    // Add file
+    fcid, err := client.FS().Add(
+        context.Background(),
+        // contract ID
+        contractId,
+        // a path on the drive
+        "/filepath",
+        // Converted file
+        files.NewBytesFile([]byte("content")),
+        //Flush changes
+        api.Flush(flush),
+    )
+    if err != nil {
+        panic(err)
+    }
+    println(fcid.String())
 }
 ```

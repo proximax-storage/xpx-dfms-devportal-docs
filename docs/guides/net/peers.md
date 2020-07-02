@@ -10,24 +10,28 @@ title: Get Connected Peers
 
 ## Example
 
+The simple example of getting connected peers to some node.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New network api
-api, err := APINetwork(env)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+)
 
-//Get peers
-peers, err := api.Peers(context.Background())
-if err != nil {
-	return err
-}
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Print peers
-for _, p := range peers {
-    println(p.String())
+    // Get peers
+    peers, err := client.Network().Peers(context.Background())
+    if err != nil {
+        panic(err)
+    }
+
+    // Print peers
+    for _, p := range peers {
+        println(p.String())
+    }
 }
 ```

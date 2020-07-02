@@ -11,36 +11,46 @@ title: Ammends Contracts
 
 ## Example
 
+Create subsctiption on contract changes by the client.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
+    "fmt"
+    "io"
 
-//New api
-cnt, err := APIContractClient(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some contract
-id := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//New subscription
-sub, err := cnt.Amendments(context.Background(), id)
-if err != nil {
-	return err
-}
-defer sub.Close()
+    // ID of some contract
+    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
 
-for {
-	//Get next contract
-	ctr, err := sub.Next(context.Background())
-	if err == io.EOF || err == context.Canceled {
-		return nil
-	} else if err != nil {
-		return err
-	}
-	
-	//Print contract
-    fmt.Println(ctr)
+    id, err := drive.IDFromString(idStr)
+    if err != nil {
+        panic(err)
+    }
+
+    //New subscription
+    sub, err := client.Contract().Amendments(context.Background(), id)
+    if err != nil {
+        panic(err)
+    }
+    defer sub.Close()
+
+    for {
+        //Get next contract
+        ctr, err := sub.Next(context.Background())
+        if err != nil && (err != io.EOF || err != context.Canceled){
+            panic(err)
+        }
+
+        //Print contract
+        fmt.Println(ctr)
+    }
 }
 ```

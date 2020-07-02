@@ -11,26 +11,32 @@ title: Deactivate SuperContract
 - One [Drive](../../built_in_features/drive/overview.md) with executors
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 
-When you decide that you don't need some [SC](../../built_in_features/supercontract/overview.md) you can deactivate it by ID. Note that you cannot delete a [SC](../../built_in_features/supercontract/overview.md) till it is not deactivated.
-
 ## Example
 
+When client decides that it doesn't need some [SC](../../built_in_features/supercontract/overview.md) it can deactivate it by ID. Note that client cannot delete a [SC](../../built_in_features/supercontract/overview.md) till it is not deactivated.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Supercontract api
-sContract, err := APISupercontract(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    "github.com/proximax-storage/go-xpx-dfms-drive/supercontract"
+)
 
-// ID of some superContract
-scID := "baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem"
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Deactivate a SC
-err = sContract.Deactivate(context.Background(), scId)
-if err != nil {
-	return err
+    // ID of some superContract
+    scID, err := supercontract.IDFromString("baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem")
+    if err != nil {
+        panic(err)
+    }
+
+    //Deactivate a SC
+    err = client.SuperContract().Deactivate(context.Background(), scID)
+    if err != nil {
+        panic(err)
+    }
 }
 ```

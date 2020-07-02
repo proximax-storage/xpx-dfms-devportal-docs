@@ -10,27 +10,32 @@ title: Connect to Node
 
 ## Example
 
+The simple example of conection one node to another.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New network api
-api, err := APINetwork(env)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    "github.com/proximax-storage/go-xpx-dfms/util"
+)
 
-addr := "/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f"
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Convert to Multiaddress
-maddrs, err := util.AddressToMultiaddress(addr)
-if err != nil {
-	return err
-}
+    addr := "/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f"
 
-//Connect
-err := api.Connect(context.Background(), maddrs...)
-if err != nil {
-	return err
+    // Convert to Multiaddress
+    maddrs, err := util.AddressToMultiaddress(addr)
+    if err != nil {
+        panic(err)
+    }
+
+    // Connect
+    err = client.Network().Connect(context.Background(), maddrs...)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
