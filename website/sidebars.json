@@ -92,6 +92,10 @@
     ]
   },
   "Guides":{
+    "Nodes": [
+      "guides/nodes/api",
+      "guides/nodes/apihttp"
+    ],
     "Contract": [
       "guides/contract/compose",
       "guides/contract/get",
@@ -129,6 +133,12 @@
       "guides/net/connect",
       "guides/net/peers",
       "guides/net/disconnect"
+    ],
+    "Different flows": [
+      "guides/different_flows/net_lifecycle",
+      "guides/different_flows/contract_lifecycle",
+      "guides/different_flows/file_lifecycle",
+      "guides/different_flows/sc_lifecycle"
     ]
   }
 }

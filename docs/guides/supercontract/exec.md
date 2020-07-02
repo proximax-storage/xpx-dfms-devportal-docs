@@ -16,30 +16,36 @@ title: Execute SuperContract
 Let's imagine that there is some [SC](../../built_in_features/supercontract/overview.md) with func that add to 100 some number.
 
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Supercontract api
-sContract, err := APISupercontract(e)
-if err != nil {
-	return err
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    "github.com/proximax-storage/go-xpx-dfms-drive/supercontract"
+)
+
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
+
+    // ID of some superContract
+    scID, err := supercontract.IDFromString("baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem")
+    if err != nil {
+        panic(err)
+    }
+
+    // Called func
+    fn := supercontract.Function{
+        Name:       "add",
+        Parameters: []int64{10}, //arguments for func
+    }
+
+    //Exec a new SC
+    txId, err := client.SuperContract().Execute(context.Background(), scID, 1000, fn)
+    if err != nil {
+        panic(err)
+    }
+
+    //print txId
+    println(txId.String())
 }
-
-// ID of some superContract
-scID := "baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem"
-
-//Create a new func
-fn := sc.Function{
-	Name:       "add",
-	Parameters: []int{10}, //number that will be added
-}
-
-//Exec a new SC
-txId, err := sContract.Execute(context.Background(), scId, 1000, fn)
-if err != nil {
-	return err
-}
-
-//print txId
-println(txId.String())
 ```

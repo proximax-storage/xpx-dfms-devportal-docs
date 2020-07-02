@@ -10,22 +10,26 @@ title: Node ID
 
 ## Example
 
+The simple example of getting node ID.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New network api
-api, err := APINetwork(env)
-if err != nil {
-	return err
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+)
+
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
+
+    //Get ID
+    id, err := client.Network().ID(context.Background())
+    if err != nil {
+        panic(err)
+    }
+
+    //Print ID
+    println(id.String())
 }
-
-//Get ID
-id, err := api.ID(context.Background())
-if err != nil {
-	return err
-}
-
-//Print ID
-println(id.String())
 ```

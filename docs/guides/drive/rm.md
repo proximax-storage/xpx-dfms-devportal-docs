@@ -12,24 +12,36 @@ title: Remove File or Dir
 
 ## Example
 
+The simple example of removing a file.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Drive api
-drive, err := APIDriveFS(e)
-if err != nil {
-	return err
-}
+    api "github.com/proximax-storage/go-xpx-dfms-api"
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some contract
-contractId := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-//Flush changes or not
-flush := true
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//List path
-err := drive.Move(context.Background(), contractId, "/dir", "/otherdir/dir" api.Flush(flush))
-if err != nil {
-	return err
+    // ID of some contract
+    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+
+    contractId, err := drive.IDFromString(idStr)
+    if err != nil {
+        panic(err)
+    }
+
+    //Flush changes or not
+    flush := true
+
+    //List path
+    err = client.FS().Move(context.Background(), contractId, "/dir", "/otherdir/dir", api.Flush(flush))
+    if err != nil {
+        panic(err)
+    }
 }
 ```

@@ -10,29 +10,35 @@ title: Deploy SuperContract
 - One [Drive](../../built_in_features/drive/overview.md) with executors
 - [SuperContract](../../built_in_features/supercontract/overview.md) API
 
-Before we can execute any [SC](../../built_in_features/supercontract/overview.md) it should be deployed. After deploy you will get the SC ID than can be used for execution. Technically we just marked some file as the [SC](../../built_in_features/supercontract/overview.md).
-
 ## Example
 
+Before we can execute any [SC](../../built_in_features/supercontract/overview.md) it should be deployed. After deploy client will get the SC ID that can be used for execution. Technically we just marked some file as the [SC](../../built_in_features/supercontract/overview.md).
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Supercontract api
-sContract, err := APISupercontract(e)
-if err != nil {
-	return err
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
+
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
+
+    // ID of some contract
+    contractId, err := drive.IDFromString("baegqajaiaqjcbpxt6l4e3lbvkityq5q673j4v4tcyst34xzxtfkot65a5nmjbjem")
+    if err != nil {
+        panic(err)
+    }
+
+    //Deploy a new SC
+    scId, err := client.SuperContract().Deploy(context.Background(), contractId, "test.wat")
+    if err != nil {
+        panic(err)
+    }
+
+    //print scId
+    println(scId.String())
 }
-
-// ID of some contract
-contractId := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-
-//Deploy a new SC
-scId, err := sContract.Deploy(context.Background(), contractId, "test.wat")
-if err != nil {
-	return err
-}
-
-//print scId
-println(scId.String())
 ```

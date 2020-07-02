@@ -11,26 +11,29 @@ title: Accept Contract
 
 ## Example
 
+Accept some exist contract by by the replicator.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New api
-cnt, err := APIContractReplicator(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some contract
-id := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+func main() {
+    // Replicator a new replicator API by given address
+    replicator := apihttp.NewReplicatorAPI("127.0.0.1:64666")
 
-id, err := drive.IDFromString(id)
-if err != nil {
-	return err
-}
+    // ID of some contract
+    id, err := drive.IDFromString("baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5")
+    if err != nil {
+        panic(err)
+    }
 
-err = cnt.Accept(context.Background(), id)
-if err != nil {
-	return err
+    err = replicator.Contract().Accept(context.Background(), id)
+    if err != nil {
+        panic(err)
+    }
 }
 ```

@@ -10,24 +10,27 @@ title: Get Node Addresses
 
 ## Example
 
+The simple example of getting adresses of some node.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New network api
-api, err := APINetwork(env)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+)
 
-//Get addresses
-addrs, err := api.Addrs(context.Background())
-if err != nil {
-	return err
-}
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Print addresses
-for _, addr := range addrs {
-    println(addr.String())
+    //Get addresses
+    addrs, err := client.Network().Addrs(context.Background())
+    if err != nil {
+        panic(err)
+    }
+    //Print addresses
+    for _, addr := range addrs {
+        println(addr.String())
+    }
 }
 ```

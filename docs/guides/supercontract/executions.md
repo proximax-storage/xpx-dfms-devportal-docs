@@ -12,28 +12,30 @@ title: SuperContract Executions
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 - One finished execution
 
-You can get all user's [SC](../../built_in_features/supercontract/overview.md) executions.
-
 ## Example
 
+Client can get all [SC](../../built_in_features/supercontract/overview.md) executions.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Supercontract api
-sContract, err := APISupercontract(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+)
 
-//List executions
-hashes, err := sContract.GetSuperContractExecutionsHash(context.Background())
-if err != nil {
-	return err
-}
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//print the list of executions
-for _, h := range hashes {
-	println(h.String())
+    // List executions
+    hashes, err := client.SuperContract().GetSuperContractExecutionsHashes(context.Background())
+    if err != nil {
+        panic(err)
+    }
+
+    // print the list of executions
+    for _, h := range hashes {
+        println(h)
+    }
 }
 ```

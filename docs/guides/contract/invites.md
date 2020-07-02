@@ -11,41 +11,37 @@ title: Contract Invites
 
 ## Example
 
+Get invites to contract by a replicator.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
+    "fmt"
+    "io"
 
-//New api
-cnt, err := APIContractReplicator(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+)
 
-// ID of some contract
-id := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+func main() {
+    // Replicator a new replicator API by given address
+    replicator := apihttp.NewReplicatorAPI("127.0.0.1:64666")
 
-id, err := drive.IDFromString(id)
-if err != nil {
-	return err
-}
+    //New subscription
+    sub, err := replicator.Contract().Invites(context.TODO())
+    if err != nil {
+        panic(err)
+    }
+    defer sub.Close()
 
-//New subscription
-sub, err := cnt.Invites(req.Context)
-if err != nil {
-	return err
-}
-defer sub.Close()
+    for {
+        //Get next invite
+        drvInvite, err := sub.Next(context.TODO())
+        if err != nil && (err != io.EOF || err != context.Canceled) {
+            panic(err)
+        }
 
-for {
-    //Get next invite
-	drvInvite, err := sub.Next(req.Context)
-	if err == io.EOF || err == context.Canceled {
-		return nil
-	} else if err != nil {
-		return err
-	}
-
-	//Print Drive contract
-    fmt.Println(ctr)
+        //Print Drive contract
+        fmt.Println(drvInvite)
+    }
 }
 ```

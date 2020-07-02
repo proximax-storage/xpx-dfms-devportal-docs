@@ -11,22 +11,34 @@ title: Get Contract
 
 ## Example
 
+Get some exist contract by the client.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
+    "fmt"
 
-//New api
-cnt, err := APIContractClient(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some contract
-id := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Get contract by ID
-ctr, err := cnt.Get(context.Background(), id)
-if err != nil {
-	return err
+    // ID of some contract
+    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+
+    id, err := drive.IDFromString(idStr)
+    if err != nil {
+        panic(err)
+    }
+
+    // Get contract by ID
+    ctr, err := client.Contract().Get(context.Background(), id)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(ctr)
 }
 ```

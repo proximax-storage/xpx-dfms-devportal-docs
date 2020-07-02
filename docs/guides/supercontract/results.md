@@ -12,37 +12,39 @@ title: SuperContract Results
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 - One finished execution
 
-If a [SC](../../built_in_features/supercontract/overview.md) function saves results to drive you can get it by transaction ID.
-
 ## Example
 
+If a [SC](../../built_in_features/supercontract/overview.md) function saves results client can get it by transaction ID.
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Supercontract api
-sContract, err := APISupercontract(e)
-if err != nil {
-	return err
-}
+    "github.com/ipfs/go-cid"
 
-// ID of some transaction
-id := "bafybeifbqukufovlk5oyjujzgev6t7co2ygtfcavcgvj5onph6v2mvwujm"
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+)
 
-//Decode id to CID
-txId, err := cid.Decode(id)
-if err != nil {
-	return err
-}
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Get the results
-scResults, err := sContract.GetResults(context.Background(), txId)
-if err != nil {
-	return err
-}
+    // ID of some transaction
+    txId, err := cid.Decode("bafybeifbqukufovlk5oyjujzgev6t7co2ygtfcavcgvj5onph6v2mvwujm")
+    if err != nil {
+        panic(err)
+    }
 
-//print results
-for _, r := range scResults {
-	println(r)
+    // Get the results
+    // Note that results can be empty if SC doesn;t save results
+    scResults, err := client.SuperContract().GetResults(context.Background(), txId)
+    if err != nil {
+        panic(err)
+    }
+
+    // print results
+    for _, r := range scResults {
+        println(r)
+    }
 }
 ```

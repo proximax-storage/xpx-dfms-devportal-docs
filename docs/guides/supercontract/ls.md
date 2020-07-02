@@ -11,31 +11,37 @@ title: List SuperContracts
 - One [Drive](../../built_in_features/drive/overview.md) with executors
 - One deployed [SuperContract](../../built_in_features/supercontract/overview.md)
 
-At any time you can get a list of a user's [SC](../../built_in_features/supercontract/overview.md).
-
 ## Example
 
+At any time client can get a list of a its [SC](../../built_in_features/supercontract/overview.md)
+
 ```go
-//Some enviroment
-var env cmds.Environment
+import (
+    "context"
 
-//New Supercontract api
-sContract, err := APISupercontract(e)
-if err != nil {
-	return err
-}
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    drive "github.com/proximax-storage/go-xpx-dfms-drive"
+)
 
-// ID of some drive
-driveId := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
+func main() {
+    // Create a new client API by given address
+    client := apihttp.NewClientAPI("127.0.0.1:63666")
 
-//Get the Drive SCs
-scList, err := sContract.List(context.Background(), driveId)
-if err != nil {
-	return err
-}
+    // ID of some contract
+    contractID, err := drive.IDFromString("baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5")
+    if err != nil {
+        panic(err)
+    }
 
-//print the list of SC
-for _, sc := range scList {
-	println(sc.String())
+    //Get the Drive SCs
+    scList, err := client.SuperContract().List(context.Background(), contractID)
+    if err != nil {
+        panic(err)
+    }
+
+    //print the list of SC
+    for _, sc := range scList {
+        println(sc.String())
+    }
 }
 ```

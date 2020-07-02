@@ -13,18 +13,22 @@ title: Compose Contract
 Prepare a new 1000MB [Drive](../../built_in_features/drive/overview.md) for 12 months with 5 replicas, but the [Drive](../../built_in_features/drive/overview.md) can start when 3 [replicators](../../roles/replicator.md) are joined. The reward will be 5000 SM every 1 month. To accept transactions needed 66% to approve.
 
 ```go
+import (
+    "context"
+    "fmt"
+    "time"
+
+    api "github.com/proximax-storage/go-xpx-dfms-api"
+    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+    "github.com/proximax-storage/go-xpx-dfms/crypto"
+)
+
 func main() {
     // Create a new client API by given addres
     client := apihttp.NewClientAPI("127.0.0.1:63666")
 
     //Not required. Generate your own private key if you want
-    private, pub, err := crypto.GenerateEd25519CatapultKey()
-    if err != nil {
-        panic(err)
-    }
-
-    //Compose a new drive ID from generated public key
-    newDriveID, err := idrive.IDFromPubKey(pub)
+    private, _, err := crypto.GenerateEd25519CatapultKey()
     if err != nil {
         panic(err)
     }
@@ -47,6 +51,7 @@ func main() {
         // Default value 3
         api.MinReplicators(3),
         // Optional. The count of wanted (and payed) replicas
+        // Default 3
         api.Replicas(5),
         // Optional. The percent for approving any transaction sent by contract account
         // Default 66
@@ -56,5 +61,6 @@ func main() {
     if err != nil {
         panic(err)
     }
+    fmt.Println(contract)
 }
 ```
