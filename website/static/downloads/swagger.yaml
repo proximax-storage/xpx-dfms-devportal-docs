@@ -653,7 +653,7 @@ paths:
               type: string
               example: 43
           required: false
-          description: Function parameters.
+          description: Function parameters, only numbers.
       responses:
         '200':
           description: Success
@@ -731,7 +731,7 @@ paths:
                     type: array
                     items:
                       type: string
-                      example: /SuperContracts/result.txt
+                      example: /SuperContracts/result.txt baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/executions:
@@ -895,6 +895,8 @@ components:
           properties:
             /:
               $ref: '#/components/schemas/cid'
+    pubKey:
+      $ref: '#/components/schemas/pubKey'
     cid:
       type: string
       example: baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
@@ -910,14 +912,12 @@ components:
         drive:
           $ref: '#/components/schemas/cid'
         owner:
-          type: string
-          example: 080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2
-          description: Hex encoded public key.
+          $ref: '#/components/schemas/pubKey'
         replicators:
           type: array
           description: Hex encoded public keys.
           items:
-            $ref: '#/components/schemas/cid'
+            $ref: '#/components/schemas/pubKey'
         root:
           $ref: '#/components/schemas/cid'
         created:
@@ -974,9 +974,7 @@ components:
       type: object
       properties:
         replicator:
-          type: string
-          description: Hex encoded public keys.
-          example: 0804122068f50e10e5b8be2b7e9ddb687a667d6e94dd55fe02b4aed8195f51f9a242558b
+          $ref: '#/components/schemas/pubKey'
         faultyBlocks:
           type: array
           items:
