@@ -46,7 +46,7 @@ paths:
           example: 1000
           schema:
             type: integer
-            format: uint64
+            format: int64
         - in: query
           name: arg (duration)
           description: |
@@ -112,11 +112,7 @@ paths:
             format: PrivKey
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/contract'
+          $ref: '#/components/responses/contractResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /contract/ls:
@@ -130,16 +126,7 @@ paths:
       operationId: ls
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Ids:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/cid'
+          $ref: '#/components/responses/cidListResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /contract/get:
@@ -154,11 +141,7 @@ paths:
         - $ref: '#/components/parameters/driveIdParam'
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/contract'
+          $ref: '#/components/responses/contractResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /contract/ammends:
@@ -174,18 +157,7 @@ paths:
         - $ref: '#/components/parameters/driveIdParam'
       responses:
         '200':
-          description: |
-            Establishes persitent connection and sends json value through it to the requester as long as new updates appear.
-          headers: 
-            -X-Stream-Output:
-              schema:
-                type: integer
-                enum:
-                 - 1
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/contract'
+          $ref: '#/components/responses/contractPollResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /contract/verify:
@@ -201,20 +173,7 @@ paths:
         - $ref: '#/components/parameters/driveIdParam'
       responses:
         '200':
-          description: |
-            Start a drive verification
-          headers: 
-            -X-Stream-Output:
-              schema:
-                type: integer
-                enum:
-                 - 1
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/verifyResult'
+          $ref: '#/components/responses/contractVerifyResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /contract/finish:
@@ -258,20 +217,7 @@ paths:
       operationId: accepted
       responses:
         '200':
-          description: drive list
-          headers: 
-            -X-Stream-Output:
-              schema:
-                type: integer
-                enum:
-                 - 1
-          content:
-            application/json:
-              schema:
-                  type: object
-                  properties:
-                    Contract:
-                      $ref: '#/components/schemas/contract'
+          $ref: '#/components/responses/contractPollResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /contract/invites:
@@ -284,21 +230,7 @@ paths:
       operationId: invites
       responses:
         '200':
-          description: |
-            Establishes persitent connection and sends json value through it to the requester as long as new updates appear.
-          headers: 
-            -X-Stream-Output:
-              schema:
-                type: integer
-                enum:
-                 - 1
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Invite:
-                    $ref: '#/components/schemas/contract'
+          $ref: '#/components/responses/invitePollResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /drive/add:
@@ -324,14 +256,7 @@ paths:
               description: Multipart might be dynamic and have many subdirectories. Format is taken from [ipfs files](https://github.com/ipfs/go-ipfs-files)
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                 cid:
-                  $ref: '#/components/schemas/cid'
+          $ref: '#/components/responses/driveAddResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /drive/get:
@@ -473,11 +398,7 @@ paths:
         - $ref: '#/components/parameters/srcParam'
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cidList'
+          $ref: '#/components/responses/driveLsResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /drive/stat:
@@ -492,11 +413,7 @@ paths:
         - $ref: '#/components/parameters/srcParam'
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/stat'
+          $ref: '#/components/responses/driveStatResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /drive/flush:
@@ -550,12 +467,7 @@ paths:
       operationId: getid
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/id'
-
+          $ref: '#/components/responses/netIdResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /net/peers:
@@ -567,16 +479,7 @@ paths:
       operationId: peers
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Peers:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/peer'
+          $ref: '#/components/responses/peersResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /net/addrs:
@@ -588,16 +491,7 @@ paths:
       operationId: addresses
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Addrs:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/addr'
+          $ref: '#/components/responses/netAddrsResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/deploy:
@@ -612,14 +506,7 @@ paths:
         - $ref: '#/components/parameters/srcParam'
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Result:
-                    $ref: '#/components/schemas/cid'
+          $ref: '#/components/responses/scDeployResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/exec:
@@ -656,18 +543,7 @@ paths:
           description: Function parameters, only numbers.
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  ScId:
-                    description: SuperContract ID is [Cid](https://github.com/multiformats/cid) (version 1) - special content identifier.
-                    type: string
-                    example: baegqajaiaqjcak6kujbwwdsx3ytcv5wvyrf7fwcij7yvb527laruzjgwch5jxqlm
-                  TxHash:
-                    $ref: '#/components/schemas/cid'
+          $ref: '#/components/responses/scExecResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/get:
@@ -681,14 +557,7 @@ paths:
         - $ref: '#/components/parameters/scIdParam'
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  SuperContract:
-                    $ref: '#/components/schemas/SuperContract'
+          $ref: '#/components/responses/scSupercontractResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/ls:
@@ -702,16 +571,7 @@ paths:
         - $ref: '#/components/parameters/driveIdParam'
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Ids:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/cid'
+          $ref: '#/components/responses/cidListResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/results:
@@ -725,17 +585,7 @@ paths:
         - $ref: '#/components/parameters/txIdParam'
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Results:
-                    type: array
-                    items:
-                      type: string
-                      example: /SuperContracts/result.txt baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+          $ref: '#/components/responses/scResultsResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/executions:
@@ -747,16 +597,7 @@ paths:
       operationId: executions
       responses:
         '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  Ids:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/cid'
+          $ref: '#/components/responses/scExecutionsResp'
         '400': 
           $ref: '#/components/responses/errorResp'
   /sc/deactivate:
@@ -780,7 +621,120 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: '#/components/schemas/errResult'
+    contractResp:
+      description: Single contract
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/contractWrap'
+    contractPollResp:
+      description: |
+        Establishes persitent connection and sends json value through it to the requester as long as new updates appear.
+      headers: 
+        -X-Stream-Output:
+          schema:
+            type: integer
+            enum:
+             - 1
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/contractWrap'
+    invitePollResp:
+      description: |
+        Establishes persitent connection and sends json value through it to the requester as long as new updates appear.
+      headers: 
+        -X-Stream-Output:
+          schema:
+            type: integer
+            enum:
+             - 1
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inviteWrap'
+    contractVerifyResp:
+      description: Start a drive verification
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/verifyResult'
+    cidListResp:
+      description: List of Cids
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/cidListWrap'
+    peersResp:
+      description: List of peers
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/peerListWrap'
+    netIdResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/peerIdWrap'
+    netAddrsResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/addrListWrap'
+    driveAddResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/cidWrap'
+    driveStatResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/statWrap'
+    driveLsResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/statListWrap'
+    scDeployResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/cidResultWrap'
+    scExecResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/supercontractExec'
+    scExecutionsResp:
+      description: List of executions
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/executionsWrap'
+    scSupercontractResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/superContractWrap'
+    scResultsResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/resultsWrap'
+
   parameters:
     driveIdParam:
       in: query
@@ -858,62 +812,138 @@ components:
         type: boolean
         default: false
   schemas:
-    id:
+    peerIdWrap:
       type: object
       properties:
         ID: 
-          type: string
-          example: 12D3L7AUwnPXj7odaWGzWcWwWD1mGrB5d5yr6zLrimHcyiZLVWcH
-          description: network ID of a node
+          $ref: '#/components/schemas/peerId'
+    peerId:
+      type: string
+      example: 12D3L7AUwnPXj7odaWGzWcWwWD1mGrB5d5yr6zLrimHcyiZLVWcH
+      description: network ID of a node
+    peerListWrap:
+      type: object
+      properties:
+        Peers:
+          type: array
+          items:
+            $ref: '#/components/schemas/peer'
     peer:
       type: object
       properties:
         Addrs: 
-          type: string
-          example: /ip4/127.0.0.1/tcp/63666
-          description: address of a node
+          $ref: '#/components/schemas/addrList'
         ID: 
-          type: string
-          example: 12D3L7AUwnPXj7odaWGzWcWwWD1mGrB5d5yr6zLrimHcyiZLVWcH
-          description: network ID of a node
+          $ref: '#/components/schemas/peerId'
+    addrListWrap:
+      type: object
+      properties:
+        Addrs:
+          $ref: '#/components/schemas/addrList'
+    addrList:
+      type: array
+      items:
+        $ref: '#/components/schemas/addr'
     addr:
       type: string
       example: /ip4/127.0.0.1/tcp/63666/p2p/12D3L7AUwnPXj7odaWGzWcWwWD1mGrB5d5yr6zLrimHcyiZLVWcH
       description: full address of a node
+    statListWrap:
+      type: object
+      properties:
+        List:
+          $ref: '#/components/schemas/statList'
+    statList:
+      type: array
+      items:
+        $ref: '#/components/schemas/stat'
+    statWrap:
+      type: object
+      properties:
+        Stat:
+          $ref: '#/components/schemas/stat'
     stat:
       type: object
       description: File statistics
       properties:
-        name:
+        Name:
           type: string
-        size:
+        Size:
           type: integer
-          format: uint64
-        type:
+          format: int64
+        Type:
           type: string
           enum:
             - "file"
             - "dir"
         Cid:
-          type: object
-          properties:
-            /:
-              $ref: '#/components/schemas/cid'
+          $ref: '#/components/schemas/cidWithPath'
+    cidWithPath:
+      type: object
+      properties:
+        /:
+          $ref: '#/components/schemas/cid'
+    supercontractExec:
+      type: object
+      properties:
+        ScId:
+          $ref: '#/components/schemas/cid'
+        TxHash:
+          $ref: '#/components/schemas/cidWithPath'
     pubKey:
       type: string
       example: 080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2
       description: Hex encoded public key.
+    cidWrap:
+      type: object
+      properties:
+        Id:
+          $ref: '#/components/schemas/cid'
+    cidResultWrap:
+      type: object
+      properties:
+        Result:
+          $ref: '#/components/schemas/cid'
     cid:
       type: string
       example: baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
       description: |
         [Cid](https://github.com/multiformats/cid) (version 1) - special content identifier.
+    cidListWrap:
+      type: object
+      description: Wrapper for array of Cids
+      properties:
+        Ids:
+          $ref: '#/components/schemas/cidList'    
+    executionsWrap:
+      type: object
+      description: Wrapper for array of Cids
+      properties:
+        Ids:
+          $ref: '#/components/schemas/executionList'    
+    executionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/cidWithPath'
     cidList:
       type: array
       items:
         $ref: '#/components/schemas/cid'
+    contractWrap:
+      type: object
+      description: Wrapper for single drive contract
+      properties:
+        Contract:
+          $ref: '#/components/schemas/contract'    
+    inviteWrap:
+      type: object
+      description: Wrapper for single drive contract as part of invite polling
+      properties:
+        Invite:
+          $ref: '#/components/schemas/contract'    
     contract:
       type: object
+      description: Drive contract
       properties:
         drive:
           $ref: '#/components/schemas/cid'
@@ -959,7 +989,12 @@ components:
           type: integer
           example: 1
           format: int64
-    SuperContract:
+    superContractWrap:
+      type: object
+      properties:
+        SuperContract:
+          $ref: '#/components/schemas/superContract'
+    superContract:
       type: object
       properties:
         id:
@@ -985,13 +1020,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/cid'
-    error:
+    resultsWrap:
       type: object
       properties:
-        message:
+        Results:
+          type: array
+          items:
+            type: string
+            example: /SuperContracts/result.txt baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+    errResult:
+      type: object
+      properties:
+        Message:
           type: string
           description: Error message
-        code:
+        Code:
           type: integer
           enum: 
           - 0
@@ -1004,7 +1047,7 @@ components:
             * 3 - RateLimited - is returned when the operation has been rate-limited.
             * 4 - Forbidden - is returned when the client doesn't have permission to
                   perform the requested operation.
-        type:
+        Type:
           type: string
           enum: 
           - "error"
