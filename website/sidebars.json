@@ -71,21 +71,21 @@
     ]
   },
   "cli": {
-    "DFMS": [
-      "cli/dfms/dfms",
+    "Storade Director Node": [
+      "cli/dfms/dfms-client",
       "cli/dfms/drive",
       "cli/dfms/contract",
       "cli/dfms/sc/sc",
       "cli/dfms/net",
       "cli/dfms/version"
     ],
-    "DFMSR": [
-      "cli/dfmsr/dfmsr",
+    "Storage Replicator Node": [
+      "cli/dfmsr/dfms-replicator",
       "cli/dfmsr/contract",
       "cli/dfmsr/net",
       "cli/dfmsr/version"
     ],
-    "More examples": [
+    "Supercontracts": [
       "cli/dfms/sc/create_wasm",
       "cli/dfms/sc/create_wat",
       "cli/dfms/sc/sc_flow_example"

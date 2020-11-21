@@ -1,7 +1,7 @@
 ---
 id: version
 title: Version
-sidebar_label: dfms version
+sidebar_label: dfms-client version
 ---
 
 ## Description
@@ -11,7 +11,7 @@ Shows detailed information about the binary. Version, application type, system i
 ## Examples
 
 ```shell
-$ dfms version
+$ dfms-client version
 Application:
 Version: v0.6.4
 Commit:

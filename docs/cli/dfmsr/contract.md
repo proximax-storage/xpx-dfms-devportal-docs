@@ -1,7 +1,7 @@
 ---
 id: contract
 title: Interface with a Replicator Contract
-sidebar_label: dfmsr contract
+sidebar_label: dfms-replicator contract
 ---
 
 **WARNING**: The API is not stable yet and is subject to change.
@@ -14,18 +14,18 @@ Is command set implementing ContractReplicator which is a part of [DFMSR](../../
 
 | Command                                                 | Description                                                                                                                        |
 | :------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
-| [`dfmsr contract compose`](#dfmsr-contract-compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                                                            |
-| [`dfmsr contract ls`](#dfmsr-contract-ls)               | lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member |
-| [`dfmsr contract get`](#dfmsr-contract-get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                         |
-| [`dfmsr contract ammends`](#dfmsr-contract-ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                                                  |
-| [`dfmsr contract accept`](#dfmsr-contract-accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                                                 |
-| [`dfmsr contract accepted`](#dfmsr-contract-accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node                              |
-| [`dfmsr contract invites`](#dfmsr-contract-invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                                                  |
-| [`dfmsr contract accepting`](#dfmsr-contract-accepting) | automatically accept every received invitation                                                                                     |
+| [`dfms-replicator contract compose`](#dfmsr-contract-compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                                                            |
+| [`dfms-replicator contract ls`](#dfmsr-contract-ls)               | lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member |
+| [`dfms-replicator contract get`](#dfmsr-contract-get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                         |
+| [`dfms-replicator contract ammends`](#dfmsr-contract-ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                                                  |
+| [`dfms-replicator contract accept`](#dfmsr-contract-accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                                                 |
+| [`dfms-replicator contract accepted`](#dfmsr-contract-accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node                              |
+| [`dfms-replicator contract invites`](#dfmsr-contract-invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                                                  |
+| [`dfms-replicator contract accepting`](#dfmsr-contract-accepting) | automatically accept every received invitation                                                                                     |
 
 ---
 
-## `dfmsr contract compose`
+## `dfms-replicator contract compose`
 
 This command composes Contract for new [Drive](../../built_in_features/drive/overview.md) between current [DFMS](../../getting_started/what_is.md) node and multiple [DFMSR](../../getting_started/what_is.md) nodes with conditions to store `space` amount of data for `subscription` time period.
 
@@ -55,7 +55,7 @@ First of all, a Contract invitation is built from configured arguments and optio
 - _Create a new contract with the needed parameters:_
 
   ```shell
-  $ dfmsr contract compose 1000 1 \        # size & duration
+  $ dfms-replicator contract compose 1000 1 \        # size & duration
                   --replicas=5 \
                   --min-replicators=3 \
                   --billing-price=5000 \
@@ -83,7 +83,7 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 ---
 
-## `dfmsr contract ls`
+## `dfms-replicator contract ls`
 
 Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member.
 
@@ -92,7 +92,7 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 - _Get client drives:_
 
   ```shell
-  $ dfmsr contract ls
+  $ dfms-replicator contract ls
   baegaajaiaqjca7fnnbv2od5i3uo2zdvruvp2uvbiaoqhnbwqv7tpy6qkbmip7622
   baegaajaiaqjcaedinbn4fbtawhvbgmuxv2uklfxabf5ughaii2jbp2vtw2z34cb5
   baegaajaiaqjcafssfchukjl77zijwpneyrv5wec7u4yj6f5fqiusqwlas5f4unpd
@@ -108,7 +108,7 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 
 ---
 
-## `dfmsr contract get`
+## `dfms-replicator contract get`
 
 `get` prints a Contract body of any `drive` from the network. Takes it from local storage or fetches from the network.
 
@@ -123,7 +123,7 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 - _Get contact by Drive ID:_
   
   ```shell
-  $ dfmsr contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  $ dfms-replicator contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   {
     "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
     "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
@@ -146,7 +146,7 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 
 ---
 
-## `dfmsr contract ammends`
+## `dfms-replicator contract ammends`
 
 `contract ammends` subscribes for Contract amendments of `drive`. Produced either from owner or [replicator](../../roles/replicator.md#replicator) consensus.
 
@@ -161,12 +161,12 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 - _Start listen to amendments of some drive:_
 
   ```shell
-  $ dfmsr contract ammends baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  $ dfms-replicator contract ammends baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   ```
 
 ---
 
-## `dfmsr contract accept`
+## `dfms-replicator contract accept`
 
 Joins `drive` by it's id. Can join only [SuperContracts](../../built_in_features/supercontract/overview.md) awaiting new members.
 
@@ -181,12 +181,12 @@ Joins `drive` by it's id. Can join only [SuperContracts](../../built_in_features
 - _Accept a contract by ID:_
   
   ```shell
-  $ dfmsr contract accept baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  $ dfms-replicator contract accept baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   ```
 
 ---
 
-## `dfmsr contract accepted`
+## `dfms-replicator contract accepted`
 
 Subscribes for newly accepted Driver Contracts of the node, either accepted automatically or manually.
 
@@ -195,12 +195,12 @@ Subscribes for newly accepted Driver Contracts of the node, either accepted auto
 - _Show accepted contracts:_
   
   ```shell
-  $ dfmsr contract accepted
+  $ dfms-replicator contract accepted
   ```
 
 ---
 
-## `dfmsr contract invites`
+## `dfms-replicator contract invites`
 
 Subscribes for [Drive](../../built_in_features/drive/overview.md) Contract invitation published on the network to be accepted or not.
 
@@ -209,12 +209,12 @@ Subscribes for [Drive](../../built_in_features/drive/overview.md) Contract invit
 - _Show invites:_
 
   ```shell
-  $ dfmsr contract invites
+  $ dfms-replicator contract invites
   ```
 
 ---
 
-## `dfmsr contract accepting`
+## `dfms-replicator contract accepting`
 
 **WARNING**: This command will be removed in the next minor release.
 
@@ -225,14 +225,14 @@ Subscribes for new invitations and accepts them automatically, ALL OF THEM WITHO
 - _Start accepting:_
 
   ```shell
-  $ dfmsr contract accepting
+  $ dfms-replicator contract accepting
   "Accepting started."
   ```
 
 - _Stop accepting:_
 
   ```shell
-  $ dfmsr contract accepting
+  $ dfms-replicator contract accepting
   "Accepting stoped."
   ```
   

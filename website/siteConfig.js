@@ -29,7 +29,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'getting_started/what_is', label: 'Getting Started'},
-    {doc: 'cli/dfms/dfms', label: 'CLI'},
+    {doc: 'cli/dfms/dfms-client', label: 'CLI'},
     {doc: 'guides/contract/compose', label: 'Guides'},
     {page: 'endpoints', label: 'API Endpoints'},
     {page: 'help', label: 'Help'}
@@ -78,8 +78,8 @@ const siteConfig = {
   cleanUrl: true,
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+  ogImage: '',
+  twitterImage: '',
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,

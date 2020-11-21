@@ -28,7 +28,7 @@ class HomeSplash extends React.Component {
             <h1>Start integrating your apps with Sirius Storage.</h1>
             <h6>Providing you with maximum data security, privacy, and scalability</h6>
             <a href="docs/getting_started/what_is" class="button button-filled">Getting Started &rarr;</a>
-            <p>Sirius Storage Version<span>0.6.4</span></p>
+            <p>Sirius Storage Version<span>0.8.1-rc1</span></p>
           </div>
           <div class="bg-diagonal"></div>
         </div>

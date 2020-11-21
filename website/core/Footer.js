@@ -37,17 +37,17 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Roles</h5>
-            <a href={this.docUrl('roles/Owner', this.props.docsPart)}>
-              Owner
+            <a href={this.docUrl('roles/owner', this.props.docsPart)}>
+              SDN
             </a>
             <a href={this.docUrl('roles/replicator#replicator', this.props.docsPart)}>
-              Replicator
+              SRN
             </a>
             <a href={this.docUrl('roles/replicator#verifier', this.props.docsPart)}>
               Verifier
             </a>
             <a href={this.docUrl('roles/executor', this.props.docsPart)}>
-              Executor
+              SC Executor
             </a>
           </div>
           <div>
@@ -85,42 +85,45 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>CLI</h5>
-            <a href={this.docUrl('cli/dfms/dfms', this.props.docsPart)}>
-              DFMS
+            <a href={this.docUrl('cli/dfms/dfms-client', this.props.docsPart)}>
+              dfms-client
             </a>
-            <a href={this.docUrl('cli/dfmsr/dfmsr', this.props.docsPart)}>
-              DFMSR
+            <a href={this.docUrl('cli/dfmsr/dfms-replicator', this.props.docsPart)}>
+              dfms-replicator
+            </a>
+            <a href={this.docUrl('cli/dfms/sc/create_wasm', this.props.docsPart)}>
+              supercontracts
             </a>
           </div>
           <div>
             <h5>Giudes</h5>
-            <a href={this.docUrl('giudes/contract/compose', this.props.docsPart)}>
+            <a href={this.docUrl('guides/contract/compose', this.props.docsPart)}>
               Contract
             </a>
-            <a href={this.docUrl('giudes/drive/add', this.props.docsPart)}>
+            <a href={this.docUrl('guides/drive/add', this.props.docsPart)}>
               Drive
             </a>
-            <a href={this.docUrl('giudes/supercontract/deploy', this.props.docsPart)}>
-              SuperContract
+            <a href={this.docUrl('guides/supercontract/deploy', this.props.docsPart)}>
+              Supercontracts
             </a>
-            <a href={this.docUrl('giudes/net/id', this.props.docsPart)}>
+            <a href={this.docUrl('guides/net/id', this.props.docsPart)}>
               Network
             </a>
           </div>
         </section>
 
-        <a
+        {/* <a
           href="https://code.facebook.com/projects/"
           target="_blank"
           rel="noreferrer noopener"
           className="fbOpenSource">
           <img
-            src={`${this.props.config.baseUrl}img/oss_logo.png`}
+            src={`${this.props.config.baseUrl}`}
             alt="Facebook Open Source"
             width="170"
             height="45"
           />
-        </a>
+        </a> */}
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );

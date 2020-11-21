@@ -1,20 +1,20 @@
 ---
-id: dfms
+id: dfms-client
 title: The Client Base Command
-sidebar_label: dfms (base command)
+sidebar_label: dfms-client (base command)
 ---
 
-The dfms command allows interacting with storage as the client ([owner](../../roles/owner.md)) node.
+The dfms-client command allows interacting with storage as the client ([owner](../../roles/owner.md)) node.
 
 ## Child commands
 
 | Command                        | Description                                                                               |
 | :----------------------------- | :---------------------------------------------------------------------------------------- |
-| [`dfms drive`](drive.md)       | interface with [Drive](../../built_in_features/drive/overview.md) file system             |
-| [`dfms contract`](contract.md) | manage [Drive](../../built_in_features/drive/overview.md) Contracts                       |
-| [`dfms net`](net.md)           | interact with the network                                                                 |
-| [`dfms sc`](sc/sc.md)             | interact with drive's [SuperContracts](../../built_in_features/supercontract/overview.md) |
-| [`dfms version`](version.md)   | show version                                                                              |
+| [`dfms-client drive`](drive.md)       | interface with [Drive](../../built_in_features/drive/overview.md) file system             |
+| [`dfms-client contract`](contract.md) | manage [Drive](../../built_in_features/drive/overview.md) Contracts                       |
+| [`dfms-client net`](net.md)           | interact with the network                                                                 |
+| [`dfms-client sc`](sc/sc.md)             | interact with drive's [SuperContracts](../../built_in_features/supercontract/overview.md) |
+| [`dfms-client version`](version.md)   | show version                                                                              |
 
 ## Global options
 

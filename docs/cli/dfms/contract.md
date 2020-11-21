@@ -1,7 +1,7 @@
 ---
 id: contract
 title: Interface with a Client Contract
-sidebar_label: dfms contract
+sidebar_label: dfms-client contract
 ---
 
 **WARNING**: The API is not stable yet and is subject to change.
@@ -14,20 +14,20 @@ sidebar_label: dfms contract
 
 | Command                                           | Description                                                                                                                 |
 | :------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
-| [`dfms contract compose`](#dfms-contract-compose) | compose new [Drive Contract](../../built_in_features/drive/overview.md)                                                     |
-| [`dfms contract ls`](#dfms-contract-ls)           | lists all the [Drives](../../built_in_features/drive/overview.md) Contract in which Node participates as an owner or member |
-| [`dfms contract get`](#dfms-contract-get)         | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                  |
-| [`dfms contract ammends`](#dfms-contract-ammends) | subscribe for [Drive Contract](../../built_in_features/drive/overview.md) updates                                           |
-| [`dfms contract verify`](#dfms-contract-ammends)  | verify Contract execution of the [Drive](../../built_in_features/drive/overview.md)                                         |
-| [`dfms contract finish`](#dfms-contract-finish)   | finish Contract of any owned [Drive Contract](../../built_in_features/drive/overview.md) updates.                           |
+| [`dfms-client contract compose`](#dfms-contract-compose) | compose new [Drive Contract](../../built_in_features/drive/overview.md)                                                     |
+| [`dfms-client contract ls`](#dfms-contract-ls)           | lists all the [Drives](../../built_in_features/drive/overview.md) Contract in which Node participates as an owner or member |
+| [`dfms-client contract get`](#dfms-contract-get)         | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                  |
+| [`dfms-client contract ammends`](#dfms-contract-ammends) | subscribe for [Drive Contract](../../built_in_features/drive/overview.md) updates                                           |
+| [`dfms-client contract verify`](#dfms-contract-ammends)  | verify Contract execution of the [Drive](../../built_in_features/drive/overview.md)                                         |
+| [`dfms-client contract finish`](#dfms-contract-finish)   | finish Contract of any owned [Drive Contract](../../built_in_features/drive/overview.md) updates.                           |
 
 ---
 
-## `dfms contract compose`
+## `dfms-client contract compose`
 
 This command composes Contract for new [Drive](../../built_in_features/drive/overview.md) between current [DFMS](../../getting_started/what_is.md) node and multiple [DFMSR](../../getting_started/what_is.md) nodes with conditions to store `space` amount of data for `subscription` time period.
 
-First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, [replicator](../../roles/replicator.md) receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of [replicator](../../roles/replicator.md) to accept invitations. If throughout 10 minutes the minimal amount of [replicator](../../roles/replicator.md) do not accept the invitation - composing fails. In another case, it succeeds. From that moment new [Drive](../../built_in_features/drive/overview.md) is considered to be created.
+First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, [Storage Replicator Node](../../roles/replicator.md) receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of [Storage Replicator Node](../../roles/replicator.md) to accept invitations. If throughout 10 minutes the minimal amount of [Storage Replicator Node](../../roles/replicator.md) do not accept the invitation - composing fails. In another case, it succeeds. From that moment new [Drive](../../built_in_features/drive/overview.md) is considered to be created.
 
 ### Arguments
 
@@ -40,11 +40,11 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 | Name                                  | Description                                                                                                                                                                       |
 | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one [replicator](../../roles/replicator.md). The default is 3                     |
-| **min-replicators(_mr_)**             | to set a minimum amount of joined [replicator](../../roles/replicator.md) for composing to succeed. The default is 3                                                              |
+| **replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one [Storage Replicator Node](../../roles/replicator.md). The default is 3                     |
+| **min-replicators(_mr_)**             | to set a minimum amount of joined [Storage Replicator Node](../../roles/replicator.md) for composing to succeed. The default is 3                                                              |
 | **subscription-price(_p_)**           | to set a price in tokens for one subscription period. The default is `space` * `replicas`                                                                                         |
 | **number-subscription-periods(_sn_)** | to set number of desired subscriptions. The default is 3                                                                                                                          |
-| **percent-approvers(_pa_)**           | to set percent of [replicator](../../roles/replicator.md) needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
+| **percent-approvers(_pa_)**           | to set percent of [Storage Replicator Node](../../roles/replicator.md) needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
 | **private-key(_key_)**                | to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                                                                           |
 | **help**                              | to see description with examples                                                                                                                                                  |
 
@@ -53,7 +53,7 @@ First of all, a Contract invitation is built from configured arguments and optio
 - _Create a new contract with the needed parameters:_
 
   ```shell
-  $ dfms contract compose 1000 1 \        # size & duration of one subscribe period
+  $ dfms-client contract compose 1000 1 \        # size & duration of one subscribe period
                   --replicas=5 \
                   --min-replicators=3 \
                   --billing-price=5000 \
@@ -81,16 +81,16 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 ---
 
-## `dfms contract ls`
+## `dfms-client contract ls`
 
-Lists all the Drives in which Node participates as an [owner](../../roles/owner.md) or member.
+Lists all the Drives in which Node participates as an [Storage Director Node](../../roles/owner.md) or member.
 
 ### Examples
 
 - _Get client drives:_
 
   ```shell
-  $ dfms contract ls
+  $ dfms-client contract ls
   baegaajaiaqjca7fnnbv2od5i3uo2zdvruvp2uvbiaoqhnbwqv7tpy6qkbmip7622
   baegaajaiaqjcaedinbn4fbtawhvbgmuxv2uklfxabf5ughaii2jbp2vtw2z34cb5
   baegaajaiaqjcafssfchukjl77zijwpneyrv5wec7u4yj6f5fqiusqwlas5f4unpd
@@ -106,7 +106,7 @@ Lists all the Drives in which Node participates as an [owner](../../roles/owner.
 
 ---
 
-## `dfms contract get`
+## `dfms-client contract get`
 
 `get` prints a Contract body of any `drive` from the network. Takes it from local storage or fetches from the network.
 
@@ -121,7 +121,7 @@ Lists all the Drives in which Node participates as an [owner](../../roles/owner.
 - _Get contact by Drive ID:_
   
   ```shell
-  $ dfms contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  $ dfms-client contract get baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   {
     "drive": "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5",
     "owner": "080412200eb448d07c7ccb312989ac27aa052738ff589e2f83973f909b506b450dc5c4e2",
@@ -144,9 +144,9 @@ Lists all the Drives in which Node participates as an [owner](../../roles/owner.
 
 ---
 
-## `dfms contract ammends`
+## `dfms-client contract ammends`
 
-Subscribes for Contract amendments of `drive`. Produced either from owner or [replicator](../../roles/replicator.md) consensus.
+Subscribes for Contract amendments of `drive`. Produced either from owner or [Storage Replicator Node](../../roles/replicator.md) consensus.
 
 ### Arguments
 
@@ -159,12 +159,12 @@ Subscribes for Contract amendments of `drive`. Produced either from owner or [re
 - _Start listen to amendments of some drive:_
 
   ```shell
-  $ dfms contract ammends baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  $ dfms-client contract ammends baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   ```
 
-## `dfms contract verify`
+## `dfms-client contract verify`
 
-Verifies that the [Drive](../../built_in_features/drive/overview.md) Contract specifications of `drive` are fulfilled. Runs verification protocol between [replicators](../../roles/replicator.md) in which they check each other regarding the replicated data retrievability of the Drive.
+Verifies that the [Drive](../../built_in_features/drive/overview.md) Contract specifications of `drive` are fulfilled. Runs verification protocol between [Storage Replicator Node](../../roles/replicator.md) in which they check each other regarding the replicated data retrievability of the Drive.
 
 ### Arguments
 
@@ -177,10 +177,10 @@ Verifies that the [Drive](../../built_in_features/drive/overview.md) Contract sp
 - _Verify some drive:_
 
   ```shell
-  $ dfms contract verify baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
+  $ dfms-client contract verify baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5
   ```
 
-## `dfms contract finish`
+## `dfms-client contract finish`
 
 Finishes [Drive](../../built_in_features/drive/overview.md) Contract. Removes obligation for replicators to store data and act on the given [Drive](../../built_in_features/drive/overview.md). Only owner is allowed to finish [Drive](../../built_in_features/drive/overview.md) Contract before original agreement.
 
@@ -195,7 +195,7 @@ Finishes [Drive](../../built_in_features/drive/overview.md) Contract. Removes ob
 - Finish some drive:_
 
   ```shell
-  $ dfms contract baegaajaiaqjcbchywf5stwzhovu7bqfezrfpjzfrvgfttc4pmamzo5wy7zlfl2jb finish
+  $ dfms-client contract baegaajaiaqjcbchywf5stwzhovu7bqfezrfpjzfrvgfttc4pmamzo5wy7zlfl2jb finish
   {
     "drive": "baegaajaiaqjcbchywf5stwzhovu7bqfezrfpjzfrvgfttc4pmamzo5wy7zlfl2jb",
     "owner": "08041220ad54820387c3e27c7ecb97c8d69866aa5917bb9c0b675e18f9506c9697f8dddb",

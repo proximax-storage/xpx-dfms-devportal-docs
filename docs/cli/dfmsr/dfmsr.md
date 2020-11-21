@@ -1,7 +1,7 @@
 ---
-id: dfmsr
+id: dfms-replicator
 title: The Replicator Base Command
-sidebar_label: dfmsr (base command)
+sidebar_label: dfms-replicator (base command)
 ---
 
 The dfmsr command allows interacting with storage as the [replicator](../../roles/replicator.md) node.

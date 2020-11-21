@@ -29,26 +29,26 @@ So, you successfully receive [SC](../../../built_in_features/supercontract/overv
 Now it's time to deploy it. For that, let's assume you have already created DriveContract in DFMS.
 
 ```shell
-$ dfms drive add --flush <DriveID> ~/xpx_supercontracts_example_ico.wat xpx_supercontracts_example_ico.wat
+$ dfms-client drive add --flush <DriveID> ~/xpx_supercontracts_example_ico.wat xpx_supercontracts_example_ico.wat
 ```
 
 Just for example:
 
 ```shell
-$ dfms drive add --flush baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww ~/xpx_supercontracts_example_ico.wat xpx_supercontracts_example_ico.wat
+$ dfms-client drive add --flush baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww ~/xpx_supercontracts_example_ico.wat xpx_supercontracts_example_ico.wat
 ```
 
 So we add [SC](../../../built_in_features/supercontract/overview.md) `wat` file to Drive.
 And then Deploy it:
 
 ```shell
-$ dfms sc deploy <DriveID> <DriveWatFile>
+$ dfms-client sc deploy <DriveID> <DriveWatFile>
 ```
 
 Just for example:
 
 ```shell
-$ dfms sc deploy baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww xpx_supercontracts_example_ico.wat
+$ dfms-client sc deploy baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww xpx_supercontracts_example_ico.wat
 ```
 
 And we will receive as result SuperContractID.
@@ -56,7 +56,7 @@ And we will receive as result SuperContractID.
 Great, [SC](../../../built_in_features/supercontract/overview.md) is deployed!
 
 ```shell
-$ dfms sc exec <ScID> <Gas> <ScFunctionName>
+$ dfms-client sc exec <ScID> <Gas> <ScFunctionName>
 ```
 
 Where `ScID` - [SC](../../../built_in_features/supercontract/overview.md) ID from Deploy result.
@@ -64,15 +64,15 @@ Where `ScID` - [SC](../../../built_in_features/supercontract/overview.md) ID fro
 For that concrete [SC](../../../built_in_features/supercontract/overview.md) function, we should upload `ico_init.csv` file to drive. Let's do it:
 
 ```shell
-$ dfms drive mkdir <DriveID> /supercontracts/
-$ dfms drive add <DriveID> ~/ico_init.csv /supercontracts/ico_init.csv
+$ dfms-client drive mkdir <DriveID> /supercontracts/
+$ dfms-client drive add <DriveID> ~/ico_init.csv /supercontracts/ico_init.csv
 ```
 
 Just for example:
 
 ```shell
-$ dfms drive mkdir baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww /supercontracts/
-$ dfms drive add baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww ~/ico_init.csv /supercontracts/ico_init.csv
+$ dfms-client drive mkdir baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww /supercontracts/
+$ dfms-client drive add baegqajaiaqjcbe3uqhtyy65b2jm4motrdaejlgpmmvwwm5evacxr43uxihr27jww ~/ico_init.csv /supercontracts/ico_init.csv
 ```
 
 And you're ready to execute ICO init function.
@@ -80,7 +80,7 @@ And you're ready to execute ICO init function.
 Just for example:
 
 ```shell
-$ dfms sc exec baegqajaiaqjcaraonfmrnw4fmeuml37jvbcttdajk5nmoq5gl453le665ulkhuvi 100000000 ico_init
+$ dfms-client sc exec baegqajaiaqjcaraonfmrnw4fmeuml37jvbcttdajk5nmoq5gl453le665ulkhuvi 100000000 ico_init
 ```
 
 Here we go. It just work.
