@@ -13,7 +13,7 @@ Any [SC](overview.md) lifecycle contains the next steps:
 
 ## Preparation
 
-To work with any [SC](overview.md), you need a [Drive](../drive/overview.md). When it will be done the [owner](../../roles/owner.md) must have some [SC](overview.md) file with [**_\*.wat_**](sc_files.md) extension that will be uploaded to the [Drive](../drive/overview.md). When the file is uploaded on a [Drive](../drive/overview.md) and downloaded by [replicators](../../roles/replicator.md) the [client](../../roles/owner.md) can deploy it.
+To work with any [SC](overview.md), you need a [Drive](../drive/overview.md). When it will be done the [owner](../../roles/owner.md) must have some [SC](overview.md) file with [**_\*.wat_**](sc_files.md) extension that will be uploaded to the [Drive](../drive/overview.md). When the file is uploaded on a [Drive](../drive/overview.md) and downloaded by [Storage Replicator Nodes](../../roles/replicator.md) the [client](../../roles/owner.md) can deploy it.
 
 ## The main steps of execution
 

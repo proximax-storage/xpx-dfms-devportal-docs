@@ -15,7 +15,7 @@ The drive instance can have different states in its lifecycle. Here are the foll
 
 ## NotStarted
 
-The [Drive](overview.md) waits for the minimal count of [replicators](../../roles/replicator.md). Its state changes to [**Pending**](state.md#pending) when a minimum count of [replicators](../../roles/replicator.md) has occurred.
+The [Drive](overview.md) waits for the minimal count of [Storage Replicator Nodes](../../roles/replicator.md). Its state changes to [**Pending**](state.md#pending) when a minimum count of [Storage Replicator Nodes](../../roles/replicator.md) has occurred.
 
 ## Pending
 
@@ -26,8 +26,8 @@ The [Drive](overview.md) has [**Pending**](state.md#pending) state in two cases:
 
 ## InProgress
 
-In this state any [replicator](../../roles/replicator.md) or the [owner](../../roles/owner.md) can start verify [replicators](../../roles/replicator.md) that they are still saving user's data. During [billing period](overview.md#billing-period) the [Drive](overview.md) has this state and continues [billing period](overview.md#billing-period) blocks. After [billing period](overview.md#billing-period) blocks, the [Drive](overview.md) goes to the [**Pending**](state.md#pending) state.
+In this state any [Storage Replicator Node](../../roles/replicator.md) or the [Storage Director Node](../../roles/owner.md) can start verify [Storage Replicator Nodes](../../roles/replicator.md) that they are still saving user's data. During [billing period](overview.md#billing-period) the [Drive](overview.md) has this state and continues [billing period](overview.md#billing-period) blocks. After [billing period](overview.md#billing-period) blocks, the [Drive](overview.md) goes to the [**Pending**](state.md#pending) state.
 
 ## Finished
 
-The [Drive](overview.md) has the [**Finished**](state.md#finished) state when the duration is over or [Drive](overview.md) doesn't contain XPX on the balance of the account for the next [billing period](overview.md#billing-period). This means that [replicators](../../roles/replicator.md) should no longer store the user's data. When the [Drive](overview.md) goes to the [**Finished**](state.md#finished) state, Blockchain returns deposits (both for participation in the [Drive](overview.md) and for files) to [replicators](../../roles/replicator.md). When the [Drive](overview.md) is finished, any transaction related to the [Drive](overview.md) is impossible, besides the reward transaction if the [Drive](overview.md) account has [SM](../../getting_started/economy.md#sm) on balance.
+The [Drive](overview.md) has the [**Finished**](state.md#finished) state when the duration is over or [Drive](overview.md) doesn't contain XPX on the balance of the account for the next [billing period](overview.md#billing-period). This means that [Storage Replicator Nodes](../../roles/replicator.md) should no longer store the user's data. When the [Drive](overview.md) goes to the [**Finished**](state.md#finished) state, Blockchain returns deposits (both for participation in the [Drive](overview.md) and for files) to [Storage Replicator Nodes](../../roles/replicator.md). When the [Drive](overview.md) is finished, any transaction related to the [Drive](overview.md) is impossible, besides the reward transaction if the [Drive](overview.md) account has [SM](../../getting_started/economy.md#sm) on balance.
