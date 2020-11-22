@@ -6,7 +6,7 @@ title: Accept Contract
 ## Requirements
 
 - IDE or text editor
-- Have one [replicator](../../roles/replicator.md) node
+- Have one [Storage Replicator Node](../../roles/replicator.md) node
 - Have one [Drive](../../built_in_features/drive/overview.md) contract
 
 ## Example

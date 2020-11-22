@@ -10,7 +10,7 @@ sidebar_label: Overview
 
 **Operation** is is called any one action. A function can consist of many operations. For example, one function can include two operations: create a file and move it to some dir.
 
-Every "super file" is uploaded by the ordinary way on an earlier created [Drive](../drive/overview.md) and stored by [replicators](../../roles/replicator.md) as an ordinary file. The main difference is that the file must have the [**_\*.wat_**](sc_files.md) extension. When [SC](overview.md) starts all [replicators](../../roles/replicator.md) become [executors](../../roles/executor.md). Each of them has a virtual machine ([VM](vm.md)) that executes the [SCs](overview.md).
+Every "super file" is uploaded by the ordinary way on an earlier created [Drive](../drive/overview.md) and stored by [Storage Replicator Nodes](../../roles/replicator.md) as an ordinary file. The main difference is that the file must have the [**_\*.wat_**](sc_files.md) extension. When [SC](overview.md) starts all [Storage Replicator Nodes](../../roles/replicator.md) become [executors](../../roles/executor.md). Each of them has a virtual machine ([VM](vm.md)) that executes the [SCs](overview.md).
 
 ## Properties
 

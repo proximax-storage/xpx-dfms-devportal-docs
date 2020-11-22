@@ -29,7 +29,7 @@ Is command set implementing ContractReplicator which is a part of [DFMSR](../../
 
 This command composes Contract for new [Drive](../../built_in_features/drive/overview.md) between current [DFMS](../../getting_started/what_is.md) node and multiple [DFMSR](../../getting_started/what_is.md) nodes with conditions to store `space` amount of data for `subscription` time period.
 
-First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, [replicators](../../roles/replicator.md) receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of [replicators](../../roles/replicator.md) to accept invitations. If throughout 10 minutes the minimal amount of [replicators](../../roles/replicator.md) do not accept the invitation - composing fails. In another case, it succeeds. From that moment new [Drive](../../built_in_features/drive/overview.md) is considered to be created.
+First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, [Storage Replicator Nodes](../../roles/replicator.md) receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of [Storage Replicator Nodes](../../roles/replicator.md) to accept invitations. If throughout 10 minutes the minimal amount of [Storage Replicator Nodes](../../roles/replicator.md) do not accept the invitation - composing fails. In another case, it succeeds. From that moment new [Drive](../../built_in_features/drive/overview.md) is considered to be created.
 
 ### Arguments
 
@@ -42,11 +42,11 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 | Name                                  | Description                                                                                                                                                                       |
 | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one [replicator](../../roles/replicator.md#replicator). The default is 3          |
-| **min-replicators(_mr_)**             | to set a minimum amount of joined [replicator](../../roles/replicator.md) for composing to succeed. The default is 3                                                              |
+| **replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one [Storage Replicator Node](../../roles/replicator.md#replicator). The default is 3          |
+| **min-replicators(_mr_)**             | to set a minimum amount of joined [Storage Replicator Node](../../roles/replicator.md) for composing to succeed. The default is 3                                                              |
 | **subscription-price(_p_)**           | to set a price in tokens for one subscription period. The default is `space` * `replicas`                                                                                         |
 | **number-subscription-periods(_sn_)** | to set number of desired subscriptions. The default is 3                                                                                                                          |
-| **percent-approvers(_pa_)**           | to set percent of [replicator](../../roles/replicator.md) needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
+| **percent-approvers(_pa_)**           | to set percent of [Storage Replicator Node](../../roles/replicator.md) needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
 | **private-key(_key_)**                | to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                                                                           |
 | **help**                              | to see description with examples                                                                                                                                                  |
 
@@ -148,7 +148,7 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 
 ## `dfms-replicator contract ammends`
 
-`contract ammends` subscribes for Contract amendments of `drive`. Produced either from owner or [replicator](../../roles/replicator.md#replicator) consensus.
+`contract ammends` subscribes for Contract amendments of `drive`. Produced either from owner or [Storage Replicator Node](../../roles/replicator.md#replicator) consensus.
 
 ### Arguments
 

@@ -8,7 +8,7 @@ The drive instance can have different states in its lifecycle. Here are the foll
 
 | State                                 | Meaning                                                                                                    |
 | :------------------------------------ | :--------------------------------------------------------------------------------------------------------- |
-| [**NotStarted**](state.md#notstarted) | The [Drive](overview.md) waits for the minimal count of [replicators](../../roles/replicator.md)           |
+| [**NotStarted**](state.md#notstarted) | The [Drive](overview.md) waits for the minimal count of [Storage Replicator Nodes](../../roles/replicator.md)           |
 | [**Pending**](state.md#pending)       | The [Drive](overview.md) waits for the end of the [Drive](overview.md) or the payment next billing period. |
 | [**InProgress**](state.md#inprogress) | The [Drive](overview.md) contract is being executed                                                        |
 | [**Finished**](state.md#finished)     | The [Drive](overview.md) is terminated or it is over.                                                      |

@@ -7,7 +7,7 @@ title: Guide of file lifecycle
 
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
-- Have at least one running [replicator](../../roles/replicator.md) node
+- Have at least one running [Storage Replicator Node](../../roles/replicator.md) node
 
 ## Example
 

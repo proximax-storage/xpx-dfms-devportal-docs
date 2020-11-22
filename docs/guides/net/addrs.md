@@ -6,7 +6,7 @@ title: Get Node Addresses
 ## Requirements
 
 - IDE or text editor
-- Have one [owner](../../roles/owner.md) or [replicator](../../roles/replicator.md) node
+- Have one [owner](../../roles/owner.md) or [Storage Replicator Node](../../roles/replicator.md) node
 
 ## Example
 
