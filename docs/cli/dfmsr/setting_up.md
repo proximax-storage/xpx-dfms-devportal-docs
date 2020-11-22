@@ -16,8 +16,8 @@ It's important to understand that there are two types of storage nodes, Client a
 
 - Before running the DFMS node the [PubSub lib](https://crypto.stanford.edu/pbc/howto.html) should be installed. Otherwise, you cannot use the DFMS.
 
-### Run a Storage Drive node
-In order to run a storage drive node, we need to install the `dfms` client. There are several ways to do this:
+### Run a Storage Director Node
+In order to run a storage director node, we need to install the `dfms-client` client. There are several ways to do this:
 
 #### Using docker:
 
@@ -56,10 +56,10 @@ Run the storage drive node with the generate private key.
 ```
 $ dfms --key=<your_private_key> // generate key via wallet
 ```
-For more details about Storage drive node, go to [dfms](../cli/dfms/dfms.md) - used by the client ([owner](../roles/owner.md));
+For more details about Storage drive node, go to [dfms-client](../cli/dfms/dfms.md) - used by the client ([Storage Director Node](../roles/owner.md));
 
-### Run a Replicator Node
-In order to run a storage drive node, we need to install the [`dfmsr`](../cli/dfmsr/dfmsr.md). 
+### Run a Storage Replicator Node
+In order to run a storage drive node, we need to install the [`dfms-replicator`](../cli/dfmsr/dfmsr.md). 
 
 #### Using command line (available soon)
 We can pull the new changes from the go-xpx-dfms repository. 
@@ -73,10 +73,10 @@ Run the storage replicator node with the generate private key.
 $ dfmsr --key=<your_private_key> // generate key via wallet
 ```
 
-For more details about Storage replicator node, go to [dfmsr](../cli/dfmsr/dfmsr.md) - used by the client [Storage Replicator Node](../roles/replicator.md)
+For more details about Storage replicator node, go to [dfms-replicator](../cli/dfmsr/dfmsr.md) - used by the client [Storage Replicator Node](../roles/replicator.md)
 
 >**Note** \
-To get more information about any command and its flags you need to use `-h` flag, for example `dfms contract -h` or `dfmsr contract -h`
+To get more information about any command and its flags you need to use `-h` flag, for example `dfms-client contract -h` or `dfms-replicator contract -h`
 Both have similar commands to interact with the network. For more details, see the CLI item. Also, see how to connect to the other nodes.
 
 ### SuperContract
@@ -86,7 +86,7 @@ For the correct work with SC a user should install the [wabt](https://github.com
 
 More commands are availabe via the links below.
 
-- For [dfms](../cli/dfms/dfms.md)
-- For [dfmsr](../cli/dfmsr/dfmsr.md)
+- For [dfms-client](../cli/dfms/dfms.md)
+- For [dfms-replicator](../cli/dfmsr/dfmsr.md)
 
 
