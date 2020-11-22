@@ -21,17 +21,15 @@ function Help(props) {
 
   const supportLinks = [
     {
-      content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
-      )})`,
+      content: `Learn more about using the [documentation on this site.](https://storagedocs.xpxsirius.io/)`,
       title: 'Browse Docs',
     },
     {
-      content: 'Ask questions about the documentation and project',
+      content: 'Ask questions about the documentation and project [here](https://t.me/proximaxhelpdesk)',
       title: 'Join the community',
     },
     {
-      content: "Find out what's new with this project",
+      content: "Find out what's new with this project [here](https://blog.proximax.io/)",
       title: 'Stay up to date',
     },
   ];
@@ -43,7 +41,7 @@ function Help(props) {
           <header className="postHeader">
             <h1>Need help?</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
+          <p>This project is maintained by <a href="https://proximax.ltd">ProximaX Enterprise</a></p>
           <GridBlock contents={supportLinks} layout="threeColumn" />
         </div>
       </Container>
