@@ -326,7 +326,6 @@ paths:
         - $ref: '#/components/parameters/driveIdParam'
         - $ref: '#/components/parameters/srcParam'
         - $ref: '#/components/parameters/flushParam'
-        - $ref: '#/components/parameters/localParam'
       responses:
         '200':
           description: Success
@@ -801,13 +800,6 @@ components:
       in: query
       name: flush
       description: To send data to replicators immediately
-      schema:
-        type: boolean
-        default: false
-    localParam:
-      in: query
-      name: local
-      description: Delete file from local drive only, but keep a reference on remote one
       schema:
         type: boolean
         default: false

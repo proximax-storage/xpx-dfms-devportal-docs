@@ -1,7 +1,7 @@
 ---
 id: sc
 title: Interface with SuperContracts
-sidebar_label: dfms sc
+sidebar_label: dfms-client sc
 ---
 
 ## Description
@@ -12,13 +12,13 @@ This command allows interacting with [SC](../../../built_in_features/supercontra
 
 | Command                                      | Description                                                                                                                                                                                    |
 | :------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`dfms-client sc deploy`](#dfms-net-deploy)         | Deploys [SuperContract](../../../built_in_features/supercontract/overview.md) to [Drive](../../../built_in_features/drive/overview.md)                                                               |
-| [`dfms-client sc exec`](#dfms-net-exec)             | Executes [SuperContract](../../../built_in_features/supercontract/overview.md)                                                                                                                    |
-| [`dfms-client sc get`](#dfms-net-get)               | Gets [SuperContract](../../../built_in_features/supercontract/overview.md)                                                                                                                        |
-| [`dfms-client sc ls`](#dfms-net-ls)                 | Lists all [SuperContracts](../../../built_in_features/supercontract/overview.md) for [Drive](../../../built_in_features/drive/overview.md)                                                           |
-| [`dfms-client sc results`](#dfms-net-results)       | Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash                                                                      |
-| [`dfms-client sc executions`](#dfms-net-executions) | Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) result Execution hashes                                                                                              |
-| [`dfms-client sc deactivate`](#dfms-sc-deactivate)  | Deactivates [SuperContracts](../../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../../built_in_features/supercontract/overview.md) will be impossible to execute |
+| [`dfms-client sc deploy`](#dfms-client-net-deploy)         | Deploys [SuperContract](../../../built_in_features/supercontract/overview.md) to [Drive](../../../built_in_features/drive/overview.md)                                                               |
+| [`dfms-client sc exec`](#dfms-client-net-exec)             | Executes [SuperContract](../../../built_in_features/supercontract/overview.md)                                                                                                                    |
+| [`dfms-client-client sc get`](#dfms-client-net-get)               | Gets [SuperContract](../../../built_in_features/supercontract/overview.md)                                                                                                                        |
+| [`dfms-client sc ls`](#dfms-client-net-ls)                 | Lists all [SuperContracts](../../../built_in_features/supercontract/overview.md) for [Drive](../../../built_in_features/drive/overview.md)                                                           |
+| [`dfms-client sc results`](#dfms-client-net-results)       | Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) results for specific Execution transaction hash                                                                      |
+| [`dfms-client sc executions`](#dfms-client-net-executions) | Lists [SuperContracts](../../../built_in_features/supercontract/overview.md) result Execution hashes                                                                                              |
+| [`dfms-client sc deactivate`](#dfms-client-sc-deactivate)  | Deactivates [SuperContracts](../../../built_in_features/supercontract/overview.md). After that, [SuperContracts](../../../built_in_features/supercontract/overview.md) will be impossible to execute |
 
 ## `dfms-client sc deploy`
 

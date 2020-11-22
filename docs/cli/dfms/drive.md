@@ -11,15 +11,15 @@ in the network with an ability to alter it with write access.
 
 | Command                                 | Description                                                                                                                          |
 | :-------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| [`dfms-client drive add`](#dfms-drive-add)     | Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).                                                     |
-| [`dfms-client drive get`](#dfms-drive-get)     | Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).                                                 |
-| [`dfms-client drive rm`](#dfms-drive-rm)       | Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).                                                |
-| [`dfms-client drive mv`](#dfms-drive-mv)       | Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                      |
-| [`dfms-client drive cp`](#dfms-drive-cp)       | Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                    |
-| [`dfms-client drive mkdir`](#dfms-drive-mkdir) | Make directory in a [Drive](../../built_in_features/drive/overview.md).                                                              |
-| [`dfms-client drive ls`](#dfms-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                                                  |
-| [`dfms-client drive stat`](#dfms-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                        |
-| [`dfms-client drive flush`](#dfms-drive-flush) | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
+| [`dfms-client drive add`](#dfms-client-drive-add)     | Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).                                                     |
+| [`dfms-client drive get`](#dfms-client-drive-get)     | Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).                                                 |
+| [`dfms-client drive rm`](#dfms-client-drive-rm)       | Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).                                                |
+| [`dfms-client drive mv`](#dfms-client-drive-mv)       | Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                      |
+| [`dfms-client drive cp`](#dfms-client-drive-cp)       | Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                    |
+| [`dfms-client drive mkdir`](#dfms-client-drive-mkdir) | Make directory in a [Drive](../../built_in_features/drive/overview.md).                                                              |
+| [`dfms-client drive ls`](#dfms-client-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                                                  |
+| [`dfms-client drive stat`](#dfms-client-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                        |
+| [`dfms-client drive flush`](#dfms-client-drive-flush) | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ---
 
@@ -115,7 +115,6 @@ copies cached content from [Drive](../../built_in_features/drive/overview.md) to
 Removes a file or directory under `path` from a specific `drive`. Cleans the reference locally along with cached data.
 Should be forward with flushing to upload reference changes.
 
-Use `--locally(l)` to remove data from local cache, but still keep a content reference in a [Drive](../../built_in_features/drive/overview.md).  
 Use `--flush(f)` to flush after execution immediately.
 
 ### Arguments
@@ -129,7 +128,6 @@ Use `--flush(f)` to flush after execution immediately.
 
 | Name             | Description                                                                                                                          |
 | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| **locally(_l_)** | Clean file only locally and keep it on track.                                                                                        |
 | **flush(_f_)**   | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples

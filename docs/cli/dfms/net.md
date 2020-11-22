@@ -14,11 +14,11 @@ It manages networking related commands.
 
 | Command                                       | Description                      |
 | :-------------------------------------------- | :------------------------------- |
-| [`dfms-client net connect`](#dfms-net-connect)       | open connection to given address |
-| [`dfms-client net disconnect`](#dfms-net-disconnect) | disconnect from given address    |
-| [`dfms-client net peers`](#dfms-net-peers)           | show all connected peers         |
-| [`dfms-client net id`](#dfms-net-id)                 | Show identity                    |
-| [`dfms-client net addrs`](#dfms-net-addrs)           | Show all p2p addresses           |
+| [`dfms-client net connect`](#dfms-client-net-connect)       | open connection to given address |
+| [`dfms-client net disconnect`](#dfms-client-net-disconnect) | disconnect from given address    |
+| [`dfms-client net peers`](#dfms-client-net-peers)           | show all connected peers         |
+| [`dfms-client net id`](#dfms-client-net-id)                 | Show identity                    |
+| [`dfms-client net addrs`](#dfms-client-net-addrs)           | Show all p2p addresses           |
 
 ---
 

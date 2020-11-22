@@ -39,7 +39,7 @@ func main() {
     flush := true
 
     //List path
-    err = client.FS().Move(context.Background(), contractId, "/dir", "/otherdir/dir", api.Flush(flush))
+    err = client.FS().Remove(context.Background(), contractId, "/dir", api.Flush(flush))
     if err != nil {
         panic(err)
     }

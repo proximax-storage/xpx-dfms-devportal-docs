@@ -14,15 +14,15 @@ It manages networking related commands.
 
 | Command                                         | Description                      |
 | :---------------------------------------------- | :------------------------------- |
-| [`dfms-replicator net connect`](#dfmsr-net-connect)       | open connection to given address |
-| [`dfms-replicator net disconnect`](#dfmsr-net-disconnect) | disconnect from given address    |
-| [`dfms-replicator net peers`](#dfmsr-net-peers)           | show all connected peers         |
-| [`dfms-replicator net id`](#dfmsr-net-id)                 | Show identity                    |
-| [`dfms-replicator net addrs`](#dfmsr-net-addrs)           | Show all p2p addresses           |
+| [`dfms-replicator net connect`](#dfms-replicator-net-connect)       | open connection to given address |
+| [`dfms-replicator net disconnect`](#dfms-replicator-net-disconnect) | disconnect from given address    |
+| [`dfms-replicator net peers`](#dfms-replicator-net-peers)           | show all connected peers         |
+| [`dfms-replicator net id`](#dfms-replicator-net-id)                 | Show identity                    |
+| [`dfms-replicator net addrs`](#dfms-replicator-net-addrs)           | Show all p2p addresses           |
 
 ---
 
-### `dfmsr net connect`
+### `dfms-replicator net connect`
 
 Connects to given set of peers. Accepts only Multiadresses in the form of: \
 `/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f`
