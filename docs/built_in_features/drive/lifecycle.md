@@ -12,10 +12,10 @@ First of all, a user ([Storage Director Node](../../roles/owner.md)) needs to cr
 The [Drive](overview.md) preparation has no strict time bounds. It is just an initiation of the [Drive](overview.md) storage contract. Any [Storage Replicator Node](../../roles/replicator.md) can join it at any time, and their reward will be calculated by the formula (reference). For each new [Drive](overview.md) user must create a new multisig account.
 
 >**Note**\
-Owner creates Drive in MB but Blockchain saves it size like count of files blocks. One MB equals to 4 file blocks.
+The owner creates Drive in MB but Blockchain saves size like count of files blocks. One MB equals to 4 file blocks.
 
 > **The example**:
-A user wants to create a new 1000MB (driveSize) [Drive](overview.md) for 12 months (duration). For this, he determines that he wants 4 replicas, but the [Drive](overview.md) can start when 3 [Storage Replicator Nodes](../../roles/replicator.md) joined. Also, he determines that 100% signatures (percentApprovers) are needed to accept the transaction. And every 1 month ([billing period](overview.md#billing-period)) 4000*4(1MB=4 fil blocks)=16000 [SO](../../getting_started/economy.md#so) (_billingPrice = replicas*driveSize_) will be distributed between [Storage Replicator Nodes](../../roles/replicator.md) by the formula.
+A user wants to create a new 1000MB (driveSize) [Drive](overview.md) for 12 months (duration). For this, he determines that he wants 4 replicas, but the [Drive](overview.md) can start when 3 [Storage Replicator Nodes](../../roles/replicator.md) joined. Also, he determines that 100% signatures (percentApprovers) are needed to accept the transaction. And every 1 month ([billing period](overview.md#billing-period)) 16000(1000\*4(1MB=4 file blocks)\*4(replicas)) [SO](../../getting_started/economy.md#so) (_billingPrice = driveSize*replicas_) will be distributed between [Storage Replicator Nodes](../../roles/replicator.md) by the formula. Every joined replicator will make deposit equal to drive size in file blocks. If drive size is 1000MB than replicator will deposit 1000*4(1MB=4 file blocks) [SO](../../getting_started/economy.md#so).
 
 ## Join to the drive
 
