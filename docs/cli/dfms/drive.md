@@ -21,6 +21,7 @@ in the network with an ability to alter it with write access.
 | [`dfms-client drive ls`](#dfms-client-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                                                               |
 | [`dfms-client drive stat`](#dfms-client-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                     |
 | [`dfms-client drive flush`](#dfms-client-drive-flush) | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
+| [`dfms-client drive clear`](#dfms-client-drive-flush) | Clear a local [Drive](../../built_in_features/drive/overview.md). |
 
 ---
 
@@ -360,6 +361,19 @@ Uploads all local reference changes with data to [Storage Replicator Nodes](../.
 > Flushing is not done automatically to aggregate multiple changes in the cache allowing uploading them at once and to
 > make that behavior default. Use `--flush` flag with any [Drive](../../built_in_features/drive/overview.md) state-changing command to upload **immediately** after
 > any change.
+
+### Arguments
+
+| Name      | Description                                            |
+| :-------- | :----------------------------------------------------- |
+| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
+
+## `dfms-client drive clear`
+
+Clears all file from a `drive` locally to free disk space. Requires write access.
+
+> **NOTE:**  
+> Flushing is not done automatically after flush
 
 ### Arguments
 

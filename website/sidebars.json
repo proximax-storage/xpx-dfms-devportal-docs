@@ -110,13 +110,15 @@
     "Drive": [
       "guides/drive/add",
       "guides/drive/get",
+      "guides/drive/file",
       "guides/drive/cp",
       "guides/drive/mv",
       "guides/drive/mkdir",
       "guides/drive/stat",
       "guides/drive/ls",
       "guides/drive/rm",
-      "guides/drive/flush"
+      "guides/drive/flush",
+      "guides/drive/clear"
     ],
     "SuperContract": [
       "guides/supercontract/deploy",

@@ -1,6 +1,6 @@
 ---
 id: flush
-title: Flush File or Dir
+title: Flush
 ---
 
 ## Requirements

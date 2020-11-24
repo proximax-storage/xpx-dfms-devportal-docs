@@ -1,6 +1,6 @@
 ---
 id: rm
-title: Remove File or Dir
+title: Remove
 ---
 
 ## Requirements

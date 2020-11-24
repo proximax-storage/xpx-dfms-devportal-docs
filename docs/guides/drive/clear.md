@@ -1,6 +1,6 @@
 ---
-id: mv
-title: Move(Rename)
+id: clear
+title: Clear
 ---
 
 ## Requirements
@@ -8,17 +8,16 @@ title: Move(Rename)
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
 - Have one [Drive](../../built_in_features/drive/overview.md) contract
-- At least one file on the [Drive](../../built_in_features/drive/overview.md)
+- Some changes on the [Drive](../../built_in_features/drive/overview.md)
 
 ## Example
 
-The simple example of moving a file on the drive.
+The simple example of flush changes.
 
 ```go
 import (
     "context"
 
-    api "github.com/proximax-storage/go-xpx-dfms-api"
     apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
     drive "github.com/proximax-storage/go-xpx-dfms-drive"
 )
@@ -35,16 +34,7 @@ func main() {
         panic(err)
     }
 
-    // Move file
-    err = client.FS().Move(context.Background(),
-        contractId,
-        // a path of file
-        "/dir",
-        // a new path
-        "/otherdir/dir",
-        // Flush changes
-        api.Flush(true),
-    )
+    err = client.FS().Clear(context.Background(), contractId)
     if err != nil {
         panic(err)
     }

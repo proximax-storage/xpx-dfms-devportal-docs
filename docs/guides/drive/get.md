@@ -1,6 +1,6 @@
 ---
 id: get
-title: Get File or Dir
+title: Get
 ---
 
 ## Requirements

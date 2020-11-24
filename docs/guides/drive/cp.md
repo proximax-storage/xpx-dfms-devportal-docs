@@ -1,6 +1,6 @@
 ---
 id: cp
-title: Copy File or Dir
+title: Copy
 ---
 
 ## Requirements

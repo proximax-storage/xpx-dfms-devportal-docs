@@ -429,6 +429,20 @@ paths:
           description: Success
         '400': 
           $ref: '#/components/responses/errorResp'
+  /drive/clear:
+    post:
+      tags:
+      - DriveFS
+      summary: Clear drive
+      description: Clear clears all drive files locally
+      operationId: driveFlush
+      parameters:
+        - $ref: '#/components/parameters/driveIdParam'
+      responses:
+        '200':
+          description: Success
+        '400': 
+          $ref: '#/components/responses/errorResp'
   /net/connect:
     post:
       tags:
