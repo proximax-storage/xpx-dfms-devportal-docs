@@ -34,7 +34,7 @@ First of all, a Contract invitation is built from configured arguments and optio
 | Name             | Description                                      |
 | :--------------- | :----------------------------------------------- |
 | **space**        | required space (in MB)                           |
-| **subscription** | Required subscription period of time. (in month) |
+| **subscription** | Required subscription period of time. (hours, minutes ans seconds, e.g _1h1m1s_) |
 
 ### Options
 

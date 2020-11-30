@@ -14,14 +14,14 @@ Is command set implementing ContractReplicator which is a part of [DFMSR](../../
 
 | Command                                                 | Description                                                                                                                        |
 | :------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
-| [`dfms-replicator contract compose`](#dfmsr-contract-compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                                                            |
-| [`dfms-replicator contract ls`](#dfmsr-contract-ls)               | lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member |
-| [`dfms-replicator contract get`](#dfmsr-contract-get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                         |
-| [`dfms-replicator contract ammends`](#dfmsr-contract-ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                                                  |
-| [`dfms-replicator contract accept`](#dfmsr-contract-accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                                                 |
-| [`dfms-replicator contract accepted`](#dfmsr-contract-accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node                              |
-| [`dfms-replicator contract invites`](#dfmsr-contract-invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                                                  |
-| [`dfms-replicator contract accepting`](#dfmsr-contract-accepting) | automatically accept every received invitation                                                                                     |
+| [`dfms-replicator contract compose`](#dfms-replicator-contract-compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                                                            |
+| [`dfms-replicator contract ls`](#dfms-replicator-contract-ls)               | lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member |
+| [`dfms-replicator contract get`](#dfms-replicator-contract-get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                         |
+| [`dfms-replicator contract ammends`](#dfms-replicator-contract-ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                                                  |
+| [`dfms-replicator contract accept`](#dfms-replicator-contract-accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                                                 |
+| [`dfms-replicator contract accepted`](#dfms-replicator-contract-accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node                              |
+| [`dfms-replicator contract invites`](#dfms-replicator-contract-invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                                                  |
+| [`dfms-replicator contract accepting`](#dfms-replicator-contract-accepting) | automatically accept every received invitation                                                                                     |
 
 ---
 

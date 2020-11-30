@@ -1,6 +1,6 @@
 ---
-id: mv
-title: Move(Rename)
+id: file
+title: Get File by CID
 ---
 
 ## Requirements
@@ -8,17 +8,18 @@ title: Move(Rename)
 - IDE or text editor
 - Have one [owner](../../roles/owner.md) node
 - Have one [Drive](../../built_in_features/drive/overview.md) contract
-- At least one file on the [Drive](../../built_in_features/drive/overview.md)
+- At least one file on the remote [Drive](../../built_in_features/drive/overview.md)
 
 ## Example
 
-The simple example of moving a file on the drive.
+The simple example of getting a file from drive by cid.
 
 ```go
 import (
     "context"
+    "io/ioutil"
 
-    api "github.com/proximax-storage/go-xpx-dfms-api"
+    files "github.com/ipfs/go-ipfs-files"
     apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
     drive "github.com/proximax-storage/go-xpx-dfms-drive"
 )
@@ -35,18 +36,16 @@ func main() {
         panic(err)
     }
 
-    // Move file
-    err = client.FS().Move(context.Background(),
-        contractId,
-        // a path of file
-        "/dir",
-        // a new path
-        "/otherdir/dir",
-        // Flush changes
-        api.Flush(true),
-    )
+    // Get file
+    file, err := drive.File(req.Context, contractId, cid)
     if err != nil {
         panic(err)
     }
+
+    data, err := ioutil.ReadAll(files.ToFile(file))
+    if err != nil {
+        panic(err)
+    }
+    println(string(data))
 }
 ```

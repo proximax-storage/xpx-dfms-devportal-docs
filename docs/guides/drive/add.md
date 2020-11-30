@@ -1,6 +1,6 @@
 ---
 id: add
-title: Add File or Dir
+title: Add
 ---
 
 ## Requirements

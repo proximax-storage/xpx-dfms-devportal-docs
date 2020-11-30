@@ -326,7 +326,6 @@ paths:
         - $ref: '#/components/parameters/driveIdParam'
         - $ref: '#/components/parameters/srcParam'
         - $ref: '#/components/parameters/flushParam'
-        - $ref: '#/components/parameters/localParam'
       responses:
         '200':
           description: Success
@@ -422,6 +421,20 @@ paths:
       - DriveFS
       summary: Flush drive
       description: Flush pushes state of the local Drive to all replicators
+      operationId: driveFlush
+      parameters:
+        - $ref: '#/components/parameters/driveIdParam'
+      responses:
+        '200':
+          description: Success
+        '400': 
+          $ref: '#/components/responses/errorResp'
+  /drive/clear:
+    post:
+      tags:
+      - DriveFS
+      summary: Clear drive
+      description: Clear clears all drive files locally
       operationId: driveFlush
       parameters:
         - $ref: '#/components/parameters/driveIdParam'
@@ -801,13 +814,6 @@ components:
       in: query
       name: flush
       description: To send data to replicators immediately
-      schema:
-        type: boolean
-        default: false
-    localParam:
-      in: query
-      name: local
-      description: Delete file from local drive only, but keep a reference on remote one
       schema:
         type: boolean
         default: false

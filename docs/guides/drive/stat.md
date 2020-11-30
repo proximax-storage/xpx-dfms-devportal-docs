@@ -1,6 +1,6 @@
 ---
 id: stat
-title: Stat of File or Dir
+title: Stat
 ---
 
 ## Requirements

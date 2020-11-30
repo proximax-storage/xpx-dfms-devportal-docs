@@ -1,6 +1,6 @@
 ---
 id: ls
-title: List Path
+title: List
 ---
 
 ## Requirements
