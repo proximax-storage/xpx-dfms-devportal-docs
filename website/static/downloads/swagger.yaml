@@ -698,7 +698,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/addrListWrap'
+            $ref: '#/components/schemas/fullAddrListWrap'
     driveAddResp:
       description: Success
       content:
@@ -851,6 +851,19 @@ components:
       items:
         $ref: '#/components/schemas/addr'
     addr:
+      type: string
+      example: /ip4/127.0.0.1/tcp/63666
+      description: address of a node
+    fullAddrListWrap:
+      type: object
+      properties:
+        Addrs:
+          $ref: '#/components/schemas/fullAddrList'
+    fullAddrList:
+      type: array
+      items:
+        $ref: '#/components/schemas/fullAddr'
+    fullAddr:
       type: string
       example: /ip4/127.0.0.1/tcp/63666/p2p/12D3L7AUwnPXj7odaWGzWcWwWD1mGrB5d5yr6zLrimHcyiZLVWcH
       description: full address of a node
