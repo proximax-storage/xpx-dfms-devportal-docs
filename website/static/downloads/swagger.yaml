@@ -3,13 +3,13 @@ servers:
   - url: https://127.0.0.1/api/v1
 info:
   description: |
-    DFMS node HTTP API.
+    Storage node HTTP API.
     [Reference implementation in GO](https://github.com/proximax-storage/go-xpx-dfms-api-http)
     [API definition](https://github.com/proximax-storage/go-xpx-dfms-api)
     
     API does not tries to follow idiomatic REST or other API patterns for reasons. 
   version: "1.0.0"
-  title: DFMS API
+  title: Storage API
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'

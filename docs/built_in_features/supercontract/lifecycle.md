@@ -30,7 +30,7 @@ When the file becomes the new [SC](overview.md), the [client](../../roles/owner.
 
 ### Identification
 
-In the moment when any DFMS user starts the execution of some [SC](overview.md) functions, a new operation's ID is  assigned for all operations. This ID is used by the user to get information about execution and result of the execution. In other words, this ID joins all operations from one execution in one group.
+In the moment when any Storage user starts the execution of some [SC](overview.md) functions, a new operation's ID is  assigned for all operations. This ID is used by the user to get information about execution and result of the execution. In other words, this ID joins all operations from one execution in one group.
 
 ### More details about the SC execution
 

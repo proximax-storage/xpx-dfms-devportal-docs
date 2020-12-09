@@ -15,6 +15,8 @@ title: Move(Rename)
 The simple example of moving a file on the drive.
 
 ```go
+package main
+
 import (
     "context"
 
@@ -25,20 +27,20 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
+    // or use API,
+    // e.g. client := NewClient(root.New(ctx, memory.Open()))
 
     // ID of some contract
-    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-
-    contractId, err := drive.IDFromString(idStr)
+    contractId, err := drive.IDFromString("baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5")
     if err != nil {
         panic(err)
     }
 
-    // Move file
+    // Move file or directory
     err = client.FS().Move(context.Background(),
         contractId,
-        // a path of file
+        // a path of a file or directory
         "/dir",
         // a new path
         "/otherdir/dir",

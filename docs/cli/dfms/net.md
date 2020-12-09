@@ -12,17 +12,19 @@ It manages networking related commands.
 
 ## Child commands
 
-| Command                                       | Description                      |
-| :-------------------------------------------- | :------------------------------- |
-| [`dfms-client net connect`](#dfms-client-net-connect)       | open connection to given address |
-| [`dfms-client net disconnect`](#dfms-client-net-disconnect) | disconnect from given address    |
-| [`dfms-client net peers`](#dfms-client-net-peers)           | show all connected peers         |
-| [`dfms-client net id`](#dfms-client-net-id)                 | Show identity                    |
-| [`dfms-client net addrs`](#dfms-client-net-addrs)           | Show all p2p addresses           |
+| Command                                     | Description                      |
+| :------------------------------------------ | :------------------------------- |
+| [`dfms-client net connect`](#Connect)       | open connection to given address |
+| [`dfms-client net disconnect`](#Disconnect) | disconnect from given address    |
+| [`dfms-client net peers`](#Peers)           | show all connected peers         |
+| [`dfms-client net id`](#ID)                 | Show identity                    |
+| [`dfms-client net addrs`](#Address)         | Show all p2p addresses           |
 
 ---
 
-## `dfms-client net connect`
+## Connect
+
+`dfms-client net connect`
 
 Connects to given set of peers. Accepts only Multiadresses in the form of: \
 `/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f`
@@ -51,7 +53,9 @@ Connects to given set of peers. Accepts only Multiadresses in the form of: \
 
 ---
 
-## `dfms-client net disconnect`
+## Disconnect
+
+`dfms-client net disconnect`
 
 Drops connections to given set of addresses. Accepts only Multiadresses in the form of: \
 `/ip4/54.169.137.143/tcp/64666/p2p/12D3L7AVBSbyCFRvqYZW5UQ9h9Zc8DyfM8RaRzGGtA3oiR9MF66f`
@@ -72,7 +76,9 @@ Drops connections to given set of addresses. Accepts only Multiadresses in the f
 
 ---
 
-## `dfms-client net peers`
+## Peers
+
+`dfms-client net peers`
 
 Lists Multiadresses network have connection to.
 
@@ -89,7 +95,9 @@ Lists Multiadresses network have connection to.
 
 ---
 
-## `dfms-client net id`
+## ID
+
+`dfms-client net id`
 
 Prints network identification or peer identity of the current node.
 
@@ -104,7 +112,9 @@ Prints network identification or peer identity of the current node.
 
 ---
 
-## `dfms-client net addrs`
+## Address
+
+`dfms-client net addrs`
 
 Prints all multiaddresses current node is listen to and dials from.
 

@@ -23,7 +23,7 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
 
     //Show all contracts
     ids, err := client.Contract().List(context.Background())

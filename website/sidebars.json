@@ -77,13 +77,15 @@
       "cli/dfms/contract",
       "cli/dfms/sc/sc",
       "cli/dfms/net",
-      "cli/dfms/version"
+      "cli/dfms/version",
+      "cli/dfms/ledger"
     ],
     "Storage Replicator Node": [
       "cli/dfmsr/dfms-replicator",
       "cli/dfmsr/contract",
       "cli/dfmsr/net",
-      "cli/dfmsr/version"
+      "cli/dfmsr/version",
+      "cli/dfms/ledger"
     ],
     "Supercontracts": [
       "cli/dfms/sc/create_wasm",

@@ -15,6 +15,8 @@ title: Remove
 The simple example of removing a file.
 
 ```go
+package main
+
 import (
     "context"
 
@@ -25,21 +27,26 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
+    // or use API,
+    // e.g. client := NewClient(root.New(ctx, memory.Open()))
 
     // ID of some contract
-    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-
-    contractId, err := drive.IDFromString(idStr)
+    contractId, err := drive.IDFromString("baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5")
     if err != nil {
         panic(err)
     }
 
-    //Flush changes or not
-    flush := true
-
-    //List path
-    err = client.FS().Remove(context.Background(), contractId, "/dir", api.Flush(flush))
+    // Remove a file or directory
+    err = client.FS().Remove(
+        context.Background(),
+        // contract ID
+        contractId,
+        // a path of a file or directory for removing
+        "/dir",
+        // Flush changes
+        api.Flush(false),
+    )
     if err != nil {
         panic(err)
     }

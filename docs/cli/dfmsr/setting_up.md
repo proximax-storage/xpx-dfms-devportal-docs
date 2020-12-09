@@ -14,7 +14,7 @@ It's important to understand that there are two types of storage nodes, Client a
 
 ## Partipcate in the Storage network ecosystem
 
-- Before running the DFMS node the [PubSub lib](https://crypto.stanford.edu/pbc/howto.html) should be installed. Otherwise, you cannot use the DFMS.
+- Before running the Storage node the [PubSub lib](https://crypto.stanford.edu/pbc/howto.html) should be installed. Otherwise, you cannot use the Storage.
 
 ### Run a Storage Director Node
 In order to run a storage director node, we need to install the `dfms-client` client. There are several ways to do this:

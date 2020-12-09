@@ -14,6 +14,8 @@ title: Make Dir
 The simple example of creating a new dir.
 
 ```go
+package main
+
 import (
     "context"
 
@@ -24,24 +26,24 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
+    // or use API,
+    // e.g. client := NewClient(root.New(ctx, memory.Open()))
 
     // ID of some contract
-    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-
-    contractId, err := drive.IDFromString(idStr)
+    contractId, err := drive.IDFromString("baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5")
     if err != nil {
         panic(err)
     }
 
-    //List path
+    // Make a new directory
     err = client.FS().MakeDir(
         context.Background(),
         // ID of a contract
         contractId,
         // a path of a new dir
         "/dir",
-        //Flush changes
+        //  Flush changes
         api.Flush(true),
     )
     if err != nil {
