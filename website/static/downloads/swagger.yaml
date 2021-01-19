@@ -14,6 +14,8 @@ info:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 tags:
+  - name: CommonRoutes
+    description: Routes for any node roles
   - name: ContractClient
     description: Client operations with Drive contracts.
   - name: ContractReplicator
@@ -642,13 +644,25 @@ paths:
   /version:
     post:
       tags:
-        - Ledger
+        - CommonRoutes
       summary: Returns info about DFMS version
       description: Returns info about DFMS version
-      operationId: key
+      operationId: version
       responses:
         "200":
           $ref: "#/components/responses/versionResp"
+        "400":
+          $ref: "#/components/responses/errorResp"
+  /type:
+    post:
+      tags:
+        - CommonRoutes
+      summary: Returns type of a node
+      description: Returns type of a node
+      operationId: type
+      responses:
+        "200":
+          $ref: "#/components/responses/typeResp"
         "400":
           $ref: "#/components/responses/errorResp"
 components:
@@ -783,6 +797,12 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/versionWrap"
+    typeResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/typeWrap"
 
   parameters:
     driveIdParam:
@@ -1092,24 +1112,22 @@ components:
     versionWrap:
       type: object
       properties:
-        App:
+        API:
           type: string
-          example: "dfms-replicator"
-        Version:
+          example: "0.4.1"
+        Build:
           type: string
           example: "v0.8.2"
-        Commit:
+    typeWrap:
+      type: object
+      properties:
+        Type:
           type: string
-          example: "eeb58532f1229b3c654575c7be996a7865872889"
-        BuildDate:
-          type: string
-          example: "2020-12-17@08:31:25"
-        System:
-          type: string
-          example: "amd64/linux"
-        GO:
-          type: string
-          example: "go1.14.6"
+          example: "client"
+          description: Returns "client" or "replicator"
+          enum:
+            - client
+            - replicator
     errResult:
       type: object
       properties:
