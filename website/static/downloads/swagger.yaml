@@ -1118,6 +1118,18 @@ components:
         Build:
           type: string
           example: "v0.8.2"
+        Commit:
+          type: string
+          example: "eeb58532f1229b3c654575c7be996a7865872889"
+        BuildDate:
+          type: string
+          example: "2020-12-17@08:31:25"
+        System:
+          type: string
+          example: "linux(amd64)"
+        GO:
+          type: string
+          example: "go1.15.6"
     typeWrap:
       type: object
       properties:
