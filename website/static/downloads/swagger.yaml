@@ -1135,11 +1135,11 @@ components:
       properties:
         Type:
           type: string
-          example: "client"
-          description: Returns "client" or "replicator"
+          example: "dfms-client"
+          description: Returns "dfms-client" or "dfms-replicator"
           enum:
-            - client
-            - replicator
+            - dfms-client
+            - dfms-replicator
     errResult:
       type: object
       properties:
