@@ -25,7 +25,7 @@ func main() {
     replicator := apihttp.NewReplicatorAPI("127.0.0.1:64666")
 
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
 
     // Get client ID. ID is part of node address
     id, err := client.Network().ID(context.TODO())

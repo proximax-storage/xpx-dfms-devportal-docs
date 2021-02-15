@@ -12,6 +12,8 @@ title: Create API node
 The simple example of creation API node.
 
 ```go
+package main
+
 import (
     "context"
 
@@ -22,20 +24,23 @@ import (
 )
 
 func main() {
-    cfg := config.DefaultClient()
-
-    rootOpts := []root.Option{
-        root.Config(cfg),
-        root.LedgerUrl(""),
+    // New API
+	// New options
+	rootOpts := []root.Option{
+	    // default config
+	    root.Config(config.DefaultClient()),
+	    // ledger address
+	    root.LedgerUrl("127.0.0.1:5000"),
     }
 
-    newRoot, err := root.New(context.TODO(), memory.Open(), rootOpts...)
-    if err != nil {
-        return
-    }
+	root, err := root.New(context.TODO(), memory.Open(), rootOpts...)
+	if err != nil {
+	    panic(err)
+	}
 
-    client := api.NewClient(newRoot)
-    // or
-    replicator := api.NewReplicator(newRoot)
+	// New client API
+	client := api.NewClient(root)
+	// Or new replicator API
+	replicator := api.NewReplicator(root)
 }
 ```

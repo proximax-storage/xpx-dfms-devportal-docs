@@ -1,6 +1,6 @@
 ---
 id: economy
-title: The External Economy of the DFMS
+title: The External Economy of the Storage
 sidebar_label: The External Economy
 ---
 
@@ -8,13 +8,13 @@ In order to create a democratized autonomous network, an economic component is e
 
 ## Sirius Internal Digial Assets: Mosaics
 
-The [DFMS](what_is.md) uses three types of [mosaics](https://bcdocs.xpxsirius.io/docs/built-in-features/mosaic/) that are intended for different goals.
+The [Storage](what_is.md) uses three types of [mosaics](https://bcdocs.xpxsirius.io/docs/built-in-features/mosaic/) that are intended for different goals.
 
 ### Sirius Platform Native Token - XPX
 
-XPX is the native token the fuels the token economy of ProximaX SiriusPlatform. It's primarily the basis of all internal tokens and it's pegged to the free market usage of the platform. From the Storage (or DFMS) perspective, XPX is the main cryptocurrency to access it's ecosystem.
+XPX is the native token the fuels the token economy of ProximaX SiriusPlatform. It's primarily the basis of all internal tokens and it's pegged to the free market usage of the platform. From the Storage (or Storage) perspective, XPX is the main cryptocurrency to access it's ecosystem.
 
-XPX is the main currency in the [DFMS](what_is.md). It can be changed to any currency according to market price.
+XPX is the main currency in the [Storage](what_is.md). It can be changed to any currency according to market price.
 
 ### Sirius Storage units - SO
 

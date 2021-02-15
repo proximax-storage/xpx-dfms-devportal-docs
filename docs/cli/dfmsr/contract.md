@@ -8,26 +8,28 @@ sidebar_label: dfms-replicator contract
 
 ## Description
 
-Is command set implementing ContractReplicator which is a part of [DFMSR](../../getting_started/what_is.md) API which is responsible for creating and managing [SuperContracts](../../built_in_features/supercontract/overview.md) and their state, contracts, etc. The API extends [DFMS](../../getting_started/what_is.md) ContractClient API with features related to replicating [Drive](../../built_in_features/drive/overview.md) and accepting [Drive](../../built_in_features/drive/overview.md) contracts.
+Is command set implementing ContractReplicator which is a part of [Storage](../../getting_started/what_is.md) API which is responsible for creating and managing `Contracts` and their state, contracts, etc. The API extends [Storage](../../getting_started/what_is.md) ContractClient API with features related to replicating [Drive](../../built_in_features/drive/overview.md) and accepting [Drive](../../built_in_features/drive/overview.md) contracts.
 
 ## Child commands
 
-| Command                                                 | Description                                                                                                                        |
-| :------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------- |
-| [`dfms-replicator contract compose`](#dfms-replicator-contract-compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                                                            |
-| [`dfms-replicator contract ls`](#dfms-replicator-contract-ls)               | lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member |
-| [`dfms-replicator contract get`](#dfms-replicator-contract-get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                         |
-| [`dfms-replicator contract ammends`](#dfms-replicator-contract-ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                                                  |
-| [`dfms-replicator contract accept`](#dfms-replicator-contract-accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                                                 |
-| [`dfms-replicator contract accepted`](#dfms-replicator-contract-accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node                              |
-| [`dfms-replicator contract invites`](#dfms-replicator-contract-invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                                                  |
-| [`dfms-replicator contract accepting`](#dfms-replicator-contract-accepting) | automatically accept every received invitation                                                                                     |
+| Command                                            | Description                                                                                                                     |
+| :------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| [`dfms-replicator contract compose`](#Compose)     | compose new [Drive](../../built_in_features/drive/overview.md) Contract                                                         |
+| [`dfms-replicator contract ls`](#List)             | lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) where Node participates as an owner or member |
+| [`dfms-replicator contract get`](#Get)             | get Contract body of any [Drive](../../built_in_features/drive/overview.md) in the network                                      |
+| [`dfms-replicator contract ammends`](#Ammends)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract updates                                               |
+| [`dfms-replicator contract accept`](#Accept)       | accept [Drive](../../built_in_features/drive/overview.md) Contract                                                              |
+| [`dfms-replicator contract accepted`](#Accepted)   | subscribe for newly accepted [Drive](../../built_in_features/drive/overview.md) Contracts of the node                           |
+| [`dfms-replicator contract invites`](#Invites)     | subscribe for [Drive](../../built_in_features/drive/overview.md) Contract invites                                               |
+| [`dfms-replicator contract accepting`](#Accepting) | automatically accept every received invitation                                                                                  |
 
 ---
 
-## `dfms-replicator contract compose`
+## Compose
 
-This command composes Contract for new [Drive](../../built_in_features/drive/overview.md) between current [DFMS](../../getting_started/what_is.md) node and multiple [DFMSR](../../getting_started/what_is.md) nodes with conditions to store `space` amount of data for `subscription` time period.
+`dfms-replicator contract compose`
+
+This command composes Contract for new [Drive](../../built_in_features/drive/overview.md) between current [Storage Director Nodes](../../roles/owner.md) node and multiple [Storage Replicator Nodes](../../roles/replicator.md) nodes with conditions to store `space` amount of data for `subscription` time period.
 
 First of all, a Contract invitation is built from configured arguments and options. This invitation broadcasted throughout the network. Then, [Storage Replicator Nodes](../../roles/replicator.md) receive the invitation and decide to accept it or not. Their decision is based on the configured fields. The composing, at the same moment, awaits the configured amount of [Storage Replicator Nodes](../../roles/replicator.md) to accept invitations. If throughout 10 minutes the minimal amount of [Storage Replicator Nodes](../../roles/replicator.md) do not accept the invitation - composing fails. In another case, it succeeds. From that moment new [Drive](../../built_in_features/drive/overview.md) is considered to be created.
 
@@ -40,15 +42,15 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 ### Options
 
-| Name                                  | Description                                                                                                                                                                       |
-| :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name                                  | Description                                                                                                                                                                                    |
+| :------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **replicas(_r_)**                     | to set the amount of [Drive](../../built_in_features/drive/overview.md) replicas. One replica = one [Storage Replicator Node](../../roles/replicator.md#replicator). The default is 3          |
 | **min-replicators(_mr_)**             | to set a minimum amount of joined [Storage Replicator Node](../../roles/replicator.md) for composing to succeed. The default is 3                                                              |
-| **subscription-price(_p_)**           | to set a price in tokens for one subscription period. The default is `space` * `replicas`                                                                                         |
-| **number-subscription-periods(_sn_)** | to set number of desired subscriptions. The default is 3                                                                                                                          |
+| **subscription-price(_p_)**           | to set a price in tokens for one subscription period. The default is `space` * `replicas`                                                                                                      |
+| **number-subscription-periods(_sn_)** | to set number of desired subscriptions. The default is 3                                                                                                                                       |
 | **percent-approvers(_pa_)**           | to set percent of [Storage Replicator Node](../../roles/replicator.md) needed to come up to consensus to proceed any [Drive](../../built_in_features/drive/overview.md) account related action |
-| **private-key(_key_)**                | to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                                                                           |
-| **help**                              | to see description with examples                                                                                                                                                  |
+| **private-key(_key_)**                | to set a custom private key to generate [Drive](../../built_in_features/drive/overview.md) account from                                                                                        |
+| **help**                              | to see description with examples                                                                                                                                                               |
 
 ### Examples
 
@@ -83,7 +85,9 @@ First of all, a Contract invitation is built from configured arguments and optio
 
 ---
 
-## `dfms-replicator contract ls`
+## List
+
+`dfms-replicator contract ls`
 
 Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md) in which Node participates as an owner or member.
 
@@ -108,7 +112,9 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 
 ---
 
-## `dfms-replicator contract get`
+## Get
+
+`dfms-replicator contract get`
 
 `get` prints a Contract body of any `drive` from the network. Takes it from local storage or fetches from the network.
 
@@ -146,7 +152,9 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 
 ---
 
-## `dfms-replicator contract ammends`
+## Ammends
+
+`dfms-replicator contract ammends`
 
 `contract ammends` subscribes for Contract amendments of `drive`. Produced either from owner or [Storage Replicator Node](../../roles/replicator.md#replicator) consensus.
 
@@ -166,7 +174,9 @@ Lists all the [SuperContracts](../../built_in_features/supercontract/overview.md
 
 ---
 
-## `dfms-replicator contract accept`
+## Accept
+
+`dfms-replicator contract accept`
 
 Joins `drive` by it's id. Can join only [SuperContracts](../../built_in_features/supercontract/overview.md) awaiting new members.
 
@@ -186,7 +196,9 @@ Joins `drive` by it's id. Can join only [SuperContracts](../../built_in_features
 
 ---
 
-## `dfms-replicator contract accepted`
+## Accepted
+
+`dfms-replicator contract accepted`
 
 Subscribes for newly accepted Driver Contracts of the node, either accepted automatically or manually.
 
@@ -200,7 +212,9 @@ Subscribes for newly accepted Driver Contracts of the node, either accepted auto
 
 ---
 
-## `dfms-replicator contract invites`
+## Invites
+
+`dfms-replicator contract invites`
 
 Subscribes for [Drive](../../built_in_features/drive/overview.md) Contract invitation published on the network to be accepted or not.
 
@@ -214,7 +228,9 @@ Subscribes for [Drive](../../built_in_features/drive/overview.md) Contract invit
 
 ---
 
-## `dfms-replicator contract accepting`
+## Accepting
+
+`dfms-replicator contract accepting`
 
 **WARNING**: This command will be removed in the next minor release.
 

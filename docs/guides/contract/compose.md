@@ -25,7 +25,7 @@ import (
 
 func main() {
     // Create a new client API by given addres
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
 
     //Not required. Generate your own private key if you want
     private, _, err := crypto.GenerateEd25519CatapultKey()

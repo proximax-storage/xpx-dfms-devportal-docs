@@ -26,14 +26,14 @@ Currently, [WasmVM](vm.md) has no strict restriction. The execution of [SC](over
 
 ## Interacting with the external world
 
-[WasmVM](vm.md) is an isolated environment from the “external world”. That means there is no direct access to [VM](vm.md) from out and vice versa. Such conditions provide guaranteed execution security, data saving, reliability, and fail-safety. [SC](overview.md) execution speed depends on physical machine resources where [DFMS](../../getting_started/what_is.md) is running.
+[WasmVM](vm.md) is an isolated environment from the “external world”. That means there is no direct access to [VM](vm.md) from out and vice versa. Such conditions provide guaranteed execution security, data saving, reliability, and fail-safety. [SC](overview.md) execution speed depends on physical machine resources where [Storage](../../getting_started/what_is.md) is running.
 For interaction with the “external world” the mechanism of “external functions” was introduced. This means, using the [SuperContract SDK](https://docs.rs/xpx-supercontracts-sdk/0.2.0/xpx_supercontracts_sdk/index.html), you can use access to the built-in functions in [WasmVM](vm.md), which allows you to access Blockchain, HTTP requests, etc.
 This provides a wide range for the flexible development of [SC](overview.md), including quite complex Oracles. All available functions, documentation, and examples, can be found in [SuperContract SDK](https://docs.rs/xpx-supercontracts-sdk/0.2.0/xpx_supercontracts_sdk/index.html).
 
 ## Versions
 
-The [WasmVM](vm.md) has a set of versions. It allows ensuring that [SC](overview.md) assembled for a specific version of the [VM](vm.md) is guaranteed to run on the same version of [VM](vm.md) (versions are part of the [DFMS](../../getting_started/what_is.md)). Because the [WasmVM](vm.md) must be safe and has the same execution results for different [executors](../../roles/executor.md), the versions can be incompatible.
-It is worth noting that the version of [WasmVM](vm.md) automatically writes in the Blockchain, and is taken from the current version of the [DFMS](../../getting_started/what_is.md) [WasmVM](vm.md) of the [SC](overview.md) [owner](../../roles/owner.md).
+The [WasmVM](vm.md) has a set of versions. It allows ensuring that [SC](overview.md) assembled for a specific version of the [VM](vm.md) is guaranteed to run on the same version of [VM](vm.md) (versions are part of the [Storage](../../getting_started/what_is.md)). Because the [WasmVM](vm.md) must be safe and has the same execution results for different [executors](../../roles/executor.md), the versions can be incompatible.
+It is worth noting that the version of [WasmVM](vm.md) automatically writes in the Blockchain, and is taken from the current version of the [Storage](../../getting_started/what_is.md) [WasmVM](vm.md) of the [SC](overview.md) [owner](../../roles/owner.md).
 
 ## Results of SC execution
 

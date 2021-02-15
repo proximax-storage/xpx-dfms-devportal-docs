@@ -13,6 +13,8 @@ title: Node ID
 The simple example of getting node ID.
 
 ```go
+package main
+
 import (
     "context"
 
@@ -21,7 +23,7 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
 
     //Get ID
     id, err := client.Network().ID(context.Background())

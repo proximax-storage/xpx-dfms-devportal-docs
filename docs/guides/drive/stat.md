@@ -15,10 +15,11 @@ title: Stat
 The simple example of getting stat of some file on the drive.
 
 ```go
+package main
+
 import (
     "context"
     "fmt"
-    "log"
 
     apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
     drive "github.com/proximax-storage/go-xpx-dfms-drive"
@@ -27,7 +28,7 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
 
     // ID of some contract
     idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
@@ -37,6 +38,7 @@ func main() {
         panic(err)
     }
 
+    // Get stat of a file or directory
     fi, err := client.FS().Stat(context.Background(), contractId, "/dir")
     if err != nil {
         panic(err)
@@ -44,7 +46,7 @@ func main() {
 
     st, ok := fi.Sys().(*fs.Stat)
     if !ok {
-        log.Fatal("error")
+        panic(err)
     }
     fmt.Println(st)
 }

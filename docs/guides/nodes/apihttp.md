@@ -9,16 +9,21 @@ title: Create API HTTP node
 
 ## Example
 
-The simple example of creation API HTTP node.
+The simple example of creation API and API HTTP node.
 
 ```go
+package main
+
 import (
-    apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
+	"context"
+	
+	apihttp "github.com/proximax-storage/go-xpx-dfms-api-http"
 )
 
 func main() {
-    replicator := apihttp.NewReplicatorAPI("127.0.0.1:64666")
-    // Or
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+	// replicator
+	replicatorHTTP := apihttp.NewReplicatorAPI("127.0.0.1:6466")
+	// client
+	clientHTTP := apihttp.NewClientAPI("127.0.0.1:6366")
 }
 ```

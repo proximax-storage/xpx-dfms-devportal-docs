@@ -26,7 +26,7 @@ $ wasm2wat target/wasm32-unknown-unknown/release/xpx_supercontracts_example_ico.
 
 So, you successfully receive [SC](../../../built_in_features/supercontract/overview.md) `xpx_supercontracts_example_ico.wat` file.
 
-Now it's time to deploy it. For that, let's assume you have already created DriveContract in DFMS.
+Now it's time to deploy it. For that, let's assume you have already created DriveContract in Storage.
 
 ```shell
 $ dfms-client drive add --flush <DriveID> ~/xpx_supercontracts_example_ico.wat xpx_supercontracts_example_ico.wat

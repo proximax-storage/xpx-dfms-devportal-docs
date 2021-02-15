@@ -1,31 +1,24 @@
----
-id: drive
-title: Interface with Drive file system.
-sidebar_label: dfms-client drive
----
+# Overview
 
-DriveFS is an API which implements Unix like file system over [Drive](../../built_in_features/drive/overview.md) to manipulate over the content of any [Drive](../../built_in_features/drive/overview.md)
-in the network with an ability to alter it with write access.
+DriveFS is an API which implements Unix like file system over [Drive](../../built_in_features/drive/overview.md) to manipulate over the content of any [Drive](../../built_in_features/drive/overview.md) in the network with an ability to alter it with write access.
 
 ## Subcommands
 
-| Command                                               | Description                                                                                                                                       |
-| :---------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`dfms-client drive add`](#dfms-client-drive-add)     | Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).                                                                  |
-| [`dfms-client drive get`](#dfms-client-drive-get)     | Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).                                                              |
-| [`dfms-client drive file`](#dfms-client-drive-file)   | Get a file by its cid.                                                                                                                            |
-| [`dfms-client drive rm`](#dfms-client-drive-rm)       | Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).                                                             |
-| [`dfms-client drive mv`](#dfms-client-drive-mv)       | Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                   |
-| [`dfms-client drive cp`](#dfms-client-drive-cp)       | Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                                 |
-| [`dfms-client drive mkdir`](#dfms-client-drive-mkdir) | Make directory in a [Drive](../../built_in_features/drive/overview.md).                                                                           |
-| [`dfms-client drive ls`](#dfms-client-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                                                               |
-| [`dfms-client drive stat`](#dfms-client-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                     |
-| [`dfms-client drive flush`](#dfms-client-drive-flush) | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
-| [`dfms-client drive clear`](#dfms-client-drive-flush) | Clear a local [Drive](../../built_in_features/drive/overview.md). |
+| Command                                        | Description                                                                                                                                       |
+| :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`dfms-client drive add`](#dfms-drive-add)     | Add a file or directory to a [Drive](../../built_in_features/drive/overview.md).                                                                  |
+| [`dfms-client drive get`](#dfms-drive-get)     | Get a file or directory from any [Drive](../../built_in_features/drive/overview.md).                                                              |
+| [`dfms-client drive rm`](#dfms-drive-rm)       | Remove a file or directory from a [Drive](../../built_in_features/drive/overview.md).                                                             |
+| [`dfms-client drive mv`](#dfms-drive-mv)       | Move and/or rename a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                   |
+| [`dfms-client drive cp`](#dfms-drive-cp)       | Copy a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                                 |
+| [`dfms-client drive mkdir`](#dfms-drive-mkdir) | Make directory in a [Drive](../../built_in_features/drive/overview.md).                                                                           |
+| [`dfms-client drive ls`](#dfms-drive-ls)       | List files under directory in a [Drive](../../built_in_features/drive/overview.md).                                                               |
+| [`dfms-client drive stat`](#dfms-drive-stat)   | Show stats about a file or directory in a [Drive](../../built_in_features/drive/overview.md).                                                     |
+| [`dfms-client drive flush`](#dfms-drive-flush) | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
----
+## Add
 
-## `dfms-client drive add`
+`dfms-client drive add`
 
 Adds a file or directory under `src` to `dst` of a specific `drive`. Forms a reference to new content in the [Drive](../../built_in_features/drive/overview.md)
 and copies data to a local cache. Does not upload, thus to replicate content and reference should be followed
@@ -51,13 +44,13 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Examples
 
-- _Add a file from pwd to a root directory in a [Drive](../../built_in_features/drive/overview.md) with the same name:_
+Add a file from pwd to a root directory in a [Drive](../../built_in_features/drive/overview.md) with the same name.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu add image.jpg
   ```
 
-- _Add a directory from \$HOME to a subdirectory in a [Drive](../../built_in_features/drive/overview.md) with the same name:_
+Add a directory from \$HOME to a subdirectory in a [Drive](../../built_in_features/drive/overview.md) with the same name.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu add ~/kittens /images/ -r
@@ -67,28 +60,27 @@ Use `--flush(f)` to flush after execution immediately.
   > 'images' - is not created automatically and should be created before addition. The '/' right after
   > the 'images' is required to show that a file or a directory should be put inside.
 
-- _Add a web file to a subdirectory in a [Drive](../../built_in_features/drive/overview.md) with a custom_
-  name:
+Add a web file to a subdirectory in a [Drive](../../built_in_features/drive/overview.md) with a custom name
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu add http://placekitten.com/200/300 /images/kitten.jpg
   ```
 
-- _Add a file from stdin to a root directory in a [Drive](../../built_in_features/drive/overview.md) with a custom name:_
+Add a file from stdin to a root directory in a [Drive](../../built_in_features/drive/overview.md) with a custom name.
 
   ```shell
   $ curl http://placekitten.com/200/300 | dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu add - /kitten.jpg
   ```
 
----
+## Get
 
-## `dfms-client drive get`
+`dfms-client drive get`
 
 Gets a referenced file or directory under `src` to `dst` of any `drive`. If some or all requested content
-is not cached locally, `get` retrieves it from [Storage Replicator Nodes](../../roles/replicator.md), caches locally and saves to `dst`. In the opposite case,
+is not cached locally, 'get' retrieves it from [Storage Replicator Nodes](../../roles/replicator.md), caches locally and saves to `dst`. In the opposite case,
 copies cached content from [Drive](../../built_in_features/drive/overview.md) to `dst`.
 
-### Arguments
+#### Arguments
 
 | Name      | Description                                                                                       |
 | :-------- | :------------------------------------------------------------------------------------------------ |
@@ -96,50 +88,28 @@ copies cached content from [Drive](../../built_in_features/drive/overview.md) to
 | **src**   | The source path of the file to be gotten from [Drive](../../built_in_features/drive/overview.md). |
 | **dst**   | The destination path for the file to be outputted. Defaults to '/'.                               |
 
-### Examples
+#### Examples
 
-- _Get a file from root directory in a [Drive](../../built_in_features/drive/overview.md) to pwd with a same name:_
+Get a file from root directory in a [Drive](../../built_in_features/drive/overview.md) to pwd with a same name.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu get image.jpg
   ```
 
-- _Get a directory from sub directory in a [Drive](../../built_in_features/drive/overview.md) to \$HOME with a custom name:_
+Get a directory from sub directory in a [Drive](../../built_in_features/drive/overview.md) to \$HOME with a custom name.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu get images/kittens ~/kitten_images
   ```
 
----
+## Remove
 
-## `dfms-client drive file`
-
-File gets a referenced file or directory by it'd `cid` to `dst` of any `drive`. If some or all requested content is not cached locally, `drive file` retrieves it from replicators, caches locally and saves to `dst`. In the opposite case, copies cached content from Drive to `dst`.
-
-`dst` takes absolute path but if prefixed with '~' or '.', it is extended with home directory or pwd, respectively.
-
-### Arguments
-
-| Name      | Description                                                                                       |
-| :-------- | :------------------------------------------------------------------------------------------------ |
-| **drive** | [Drive](../../built_in_features/drive/overview.md) ID.                                            |
-| **cid**   | The source cid of the file to be gotten from [Drive](../../built_in_features/drive/overview.md). |
-| **dst**   | The destination path for the file to be outputted. Defaults to '/'.                               |
-
-### Examples
-
-- _Get a file from a [Drive](../../built_in_features/drive/overview.md) to pwd with a same name:_
-
-  ```shell
-  $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu file bafybeihnpekq72dk75zpkhlgoh6lsjlxcygu4vrtclaqartyxqqqys5c7m ./image.jpg
-  ```
----
-
-## `dfms-client drive rm`
+`dfms-client drive rm`
 
 Removes a file or directory under `path` from a specific `drive`. Cleans the reference locally along with cached data.
 Should be forward with flushing to upload reference changes.
 
+Use `--locally(l)` to remove data from local cache, but still keep a content reference in a [Drive](../../built_in_features/drive/overview.md).  
 Use `--flush(f)` to flush after execution immediately.
 
 ### Arguments
@@ -151,13 +121,14 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Options
 
-| Name           | Description                                                                                                                                       |
-| :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **flush(_f_)** | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
+| Name             | Description                                                                                                                                       |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **locally(_l_)** | Clean file only locally and keep it on track.                                                                                                     |
+| **flush(_f_)**   | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
 ### Examples
 
-- _Remove file reference and clean data from cache:_
+Remove file reference and clean data from cache.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu ls
@@ -171,7 +142,7 @@ Use `--flush(f)` to flush after execution immediately.
   > **NOTE:**  
   > In this case file fully removed locally and could not be got.
 
-- _Remove directory and everything inside only from the local cache, while keeping reference._
+Remove directory and everything inside only from the local cache, while keeping reference.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu ls /images
@@ -186,9 +157,9 @@ Use `--flush(f)` to flush after execution immediately.
   > **NOTE:**  
   > Files are removed from a local cache, but they still can be accessed from [Storage Replicator Nodes](../../roles/replicator.md) as if their content is stored locally.
 
----
+## Move
 
-## `dfms-client drive mv`
+`dfms-client drive mv`
 
 Move and/or rename a file or directory under `src` to `dst` in a specific `drive`. Should be forward with flushing to upload reference changes.
 
@@ -210,7 +181,7 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Examples
 
-- _Move file from root directory to subdirectory:_
+Move file from root directory to subdirectory.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu ls
@@ -221,7 +192,7 @@ Use `--flush(f)` to flush after execution immediately.
   kitten.jpg
   ```
 
-- _Rename directory:_
+Rename directory.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu ls
@@ -231,9 +202,9 @@ Use `--flush(f)` to flush after execution immediately.
   kitten_images/
   ```
 
----
+## Copy
 
-## `dfms-client drive cp`
+`dfms-client drive cp`
 
 Copies a reference of a file or directory under `src` to `dst` in a specific `drive`. Does not copy actual data
 and makes it accessible from different places, like symlink. Should be forward with flushing to upload
@@ -257,7 +228,7 @@ Use `--flush(f)` to flush after execution immediately.
 
 ### Examples
 
-- _Copy file from root directory to subdirectory with the a same name:_
+Copy file from root directory to subdirectory with the a same name.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu ls
@@ -271,7 +242,7 @@ Use `--flush(f)` to flush after execution immediately.
   kitten.jpg
   ```
 
-- _Copy directory with a custom name:_
+Copy directory with a custom name.
 
   ```shell
   $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu ls
@@ -282,9 +253,9 @@ Use `--flush(f)` to flush after execution immediately.
   kitten_images/
   ```
 
----
+## Make Directory
 
-## `dfms-client drive mkdir`
+`dfms-client drive mkdir`
 
 Makes a directory under `path` in a specific `drive`. Should be forward with flushing to upload
 reference changes.
@@ -304,7 +275,7 @@ Use `--flush(f)` to flush after execution immediately.
 | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **flush(_f_)** | Upload local changes from cache to [Storage Replicator Nodes](../../roles/replicator.md) of a [Drive](../../built_in_features/drive/overview.md). |
 
-### Example
+## Example
 
 ```shell
 $ dfms-client drive baegbeibondkkrhxfprzwrlgxxltavqhweh2ylhu4hgo5lxjxpqbpfsw2lu ls
@@ -315,9 +286,9 @@ images/
 image.jpg
 ```
 
----
+## List
 
-## `dfms-client drive ls`
+`dfms-client drive ls`
 
 Lists content of a directory under `path` in a specific `drive`.
 
@@ -338,9 +309,9 @@ Use `--sort(s)` to sort list lexicographically.
 | **verbose(_v_)** | Use long listing format. |
 | **sort(_s_)**    | Sort list entries.       |
 
----
+## Static
 
-## `dfms-client drive stat`
+`dfms-client drive stat`
 
 Shows stats about a file or directory under `path` in a specific `drive`.
 
@@ -351,9 +322,9 @@ Shows stats about a file or directory under `path` in a specific `drive`.
 | **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
 | **path**  | The path of the file to get stats about.               |
 
----
+## Flush
 
-## `dfms-client drive flush`
+`dfms-client drive flush`
 
 Uploads all local reference changes with data to [Storage Replicator Nodes](../../roles/replicator.md) of `drive`. Require write access.
 
@@ -361,19 +332,6 @@ Uploads all local reference changes with data to [Storage Replicator Nodes](../.
 > Flushing is not done automatically to aggregate multiple changes in the cache allowing uploading them at once and to
 > make that behavior default. Use `--flush` flag with any [Drive](../../built_in_features/drive/overview.md) state-changing command to upload **immediately** after
 > any change.
-
-### Arguments
-
-| Name      | Description                                            |
-| :-------- | :----------------------------------------------------- |
-| **drive** | [Drive](../../built_in_features/drive/overview.md) ID. |
-
-## `dfms-client drive clear`
-
-Clears all file from a `drive` locally to free disk space. Requires write access.
-
-> **NOTE:**  
-> Flushing is not done automatically after flush
 
 ### Arguments
 

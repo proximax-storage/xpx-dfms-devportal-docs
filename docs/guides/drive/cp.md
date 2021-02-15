@@ -15,6 +15,8 @@ title: Copy
 The simple example of copy an exist file.
 
 ```go
+package main
+
 import (
     "context"
 
@@ -25,22 +27,22 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
+    // or use API,
+    // e.g. client := NewClient(root.New(ctx, memory.Open()))
 
     // ID of some contract
-    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-
-    contractId, err := drive.IDFromString(idStr)
+    contractId, err := drive.IDFromString("baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5")
     if err != nil {
         panic(err)
     }
 
-    // Copy the file
+    // Copy a file or directory
     err = client.FS().Copy(
         context.Background(),
-        // a file path
+        // a file or directory path
         contractId, "/file",
-        // destination path
+        // a destination path
         "/copy_file",
         // Flush changes
         api.Flush(true),

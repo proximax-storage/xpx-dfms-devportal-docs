@@ -15,6 +15,8 @@ title: Get File by CID
 The simple example of getting a file from drive by cid.
 
 ```go
+package main
+
 import (
     "context"
     "io/ioutil"
@@ -26,18 +28,23 @@ import (
 
 func main() {
     // Create a new client API by given address
-    client := apihttp.NewClientAPI("127.0.0.1:63666")
+    client := apihttp.NewClientAPI("127.0.0.1:6366")
+    // or use API,
+    // e.g. client := NewClient(root.New(ctx, memory.Open()))
 
     // ID of some contract
-    idStr := "baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5"
-
-    contractId, err := drive.IDFromString(idStr)
+    contractId, err := drive.IDFromString("baegaajaiaqjcahaxr4ry4styn74ronvr2nvfdmgxtrzyhsci2xqpw5eisrisrgn5")
     if err != nil {
         panic(err)
     }
 
-    // Get file
-    file, err := drive.File(req.Context, contractId, cid)
+    fileCid, err := cid.Decode("bafybeihnpekq72dk75zpkhlgoh6lsjlxcygu4vrtclaqartyxqqqys5c7m")
+    if err != nil {
+        panic(err)
+    }
+
+    // Get file by CID
+    file, err := drive.File(req.Context, contractId, fileCid)
     if err != nil {
         panic(err)
     }
