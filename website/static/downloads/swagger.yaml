@@ -641,6 +641,18 @@ paths:
           $ref: "#/components/responses/ledgerKeyResp"
         "400":
           $ref: "#/components/responses/errorResp"
+  /ledger/drives:
+    post:
+      tags:
+        - Ledger
+      summary: Returns all active drives
+      description: Returns all active drives
+      operationId: drives
+      responses:
+        "200":
+          $ref: "#/components/responses/ledgerDrivesResp"
+        "400":
+          $ref: "#/components/responses/errorResp"
   /version:
     post:
       tags:
@@ -791,6 +803,12 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/ledgerKeyWrap"
+    ledgerDrivesResp:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/cidListWrap"
     versionResp:
       description: Success
       content:
