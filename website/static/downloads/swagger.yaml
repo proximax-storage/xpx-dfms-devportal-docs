@@ -14,6 +14,8 @@ info:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 tags:
+  - name: AuthRoutes
+    description: Routes for authorization service
   - name: CommonRoutes
     description: Routes for any node roles
   - name: ContractClient
@@ -27,6 +29,88 @@ tags:
   - name: SuperContract
     description: Interaction with SuperContracts on a drive.
 paths:
+  /auth/generate:
+    post:
+      tags:
+        - AuthRoutes
+      summary: Generates a new access token
+      description: Allows generate a new access token with required it and commands(routes) for some time
+      operationId: generate
+      responses:
+        "200":
+          $ref: "#/components/responses/authGenerateResp"
+        "400":
+          $ref: "#/components/responses/errorResp"
+      parameters:
+        - in: query
+          name: arg (name/id)
+          description: name of a new token
+          required: true
+          example: test_token
+          schema:
+            type: string
+        - in: query
+          name: arg (duration)
+          description: |
+            Duration of token
+          required: true
+          schema:
+            type: string
+            format: string
+          example: 1000h
+        - in: query
+          name: arg (permissions)
+          description: token's permissions
+          required: true
+          schema:
+            type: string
+            format: string
+          example: drive/ls;contract/ls;net/peers
+        - $ref: "#/components/parameters/tokenArg"
+  /auth/verify:
+    post:
+      tags:
+        - AuthRoutes
+      summary: Verifies access to command(route)
+      description: verifies token's access to command(route)
+      operationId: verify
+      responses:
+        "200":
+          description: Success
+        "400":
+          $ref: "#/components/responses/errorResp"
+      parameters:
+        - $ref: "#/components/parameters/tokenParam"
+        - $ref: "#/components/parameters/tokenArg"
+  /auth/ls:
+    post:
+      tags:
+        - AuthRoutes
+      summary: Lists all tokens ids
+      description: Returns all generated tokens if auth service is storable
+      operationId: authLS
+      responses:
+        "200":
+          $ref: "#/components/responses/authLsResp"
+        "400":
+          $ref: "#/components/responses/errorResp"
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
+  /auth/revoke:
+    post:
+      tags:
+        - AuthRoutes
+      summary: Revoke a token by ID
+      description: Revokes a token by ID if auth service is storable
+      operationId: revoke
+      responses:
+        "200":
+          description: Success
+        "400":
+          $ref: "#/components/responses/errorResp"
+      parameters:
+        - $ref: "#/components/parameters/tokenParam"
+        - $ref: "#/components/parameters/tokenArg"
   /contract/compose:
     post:
       tags:
@@ -112,6 +196,7 @@ paths:
           schema:
             type: string
             format: PrivKey
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/contractResp"
@@ -126,6 +211,8 @@ paths:
       description: |
         Lists all the contracts in which Node participates as an owner or a member
       operationId: ls
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/cidListResp"
@@ -141,6 +228,7 @@ paths:
       operationId: getContract
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/contractResp"
@@ -157,6 +245,7 @@ paths:
       operationId: ammends
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/contractPollResp"
@@ -173,6 +262,7 @@ paths:
       operationId: verify
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/contractVerifyResp"
@@ -189,6 +279,7 @@ paths:
       operationId: finish
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -204,6 +295,7 @@ paths:
       operationId: accept
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -217,6 +309,8 @@ paths:
       description: |
         Establishes persitent connection and sends json value through it to the requester as long as new updates appear.
       operationId: accepted
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/contractPollResp"
@@ -230,6 +324,8 @@ paths:
       description: |
         Creates subscription for new contract invitations. Main use case is to have external contract acceptance logic.
       operationId: invites
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/invitePollResp"
@@ -247,6 +343,7 @@ paths:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/dstParam"
         - $ref: "#/components/parameters/flushParam"
+        - $ref: "#/components/parameters/tokenArg"
       requestBody:
         description: file/directory to be added
         required: true
@@ -272,6 +369,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/srcParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -300,6 +398,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/fileCIDParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -328,6 +427,7 @@ paths:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/srcParam"
         - $ref: "#/components/parameters/flushParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -347,6 +447,7 @@ paths:
         - $ref: "#/components/parameters/srcParam"
         - $ref: "#/components/parameters/dstParam"
         - $ref: "#/components/parameters/flushParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -366,6 +467,7 @@ paths:
         - $ref: "#/components/parameters/srcParam"
         - $ref: "#/components/parameters/dstParam"
         - $ref: "#/components/parameters/flushParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -382,6 +484,7 @@ paths:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/srcParam"
         - $ref: "#/components/parameters/flushParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -397,6 +500,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/srcParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/driveLsResp"
@@ -412,6 +516,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/srcParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/driveStatResp"
@@ -426,6 +531,7 @@ paths:
       operationId: driveFlush
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -440,6 +546,7 @@ paths:
       operationId: driveFlush
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -454,6 +561,7 @@ paths:
       operationId: connect
       parameters:
         - $ref: "#/components/parameters/addrParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -468,6 +576,7 @@ paths:
       operationId: disconnect
       parameters:
         - $ref: "#/components/parameters/addrParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -480,6 +589,8 @@ paths:
       summary: Get ID
       description: Get ID of a node
       operationId: getid
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/netIdResp"
@@ -492,6 +603,8 @@ paths:
       summary: Connected peers
       description: Get all connected peers.
       operationId: peers
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/peersResp"
@@ -504,6 +617,8 @@ paths:
       summary: Node addresses
       description: Get all addresses of a node.
       operationId: addresses
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/netAddrsResp"
@@ -519,6 +634,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
         - $ref: "#/components/parameters/srcParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/scDeployResp"
@@ -532,6 +648,7 @@ paths:
       description: Start execution of a SuperContract. Return the Transaction ID.
       operationId: execute
       parameters:
+        - $ref: "#/components/parameters/tokenArg"
         - $ref: "#/components/parameters/scIdParam"
         - in: query
           name: arg
@@ -570,6 +687,7 @@ paths:
       operationId: getSC
       parameters:
         - $ref: "#/components/parameters/scIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/scSupercontractResp"
@@ -584,6 +702,7 @@ paths:
       operationId: lsSC
       parameters:
         - $ref: "#/components/parameters/driveIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/cidListResp"
@@ -598,6 +717,7 @@ paths:
       operationId: results
       parameters:
         - $ref: "#/components/parameters/txIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/scResultsResp"
@@ -610,6 +730,8 @@ paths:
       summary: Execution results
       description: Get all execution results started by a node. Returns Transaction IDs.
       operationId: executions
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/scExecutionsResp"
@@ -624,6 +746,7 @@ paths:
       operationId: deactivate
       parameters:
         - $ref: "#/components/parameters/scIdParam"
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           description: Success
@@ -636,6 +759,8 @@ paths:
       summary: Allows interact with a ledger
       description: Allows interact with a ledger
       operationId: key
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/ledgerKeyResp"
@@ -648,6 +773,8 @@ paths:
       summary: Returns all active drives
       description: Returns all active drives
       operationId: drives
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/ledgerDrivesResp"
@@ -660,6 +787,8 @@ paths:
       summary: Returns info about DFMS version
       description: Returns info about DFMS version
       operationId: version
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/versionResp"
@@ -672,6 +801,8 @@ paths:
       summary: Returns type of a node
       description: Returns type of a node
       operationId: type
+      parameters:
+        - $ref: "#/components/parameters/tokenArg"
       responses:
         "200":
           $ref: "#/components/responses/typeResp"
@@ -731,6 +862,18 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/cidListWrap"
+    authGenerateResp:
+      description: A new token
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/authGenerateWrap"
+    authLsResp:
+      description: List of tokens
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/authListWrap"
     peersResp:
       description: List of peers
       content:
@@ -823,6 +966,22 @@ components:
             $ref: "#/components/schemas/typeWrap"
 
   parameters:
+    tokenArg:
+      in: query
+      name: arg
+      description: Access token. Required if auth enabled 
+      required: false
+      schema:
+        type: string
+      example: ZXlKaGJHY2lPaUpGWkRJMU5URTVJaXdpZEhsd0lqb2lTbGRVSW4wLmV5SmxlSEFpT2pFMk1UUXdNVFV3T1RFc0ltbGhkQ0k2TVRZeE5EQXhNVFE1TVN3aWFuUnBJam9pZEdWemRDSXNJa04xYzNSdmJWQmhlV3h2WVdRaU9pSmhkWFJvTDJ4ek95SjkuZFlmZnhZSlAwaGNRZEY4NlpTOXdLczc5YWJyVGlIZEJ1UEJUZmc0b29vNlRSaHVhT3plNTl5clU3TG1kcHNsODYzbFZaaWs5eUU1ZWNiNm5FYV9kQnc=
+    tokenParam:
+      in: query
+      name: arg
+      description: a token
+      required: true
+      schema:
+        type: string
+      example: ZXlKaGJHY2lPaUpGWkRJMU5URTVJaXdpZEhsd0lqb2lTbGRVSW4wLmV5SmxlSEFpT2pFMk1UUXdNVFV3T1RFc0ltbGhkQ0k2TVRZeE5EQXhNVFE1TVN3aWFuUnBJam9pZEdWemRDSXNJa04xYzNSdmJWQmhlV3h2WVdRaU9pSmhkWFJvTDJ4ek95SjkuZFlmZnhZSlAwaGNRZEY4NlpTOXdLczc5YWJyVGlIZEJ1UEJUZmc0b29vNlRSaHVhT3plNTl5clU3TG1kcHNsODYzbFZaaWs5eUU1ZWNiNm5FYV9kQnc=
     driveIdParam:
       in: query
       name: arg
@@ -1158,6 +1317,22 @@ components:
           enum:
             - dfms-client
             - dfms-replicator
+    authGenerateWrap:
+      type: object
+      properties:
+        Token:
+          type: string
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+          description: A new generated access token
+    authListWrap:
+      type: object
+      properties:
+        TokenIDs:
+          type: array
+          description: List of ids of access tokens
+          items:
+            type: string
+            example: token_one
     errResult:
       type: object
       properties:
