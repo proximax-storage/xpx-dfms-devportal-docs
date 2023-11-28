@@ -1,48 +1,48 @@
 {
   "docs": {
     "Getting Started": [
-      "getting_started/what_is",
-      "getting_started/economy",
-      "getting_started/setting_up"
+      "storage_v2/getting_started/what_is",
+      "storage_v2/getting_started/economy",
+      "storage_v2/getting_started/setting_up"
     ],
     "Roles":[
-      "roles/owner",
-      "roles/replicator",
-      "roles/executor"
+      "storage_v2/roles/owner",
+      "storage_v2/roles/replicator",
+      "storage_v2/roles/executor"
     ],
     "Built-In Features": [
       {
         "type": "subcategory",
         "label": "Drive",
         "ids": [
-          "built_in_features/drive/overview",
-          "built_in_features/drive/lifecycle",
-          "built_in_features/drive/state"
+          "storage_v2/built_in_features/drive/overview",
+          "storage_v2/built_in_features/drive/lifecycle",
+          "storage_v2/built_in_features/drive/state"
         ]
       },
       {
         "type": "subcategory",
         "label": "Replicator",
         "ids": [
-          "built_in_features/replicator/overview"
+          "storage_v2/built_in_features/replicator/overview"
         ]
       },
       {
         "type": "subcategory",
         "label": "Verifier",
         "ids": [
-          "built_in_features/verifier/overview"
+          "storage_v2/built_in_features/verifier/overview"
         ]
       },
       {
         "type": "subcategory",
         "label": "SuperContract",
         "ids": [
-          "built_in_features/supercontract/overview",
-          "built_in_features/supercontract/lifecycle",
-          "built_in_features/supercontract/state",
-          "built_in_features/supercontract/sc_files",
-          "built_in_features/supercontract/vm"
+          "storage_v2/built_in_features/supercontract/overview",
+          "storage_v2/built_in_features/supercontract/lifecycle",
+          "storage_v2/built_in_features/supercontract/state",
+          "storage_v2/built_in_features/supercontract/sc_files",
+          "storage_v2/built_in_features/supercontract/vm"
         ]
       },
       
@@ -50,97 +50,97 @@
         "type": "subcategory",
         "label": "Challenge",
         "ids": [
-          "built_in_features/challenge"
+          "storage_v2/built_in_features/challenge"
         ]
       },
       {
         "type": "subcategory",
         "label": "Rewards",
         "ids": [
-          "built_in_features/rewards"
+          "storage_v2/built_in_features/rewards"
         ]
       }
     ],
     "Protocols":[
-      "protocols/cross_block_protocol",
-      "protocols/fair_streaming"
+      "storage_v2/protocols/cross_block_protocol",
+      "storage_v2/protocols/fair_streaming"
     ],
     "Algorithms":[
-      "algorithms/verification",
-      "algorithms/consensus"
+      "storage_v2/algorithms/verification",
+      "storage_v2/algorithms/decision_making"
     ]
   },
   "cli": {
     "Storade Director Node": [
-      "cli/dfms/dfms-client",
-      "cli/dfms/drive",
-      "cli/dfms/contract",
-      "cli/dfms/sc/sc",
-      "cli/dfms/net",
-      "cli/dfms/version"
+      "storage_v2/cli/dfms/dfms-client",
+      "storage_v2/cli/dfms/drive",
+      "storage_v2/cli/dfms/contract",
+      "storage_v2/cli/dfms/sc/sc",
+      "storage_v2/cli/dfms/net",
+      "storage_v2/cli/dfms/version"
     ],
     "Storage Replicator Node": [
-      "cli/dfmsr/dfms-replicator",
-      "cli/dfmsr/contract",
-      "cli/dfmsr/net",
-      "cli/dfmsr/version"
+      "storage_v2/cli/dfmsr/dfms-replicator",
+      "storage_v2/cli/dfmsr/contract",
+      "storage_v2/cli/dfmsr/net",
+      "storage_v2/cli/dfmsr/version"
     ],
     "Supercontracts": [
-      "cli/dfms/sc/create_wasm",
-      "cli/dfms/sc/create_wat",
-      "cli/dfms/sc/sc_flow_example"
+      "storage_v2/cli/dfms/sc/create_wasm",
+      "storage_v2/cli/dfms/sc/create_wat",
+      "storage_v2/cli/dfms/sc/sc_flow_example"
     ]
   },
   "Guides":{
     "Nodes": [
-      "guides/nodes/api",
-      "guides/nodes/apihttp"
+      "storage_v2/guides/nodes/api",
+      "storage_v2/guides/nodes/apihttp"
     ],
     "Contract": [
-      "guides/contract/compose",
-      "guides/contract/get",
-      "guides/contract/ls",
-      "guides/contract/ammends",
-      "guides/contract/verify",
-      "guides/contract/accept",
-      "guides/contract/accepted",
-      "guides/contract/invites",
-      "guides/contract/finish"
+      "storage_v2/guides/contract/compose",
+      "storage_v2/guides/contract/get",
+      "storage_v2/guides/contract/ls",
+      "storage_v2/guides/contract/ammends",
+      "storage_v2/guides/contract/verify",
+      "storage_v2/guides/contract/accept",
+      "storage_v2/guides/contract/accepted",
+      "storage_v2/guides/contract/invites",
+      "storage_v2/guides/contract/finish"
     ],
     "Drive": [
-      "guides/drive/add",
-      "guides/drive/get",
-      "guides/drive/file",
-      "guides/drive/cp",
-      "guides/drive/mv",
-      "guides/drive/mkdir",
-      "guides/drive/stat",
-      "guides/drive/ls",
-      "guides/drive/rm",
-      "guides/drive/flush",
-      "guides/drive/clear"
+      "storage_v2/guides/drive/add",
+      "storage_v2/guides/drive/get",
+      "storage_v2/guides/drive/file",
+      "storage_v2/guides/drive/cp",
+      "storage_v2/guides/drive/mv",
+      "storage_v2/guides/drive/mkdir",
+      "storage_v2/guides/drive/stat",
+      "storage_v2/guides/drive/ls",
+      "storage_v2/guides/drive/rm",
+      "storage_v2/guides/drive/flush",
+      "storage_v2/guides/drive/clear"
     ],
     "SuperContract": [
-      "guides/supercontract/deploy",
-      "guides/supercontract/exec",
-      "guides/supercontract/results",
-      "guides/supercontract/ls",
-      "guides/supercontract/get",
-      "guides/supercontract/executions",
-      "guides/supercontract/deactivate"
+      "storage_v2/guides/supercontract/deploy",
+      "storage_v2/guides/supercontract/exec",
+      "storage_v2/guides/supercontract/results",
+      "storage_v2/guides/supercontract/ls",
+      "storage_v2/guides/supercontract/get",
+      "storage_v2/guides/supercontract/executions",
+      "storage_v2/guides/supercontract/deactivate"
     ],
     "Network": [
-      "guides/net/id",
-      "guides/net/addrs",
-      "guides/net/connect",
-      "guides/net/peers",
-      "guides/net/disconnect"
+      "storage_v2/guides/net/id",
+      "storage_v2/guides/net/addrs",
+      "storage_v2/guides/net/connect",
+      "storage_v2/guides/net/peers",
+      "storage_v2/guides/net/disconnect"
     ],
     "Different flows": [
-      "guides/different_flows/net_lifecycle",
-      "guides/different_flows/contract_lifecycle",
-      "guides/different_flows/file_lifecycle",
-      "guides/different_flows/sc_lifecycle"
+      "storage_v2/guides/different_flows/net_lifecycle",
+      "storage_v2/guides/different_flows/contract_lifecycle",
+      "storage_v2/guides/different_flows/file_lifecycle",
+      "storage_v2/guides/different_flows/sc_lifecycle"
     ]
   }
 }

@@ -27,7 +27,7 @@ class HomeSplash extends React.Component {
             <img src="img/illustration-developer.png" className="jumbotron-img" />
             <h1>Start integrating your apps with Sirius Storage.</h1>
             <h6>Providing you with maximum data security, privacy, and scalability</h6>
-            <a href="docs/getting_started/what_is" class="button button-filled">Getting Started &rarr;</a>
+            <a href="docs/storage_v2/getting_started/what_is" class="button button-filled">Getting Started &rarr;</a>
             <p>Sirius Storage Version<span>0.8.1</span></p>
           </div>
           <div class="bg-diagonal"></div>
@@ -126,7 +126,7 @@ class Index extends React.Component {
             content: 'Install the development kit and start coding your first blockchain app.',
             image: `${baseUrl}img/home-getting-started.png`,
             imageAlign: 'top',
-            link: `${baseUrl + docsUrl}/getting_started/what_is`,
+            link: `${baseUrl + docsUrl}/storage_v2/getting_started/what_is`,
             title: 'Getting started',
           },
           {
