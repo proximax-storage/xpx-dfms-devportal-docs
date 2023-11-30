@@ -24,7 +24,8 @@
         "type": "subcategory",
         "label": "Replicator",
         "ids": [
-          "storage_v2/built_in_features/replicator/overview"
+          "storage_v2/built_in_features/replicator/overview",
+          "storage_v2/built_in_features/replicator/lifecycle"
         ]
       },
       {
