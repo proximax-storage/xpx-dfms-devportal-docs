@@ -29,7 +29,6 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'storage_v2/getting_started/what_is', label: 'Getting Started'},
-    {doc: 'storage_v2/cli/dfms/dfms-client', label: 'CLI'},
     {doc: 'storage_v2/guides/contract/compose', label: 'Guides'},
     {page: 'endpoints', label: 'API Endpoints'},
     {page: 'help', label: 'Help'}

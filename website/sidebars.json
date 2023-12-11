@@ -46,14 +46,6 @@
           "storage_v2/built_in_features/supercontract/vm"
         ]
       },
-      
-      {
-        "type": "subcategory",
-        "label": "Challenge",
-        "ids": [
-          "storage_v2/built_in_features/challenge"
-        ]
-      },
       {
         "type": "subcategory",
         "label": "Rewards",
@@ -69,27 +61,6 @@
     "Algorithms":[
       "storage_v2/algorithms/verification",
       "storage_v2/algorithms/decision_making"
-    ]
-  },
-  "cli": {
-    "Storade Director Node": [
-      "storage_v2/cli/dfms/dfms-client",
-      "storage_v2/cli/dfms/drive",
-      "storage_v2/cli/dfms/contract",
-      "storage_v2/cli/dfms/sc/sc",
-      "storage_v2/cli/dfms/net",
-      "storage_v2/cli/dfms/version"
-    ],
-    "Storage Replicator Node": [
-      "storage_v2/cli/dfmsr/dfms-replicator",
-      "storage_v2/cli/dfmsr/contract",
-      "storage_v2/cli/dfmsr/net",
-      "storage_v2/cli/dfmsr/version"
-    ],
-    "Supercontracts": [
-      "storage_v2/cli/dfms/sc/create_wasm",
-      "storage_v2/cli/dfms/sc/create_wat",
-      "storage_v2/cli/dfms/sc/sc_flow_example"
     ]
   },
   "Guides":{
