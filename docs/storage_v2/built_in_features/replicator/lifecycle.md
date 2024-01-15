@@ -23,13 +23,12 @@ When the Replicator joins the [Drive](overview.md), it starts listening to all t
 
 The synchronization consists of the next steps:
 
-  1. Download actual File Structure from other Replicators;
+  1. Download actual File Structure from other Replicators or Client;
   2. Compare the existing File Structure with the downloaded one and form the list of files to download;
-  3. Remove from Sandbox files that were downloaded there before and are not needed according to the list formed in p.2;
-  4. Download files according to the list, taking into account that some of them can have already been downloaded to the Sandbox;
-  5. If during the synchronization a new DataModificationApprovalTransaction is posted, then go to p.1.
-  6. When all necessary files are downloaded, sign Data Modification Single Approval Transaction and apply modifications to the real state of the [Drive](overview.md) without waiting for the approval.
-  7. If there are some pending modifications on the [Drive](overview.md), the [Replicator Node](../../roles/replicator.md) starts their execution in a usual way via execution of Action List (or Synchronization, if necessary).
+  3. Download files according to the list, taking into account that some of them can have already been downloaded;
+  4. If during the synchronization a new DataModificationApprovalTransaction is posted, then go to p.1.
+  5. When all necessary files are downloaded, sign Data Modification Single Approval Transaction and apply modifications to the real state of the [Drive](overview.md) without waiting for the approval.
+  6. If there are some pending modifications on the [Drive](overview.md), the [Replicator Node](../../roles/replicator.md) starts their execution in a usual way via execution of Action List (or Synchronization, if necessary).
 
 ## Storage Verification
 
