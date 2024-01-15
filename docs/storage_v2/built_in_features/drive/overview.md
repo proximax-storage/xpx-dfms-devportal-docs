@@ -12,8 +12,17 @@ The [Drive](overview.md) has the following properties:
 
 |Property|Description|
 |---|---
-|Multisig|Every [Drive](overview.md) has a unique identifier.
+|MultisigAccount|Every [Drive](overview.md) has a unique identifier.
 |Owner|Every [Drive](overview.md) has a user who created it.
-|Billing Period|The period of time for which the payment for the Drive service is made and equal to 4 weeks.
-|Drive Size|A [Drive](overview.md) space in MB (required).
-|Replicators Count|The amount of [Drive](overview.md) copies (required); Amount of [Storage Replicator Nodes](../../roles/replicator.md) is not limited, but should not be less than 1.
+|RootHash|Unique identifier of the drive state.
+|Size|A [Drive](overview.md) space in MB (required).
+|UsedSizeBytes|Used [Drive](overview.md) space in bytes.
+|Replicators Count|The amount of [Drive](overview.md) copies.
+|ActiveDataModifications|Array of active data modifications.
+|CompletedDataModifications|Array of completed data modifications.
+|ConfirmedUsedSizes|Information of drives assigned to the replicator.
+|Replicators|Array of replicators public key assigned to the [Drive](overview.md).
+|OffboardingReplicators|Array of replicators that applied for offboarding.
+|Verification|Information about verifications of replicators.
+|DownloadShards|Array of download channels and replicators that belong to respective download shards.
+|DataModificationShards|Array of data modofication shards.
