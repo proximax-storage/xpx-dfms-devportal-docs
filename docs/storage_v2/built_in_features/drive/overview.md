@@ -15,7 +15,7 @@ The [Drive](overview.md) has the following properties:
 |MultisigAccount|Every [Drive](overview.md) has a unique identifier.
 |Owner|Every [Drive](overview.md) has a user who created it.
 |RootHash|Unique identifier of the drive state.
-|Size|A [Drive](overview.md) space in MB (required).
+|Size|A [Drive](overview.md) space in MB.
 |UsedSizeBytes|Used [Drive](overview.md) space in bytes.
 |Replicators Count|The amount of [Drive](overview.md) copies.
 |ActiveDataModifications|Array of active data modifications.
