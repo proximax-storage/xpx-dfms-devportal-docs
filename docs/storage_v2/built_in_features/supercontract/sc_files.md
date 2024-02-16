@@ -9,8 +9,3 @@ There are two file types:
 - **_\*.wat_** - WebAssembly text format. It using only for uploading (and other FS transaction) to drive and for deploy a new [SC](../../built_in_features/supercontract/overview.md).
 
 For more deatails see the [wabt repo](https://github.com/WebAssembly/wabt/tree/1.0.13).
-
-## Guides
-
-- [create a **_\*.wasm_**](../../cli/dfms/sc/create_wasm.md);
-- [create a **_\*.wat_**](../../cli/dfms/sc/create_wat.md).
