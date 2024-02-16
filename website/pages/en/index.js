@@ -129,18 +129,18 @@ class Index extends React.Component {
             link: `${baseUrl + docsUrl}/storage_v2/getting_started/what_is`,
             title: 'Getting started',
           },
-          {
-            content: 'Easy-to-follow step by step guides with code examples.',
-            image: `${baseUrl}img/home-guides.png`,
-            imageAlign: 'top',
-            link: `${baseUrl + docsUrl}/cli/dfms/dfms`,
-            title: 'Guides',
-          },
+          // {
+          //   content: 'Easy-to-follow step by step guides with code examples.',
+          //   image: `${baseUrl}img/home-guides.png`,
+          //   imageAlign: 'top',
+          //   link: `${baseUrl + docsUrl}/cli/dfms/dfms`,
+          //   title: 'Guides',
+          // },
           {
             content: 'Architecture your solution connecting decentralized file management system',
             image: `${baseUrl}img/home-built-in-features.png`,
             imageAlign: 'top',
-            link: `${baseUrl + docsUrl}/built_in_features/drive/overview`,
+            link: `${baseUrl + docsUrl}/storage_v2/built_in_features/drive/overview`,
             title: 'Built-in Features',
           },
           {
