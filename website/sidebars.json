@@ -2,8 +2,7 @@
   "docs": {
     "Getting Started": [
       "storage_v2/getting_started/what_is",
-      "storage_v2/getting_started/economy",
-      "storage_v2/getting_started/setting_up"
+      "storage_v2/getting_started/economy"
     ],
     "Roles":[
       "storage_v2/roles/owner",
