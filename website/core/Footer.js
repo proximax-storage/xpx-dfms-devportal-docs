@@ -95,7 +95,7 @@ class Footer extends React.Component {
               supercontracts
             </a>
           </div>
-          <div>
+          {/* <div>
             <h5>Giudes</h5>
             <a href={this.docUrl('guides/contract/compose', this.props.docsPart)}>
               Contract
@@ -109,7 +109,7 @@ class Footer extends React.Component {
             <a href={this.docUrl('guides/net/id', this.props.docsPart)}>
               Network
             </a>
-          </div>
+          </div> */}
         </section>
 
         {/* <a

@@ -11,8 +11,8 @@
 const siteConfig = {
   docsSideNavCollapsible: true,
 
-  title: 'Storage DFMS', // Title for your website.
-  tagline: 'Create your applications using Data File Management System as a backbone',
+  title: 'Sirius Storage', // Title for your website.
+  tagline: 'Create your applications using Sirius Storage as a backbone',
   url: 'https://proximax-storage.github.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -28,9 +28,8 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'getting_started/what_is', label: 'Getting Started'},
-    {doc: 'cli/dfms/dfms-client', label: 'CLI'},
-    {doc: 'guides/contract/compose', label: 'Guides'},
+    {doc: 'storage_v2/getting_started/what_is', label: 'Getting Started'},
+    //{doc: 'storage_v2/guides/contract/compose', label: 'Guides'},
     {page: 'endpoints', label: 'API Endpoints'},
     {page: 'help', label: 'Help'}
     // {blog: true, label: 'Blog'},
