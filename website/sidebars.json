@@ -53,6 +53,13 @@
         ]
       }
     ],
+    "Storage User Application":[
+      "storage_v2/storage_user_app/overview",
+      "storage_v2/storage_user_app/getting_started",
+      "storage_v2/storage_user_app/managing_drives",
+      "storage_v2/storage_user_app/managing_drive_files",
+      "storage_v2/storage_user_app/downloading_data"      
+    ],
     "Protocols":[
       "storage_v2/protocols/cross_block_protocol",
       "storage_v2/protocols/fair_streaming"

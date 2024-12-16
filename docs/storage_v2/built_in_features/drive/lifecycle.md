@@ -4,84 +4,94 @@ title: Drive Lifecycle
 sidebar_label: Lifecycle
 ---
 >**Note**\
-You can see the [bcdocs](https://bcdocs.xpxsirius.io/docs/built-in-features/drive) for getting information about schemas of transactions described here.
+See [bcdocs](https://bcdocs.xpxsirius.io/docs/built-in-features/drive) for information about schemas of transactions described on this page.
 
-## Drive creation
+## Creating Drive
 
-To create the [Drive](overview.md), the [owner](../../roles/owner.md) must define Drive Size and Replicators Count and send Prepare Drive transaction. Drive Size is integer should not be less than 1MB. Minimum count of replicators defined in the Blockchain configuration, by default it is 4, but it could change. The [Drive](overview.md) preparation has no strict time bounds and you will wait replicators assignment to the drive. Any [Replicator Node](../../roles/replicator.md) could be assigned at any time in case he has enough space.
+To create a [Drive](overview.md), the [Owner](../../roles/owner.md) must define *Drive Size* and *Replicators Count*, and then send a `PrepareDrive` transaction.
 
-## Billing period
+- ***Drive Size*** is an integer size (in megabytes) of the Drive and must not be less than 1 MB.
+- ***Replicators Count*** must be greater than or equal to the minimum count of [Replicators](../replicator/overview.md) defined in the Blockchain configuration, which is set to `4` by default.
 
-We defined the duration of the Billing Period to be equal to 4 weeks for now, but it can be change in Blockchain config. Once per Billing Period, Harvesters make payment for the Storage, so the Drive Owner should pay attention if there are enough Storage Units on the Drive account. To replenish the Storage Account, the Drive Owner can send at any time StoragePaymentTransaction. To prepay the [Drive](overview.md) for the next Billing Period, the Drive Owner (or any other Public Key) should release the StoragePayment Transaction and specify the desired amount of Storage units it wants to pay for the Drive. 
+Drive preparation has no strict time bounds, and the Owner has to wait until Replicators are assigned to the Drive. Any Replicator node can be assigned to the Drive at any time, provided that Replicator has enough free space.
 
-As soon as the Billing Period since the last payment according to the time mentioned in the block passes, Harvesters make an automatic payment for the Storage for the past period. If there are not enough SO units for the Drive prolongation or not enough Verifications were prepaid, then the [Drive](overview.md) is closed in compliance with all procedures mentioned in the DriveClosureTransaction. Since ProximaX blockchain is public, there is no possibility to encourage the Replicators to work free of charge so there is no a so-called buffer zone when the Billing Period has already finished but the Drive still works.
+## Billing Period
 
-## Interacting with drive
+The duration of the Billing Period is defined to be equal to **4 weeks** by default, but it can be changed in the Blockchain configuration. Once per Billing Period, **Harvesters** make payment for the Storage, so the Drive Owner should pay attention if there are enough Storage Units on the Drive account.
 
-During the execution of the [Drive](overview.md), the [Storage Director Node](../../roles/owner.md) can interact with it, like on other cloud storage. It means that it can do uploading, removing, renaming, moving, downloading files, and creating/removing directories(empty directories are not allowed). Whenever an [Storage Director Node](../../roles/owner.md) makes any file operation, it changes a root hash. Blockchain is storing this hash and anyone can get an actual hash. So, all [Replicator Nodes](../../roles/replicator.md) can easily monitor [Drive](overview.md) changes.
+To replenish the Drive account, the Drive Owner can send `StoragePayment` transaction at any time. To prepay the Drive for the next Billing Period, the Drive Owner (or any other user) should release the StoragePayment Transaction and specify the desired amount of Storage units it wants to pay for the Drive.
 
-To Modify the [Drive](overview.md) Data, the Drive Owner should generate the Action List in which all necessary modifications are listed in the required order. The Content Download Information(CDI) is generated for the content to be downloaded by the Replicators. This content includes Modified Files and the Action List. This CDI, along with the size of the content to Download (including the Action List), is posted on the blockchain via DataModificationTransaction. The Drive Owner should not lie about the size of data to upload. Otherwise, the [Replicator Nodes](../../roles/replicator.md) will reject the Modification. The Drive Owner MUST NOT delete all the files that are to be downloaded by the Replicators until the corresponding. 
+As soon as the Billing Period since the last payment according to the time mentioned in the block passes, Harvesters make an automatic payment for the Storage for the past period. If there are not enough [SO units](../../getting_started/economy.md#storage-units--so) for the Drive prolongation, or not enough Verifications were prepaid, then the Drive is closed in compliance with all procedures mentioned in the `DriveClosure` transaction. Since ProximaX blockchain is public, there is no possibility to encourage the Replicators to work free of charge, so there is no a so-called buffer zone when the Billing Period has already finished, but the Drive still works.
 
-DataModificationApprovalTransaction is posted on the blockchain. Until the Data Modification is approved via DataModificationApprovalTransaction, the Drive Owner has the possibility to cancel the Modification with DataModificationCancelTransaction. In case of Modification Cancelation via DataModificationCancelTransaction or discarding the Modification by the Replicators, the Drive Owner still has to pay the Replicators for the modification.
+## Interacting with Drive
 
-When the Replicator starts the execution of the Modification, it tries to download necessary data based on the CDI mentioned in the transaction. This data consists of two parts:
+During the execution of the [Drive](overview.md), the [Storage Director](../../roles/owner.md) can interact with it, like on other cloud storage. It means that the [Owner](../../roles/owner.md) can upload, remove, rename, move or download files, and create or remove directories (empty directories are not uploaded to the Drive).
 
- - Action List which contains all the actions which should be executed during Data Modification;
- - Modified Files that should be downloaded by the Replicator to fulfill the requirements of the Action List.
- #### The possible actions in the Action List are:
- - File Creation,
- - File Modification,
- - File Remove,
- - File Rename(Move),
- - Folder Creation(Should not be empty),
- - Folder Remove,
- - Folder Rename(Move),
+Whenever a [Storage Director](../../roles/owner.md) makes any file operation, it changes the [Root Hash](overview.md#properties) of the Drive. Blockchain stores this hash publicly, and anyone can get current root hash of any Drive. So, all [Replicator](../../roles/replicator.md) nodes can easily monitor Drive changes.
 
-### Upload
+To modify the Drive data, the Drive Owner must generate an **Action List** in which all necessary modifications are listed in the required order. The **Content Download Information** (or **CDI**) is generated for the content to be downloaded by the Replicators. This content includes modified files and the Action List. This CDI, along with the size of the content to download (including the Action List), is posted on the blockchain via `DataModification` transaction. The Drive Owner should not lie about the size of data to upload; otherwise, the Replicators will reject the modification. The Drive Owner **must not delete** any of the files that are to be downloaded by the Replicators until the modification is finished.
 
-When an [Storage Director Node](../../roles/owner.md) uploads new files, it fills the Actions List, where indicates the file hashes and sizes. Blockchain automatically transfers *fileSize \* replicas* [SM](../../getting_started/economy.md#sm) for each file from the [Storage Director Node](../../roles/owner.md) account to [Drive](overview.md) account. These tokens are rewards of [Replicator Nodes](../../roles/replicator.md) and the [Storage Director Node](../../roles/owner.md) for file spreading (the [Storage Director Node](../../roles/owner.md) can also return part of its tokens). The transaction can be rejected in the following cases:
+Data Modification begins with a `DataModificationApproval` transaction being posted on the blockchain. Until this transaction is approved, the Drive Owner is allowed to cancel the Modification with `DataModificationCancel` transaction. If Data Modification is cancelled for any reason (either via `DataModificationCancel` transaction, or by being discarded by the Replicators), the Drive Owner still has to pay the Replicators for the Modification.
 
-- if the [Storage Director Node](../../roles/owner.md) doesn't have enough mosaics;
-- Blockchain already contains the same hash;
-- not enough space on the [Drive](overview.md).
-Blockchain marks all [Replicator Nodes](../../roles/replicator.md) that they don't put deposits for a new file.
+When the Replicator begins to process the Modification, it tries to download necessary data based on the CDI mentioned in the transaction. This data consists of two parts:
 
-As soon as the File Structure is generated, the Replicator (with other Replicators) signs multisig Data Modification Approval Transaction and mentions a new FileStructureCDI and other necessary information. If the Modification fails then the Replicator mentions in the transaction the necessary for the transaction information based on the old Drive State. 
+- **Action List**, which contains all the actions which should be executed during Data Modification.
+- **Modified Files** that should be downloaded by the Replicator to fulfill the requirements of the Action List.
 
-The Data Modification is considered as the failed one if one of the next conditions is satisfied:
+#### The possible actions in the Action List are:
+- File Creation;
+- File Modification;
+- File Removal;
+- File Renaming/Moving;
+- Folder Creation (must contain at least one file or one non-empty folder);
+- Folder Removal;
+- Folder Renaming/Moving.
 
- - The Downloaded Data size exceeds the declared in the DataModificationTransaction one (such download should be interrupted as soon as the excess is discovered);
- - The Downloaded Data does not contain the Action List;
- - The Action List is corrupted or contains invalid actions;
- - An error with the interaction with the File System has occurred;
- - The size of the Drive after applying the action list exceeds the ordered Drive Size.
+### Uploading
 
-If the Data Modification has not failed, as soon as the Data Modification Approval Transaction is added to the blockchain, the [Replicator Node](../../roles/replicator.md) reapplies the Action List not virtually. It works with the real state of the [Drive](overview.md), loading the necessary files and apply to the Drive.
+When a [Storage Director](../../roles/owner.md) node uploads new files, it fills the Actions List, where file hashes and their sizes are indicated. Blockchain automatically transfers *fileSize \* replicatorCount* [SM units](../../getting_started/economy.md#sm) for each file from the [Storage Director](../../roles/owner.md) account to the [Drive](overview.md) account. These mosaics are rewards for [Replicator](../../roles/replicator.md) nodes and the Storage Director node for file spreading (the Storage Director can also receive part of its mosaics back).
 
-### Download
+The transaction can be rejected in the following cases:
 
-In this procedure, we should highlight two roles:
+- The Storage Director doesn't have enough mosaics;
+- The blockchain already contains the Modification with the same hash;
+- Not enough space left on the Drive.
 
- - Downloader - the [Replicator Node](../../roles/replicator.md) which downloads the file
- - Uploader - the node which can upload the requested piece of the file. They can be Replicators who already downloaded the piece or the Drive Owner.
+As soon as the File Structure is generated, each Replicator signs the `DataModificationApproval` transaction and mentions a new File Structure CDI and other necessary information. If the Modification fails, then the Replicator mentions the necessary information based on the old Drive State.
 
-To be able to download data from the desired Drive, the Content Consumer or a Sponsor should open a Download Channel on this Drive and prepay some amount via Download Transaction. Any node that can issue this transaction indicated the list of Public keys (Content Consumers) that can download files within this channel. If this node wants to grant free downloading to any interested node, it records zero-key in this field.
+The Data Modification is considered as a failed one if any of the following conditions is satisfied:
+
+- The actual size of the downloaded data exceeds the size declared in the `DataModification` transaction (such download should be interrupted as soon as the excess is discovered).
+- The downloaded data does not contain the Action List.
+- The Action List is corrupted or contains invalid actions.
+- An error with the interaction with the File System has occurred.
+- The size of the Drive after applying the action list exceeds the ordered Drive Size.
+
+If the Data Modification has not failed, as soon as the `DataModificationApproval` transaction is added to the blockchain, the [Replicators](../../roles/replicator.md) now apply the Action List not virtually. It works with the real state of the [Drive](overview.md), loading the necessary files and applying the changes to the Drive file system.
+
+### Downloading
+
+In this procedure, two roles are distinguished:
+
+- **Downloader** — a [Replicator](../../roles/replicator.md) which downloads the file.
+- **Uploader** — a node which can upload the requested piece of the file. They can be Replicators who already downloaded the piece or the Drive Owner.
+
+To be able to download data from the desired Drive, a **Content Consumer** or a **Sponsor** must open a **Download Channel** on this Drive and prepay some amount via `Download` transaction. Any node that can issue this transaction must also indicate a list of Public Keys (Content Consumers) that are allowed to download files within this channel. If this node wants to grant free downloading to any interested node, it must put a zero-key in this field.
 
 In this transaction, the Content Consumer or a Sponsor locks:
 
- - Streaming Units - needed to pay for the Replicators' work,
- - XPX - needed to pay for the DownloadApprovalTransaction made by the Replicators.
+- [SM units](../../getting_started/economy.md#streaming-units--sm) — needed to pay for the Replicators' work,
+- [XPX](../../getting_started/economy.md#sirius-platform-native-token--xpx) - needed to pay for the `DownloadApproval` transaction made by the Replicators.
 
- The Content Consumer or another Sponsor can increase the locked amount of each currency by posting Download Payment Transaction. 
+The Content Consumer or another Sponsor can increase the locked amount of each currency by posting `DownloadPayment` transaction.
 
 ### Drive Closure
 
-If the Drive Owner wishes to close the Drive, he posts the Drive Closure Transaction. When the DriveClosureTransaction is posted on the blockchain, besides closing the Drive, all pending Data Modifications are canceled as via DataModificationCancelTransaction with one caveat: only the first pending DataModification is paid, as it is mentioned in DataModificationCancelTransaction, other ones are canceled free of charge. The reason for this policy is simple: we do not want the Drive Owner to be able to force the Replicators to download a large amount of data free of charge, so we make the Owner pay for the first pending modification. 
+If the Drive Owner wishes to close the Drive, they posts the `DriveClosure` transaction. When the `DriveClosure` transaction is posted on the blockchain, besides closing the Drive, all pending Data Modifications are canceled as via `DataModificationCancel` transaction with one caveat: only the first pending Data Modification is paid, as it is mentioned in `DataModificationCancel` transaction, and others are canceled free of charge. The reason for this policy is simple: we do not want the Drive Owner to be able to force the Replicators to download a large amount of data free of charge, so we make the Owner pay for the first pending modification. However, since all modifications are executed sequentially, we can be sure that the Replicators have not started executing all other pending modifications. So, the payment for them can be returned to the Drive Owner. Those Replicators who have not approved modifications that have been approved by the `DataModificationApproval` transaction receive rewards for these modifications.
 
-However, since all modifications are executed sequentially, we can be sure that the Replicators have not started executing all other pending modifications. So, the payment for them can be returned to the Drive Owner. Those Replicators who have not approved modifications that have been approved by the DataModificationApprovalTransaction receive rewards for these modifications.
+The Drive contract is finished when the Drive duration is over. Besides that, the Drive can be terminated before the deadline. It can happen when:
 
-The [Drive](overview.md) contract is finished when the duration is over. Besides that, the [Drive](overview.md) can be terminated until the deadline. It can happen when:
+- The [Director Node](../../roles/owner.md) decides to terminate the Drive.
+- The [Drive](overview.md) does not have enough mosaics to start the next [Billing Period](overview.md#billing-period).
 
-- The [Director Node](../../roles/owner.md) decides to terminate the [Drive](overview.md).
-- The [Drive](overview.md) does not have mosaics to start the next [billing period](overview.md#billing-period ).
-After the end of the [Drive](overview.md) duration, all [Replicator Nodes](../../roles/replicator.md) return their deposits.
+After the end of the Drive duration, all [Replicator](../../roles/replicator.md) nodes receive their deposits back.
