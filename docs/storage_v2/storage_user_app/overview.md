@@ -8,6 +8,6 @@ sidebar_label: Overview
 
 It is available for Linux and MacOS at https://github.com/proximax-storage/cpp-xpx-storage-user-app.git.
 
-![Storage User Application in Work (Registering a Modification)](../../assets/storage_user_app/main_window_modification_registering.png)
+![Storage User Application in Work (Registering a Modification)](/assets/storage_user_app/main_window_modification_registering.png)
 
-![Storage User Application in Work (Download Tab)](../../assets/storage_user_app/main_window_download_in_progress.png)
+![Storage User Application in Work (Download Tab)](/assets/storage_user_app/main_window_download_in_progress.png)

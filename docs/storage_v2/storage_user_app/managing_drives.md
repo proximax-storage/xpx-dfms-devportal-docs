@@ -7,7 +7,7 @@ sidebar_label: Managing Drives
 Creating, removing, and performing other operations on your [Drives](../built_in_features/drive/overview.md) (such as topping-up, changing local directory, renaming etc.) is done on the **Drives** tab of the User Application.
 
 <figure>
-  <img src="../../assets/storage_user_app/main_window_drives.png" alt="Drives Tab">
+  <img src="/assets/storage_user_app/main_window_drives.png" alt="Drives Tab">
   <figcaption align="center">Drives Tab</figcaption>
 </figure>
 
@@ -16,7 +16,7 @@ Creating, removing, and performing other operations on your [Drives](../built_in
 
 To order a creation of a new drive, click the **[ + ]** button in the upper left part of the window. A new dialog box will appear, prompting you to specify the required data for the new drive:
 
-![Create Drive Dialog](../../assets/storage_user_app/create_drive_dialog.png)
+![Create Drive Dialog](/assets/storage_user_app/create_drive_dialog.png)
 
 - `Name` is a human-readable name of the drive. It must be no longer than 40 characters and may only contain alphanumericals and underscores (`A–Z`, `a–z`, `0–9`, and `_`). *This name is only stored locally, and you will be able to rename the drive later at any moment.*
 
@@ -34,21 +34,21 @@ Keep in mind that increasing the `Replicator number` will also increase operatio
 
 When you are ready, press **Confirm** to proceed to the creation of the drive. The name of the drive will appear in the drop-down list in the upper left part of the window, indicating that it is now in a process of creation:
 
-![Creating a New Drive](../../assets/storage_user_app/main_window_creating_drive.png)
+![Creating a New Drive](/assets/storage_user_app/main_window_creating_drive.png)
 
 Once the respective transaction is accepted, you will receive a notification stating that the drive has been successfully created:
 
-![Drive Created Notification](../../assets/storage_user_app/drive_created_notification.png)
+![Drive Created Notification](/assets/storage_user_app/drive_created_notification.png)
 
 The main window will now look like this. Note that the name of the drive in the drop-down list now shows without the `(creating...)` suffix. If there are any files in the local drive folder, they will be also shown on the right side of the window in green color, indicating that they exist locally, but are not stored by the Replicators yet. *See [Drives Tab Interface Overview](./managing_drive_files.md#drives-tab-interface-overview) for more details.*
 
 <figure>
-  <img src="../../assets/storage_user_app/main_window_drive_created_empty.png" alt="Main Window with Created Drive (Empty Local Folder)">
+  <img src="/assets/storage_user_app/main_window_drive_created_empty.png" alt="Main Window with Created Drive (Empty Local Folder)">
   <figcaption align="center">Main window after the Drive has been created (local folder is empty)</figcaption>
 </figure>
 
 <figure>
-  <img src="../../assets/storage_user_app/main_window_drive_created_with_files.png" alt="Main Window with Created Drive (Non-Empty Local Folder)">
+  <img src="/assets/storage_user_app/main_window_drive_created_with_files.png" alt="Main Window with Created Drive (Non-Empty Local Folder)">
   <figcaption align="center">Main window after the Drive has been created (local folder already contains some files and folders)</figcaption>
 </figure>
 
@@ -66,15 +66,15 @@ Removing a Drive involves sending a transaction. Make sure that you have enough 
 
 To remove an existing drive, first select it from the drop-down list in the upper left part of the window, click the **[ – ]** button below the list, and then click the **Confirm** button in the dialog box that will appear:
 
-![Confirm Drive Removal Dialog](../../assets/storage_user_app/confirm_drive_removal_dialog.png)
+![Confirm Drive Removal Dialog](/assets/storage_user_app/confirm_drive_removal_dialog.png)
 
 The status of the Drive will update in the drop-down list, indicating that it is being deleted:
 
-![Main Window Removing Drive](../../assets/storage_user_app/main_window_removing_drive.png)
+![Main Window Removing Drive](/assets/storage_user_app/main_window_removing_drive.png)
 
 After the operation is completed, you will receive a corresponding notification:
 
-![Drive Removed Notification](../../assets/storage_user_app/drive_removed_notification.png)
+![Drive Removed Notification](/assets/storage_user_app/drive_removed_notification.png)
 
 
 # Miscellaneous
@@ -83,7 +83,7 @@ After the operation is completed, you will receive a corresponding notification:
 
 You can rename any of your Drives at any moment. To do this, select the Drive you want to rename in the drop-down list in the upper left part of the window, then click the **[ ... ]** button below and select **Rename**. In the dialog box that will appear enter a new name of the selected Drive:
 
-![Rename Drive Dialog](../../assets/storage_user_app/rename_drive_dialog.png)
+![Rename Drive Dialog](/assets/storage_user_app/rename_drive_dialog.png)
 
 Click **OK** when you are ready. The Drive will be renamed instantly.
 
@@ -100,7 +100,7 @@ As soon as the new local folder is selected, the right part of the window will u
 
 To top up any Drive (including yours), click the **[ ... ]** button and select **Top-up**. A new dialog box will appear:
 
-![Storage Payment Dialog](../../assets/storage_user_app/storage_payment_dialog.png)
+![Storage Payment Dialog](/assets/storage_user_app/storage_payment_dialog.png)
 
 - `Drive` is a key of a Drive that you want to top up. If you want to top up one of your Drives, you can click the drop-down list below this field and choose the Drive. This will automatically fill in this field with the respective Drive key.
 
@@ -110,7 +110,7 @@ Click **Confirm** when you are ready.
 
 Topping-up will be completed shortly after this. Upon its completion you will receive a following notification:
 
-![Payment Successful Notification](../../assets/storage_user_app/payment_successful_notification.png)
+![Payment Successful Notification](/assets/storage_user_app/payment_successful_notification.png)
 
 ## Copying Drive Key
 
@@ -127,12 +127,12 @@ To copy a link that can be later used for [adding a download](./downloading_data
 When you click **Copy Link**, a new dialog box will appear showing information about the download link that is being created:
 
 <figure>
-  <img src="../../assets/storage_user_app/copy_link_dialog_file.png" alt="Copy Link Dialog (Single File)">
+  <img src="/assets/storage_user_app/copy_link_dialog_file.png" alt="Copy Link Dialog (Single File)">
   <figcaption align="center">Creating a link to a file</figcaption>
 </figure>
 
 <figure>
-  <img src="../../assets/storage_user_app/copy_link_dialog_folder.png" alt="Copy Link Dialog (Single Folder)">
+  <img src="/assets/storage_user_app/copy_link_dialog_folder.png" alt="Copy Link Dialog (Single Folder)">
   <figcaption align="center">Creating a link to a folder</figcaption>
 </figure>
 
@@ -144,7 +144,7 @@ When you click **Copy Link**, a new dialog box will appear showing information a
 If you choose to copy a link to the whole Drive (this is done by selecting **[ .. ]** while being in the root of the Drive), an extended dialog box will show: 
 
 <figure>
-  <img src="../../assets/storage_user_app/copy_link_dialog_drive.png" alt="Copy Link Dialog (Whole Drive)">
+  <img src="/assets/storage_user_app/copy_link_dialog_drive.png" alt="Copy Link Dialog (Whole Drive)">
   <figcaption align="center">Creating a link to the whole Drive</figcaption>
 </figure>
 

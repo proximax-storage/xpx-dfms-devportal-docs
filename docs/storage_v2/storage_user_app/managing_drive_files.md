@@ -10,7 +10,7 @@ The main portion of the **Drives** tab of the User Application is used to track 
 # Drives Tab Interface Overview
 
 <figure>
-  <img src="../../assets/storage_user_app/main_window_changed_files.png" alt="Drives Tab With Changes">
+  <img src="/assets/storage_user_app/main_window_changed_files.png" alt="Drives Tab With Changes">
   <figcaption align="center">Drives Tab showing changes in the local folder (on the right) ready to be applied</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ When your local drive folder is in a desired state, use **Apply changes** button
 
 Clicking **Apply changes** will automatically generate and send a Data Modification transaction. It will also create a new frame within the window that will show the current state of the data modification:
 
-![Drives Tab (Modification Is Registering)](../../assets/storage_user_app/main_window_modification_registering.png)
+![Drives Tab (Modification Is Registering)](/assets/storage_user_app/main_window_modification_registering.png)
 
 Every modification goes through three states: **registering**, **uploading** and **completing**.
 
@@ -65,4 +65,4 @@ Cancelling a modification involves sending a transaction. Make sure that you hav
 
 After the modification is completed, the left and right parts of the tab will update. The state of the Drive on the left will now be the same as one of the local folder, and there will be no differences shown in the right part of the window:
 
-![Drives Tab (Modification Is Completed)](../../assets/storage_user_app/main_window_modification_completed.png)
+![Drives Tab (Modification Is Completed)](/assets/storage_user_app/main_window_modification_completed.png)

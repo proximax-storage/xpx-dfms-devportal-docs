@@ -13,7 +13,7 @@ sidebar_label: Getting Started
 
 When you launch the User Application for the first time, you will be prompted to log in into an account:
 
-![Create New Account Dialog](../../assets/storage_user_app/account_dialog.png)
+![Create New Account Dialog](/assets/storage_user_app/account_dialog.png)
 
 To proceed, you must fill in both fields.
 
@@ -29,7 +29,7 @@ Click **Save** when you are ready. This will bring you to the [Settings](#config
 
 After creating and saving your first account, you will be prompted to fill in network-related settings to complete the setup. All of the fields in this window are required, but some of them already have default values filled in.
 
-![Settings Window](../../assets/storage_user_app/settings_dialog.png)
+![Settings Window](/assets/storage_user_app/settings_dialog.png)
 
 - `REST Server Address` and `Replicator Booststrap Address` are, respectively, IP addresses, together with ports, of the REST server and any of the bootstrap replicators of the network you want to connect to. They must be in the following format: `18.142.186.205:3000`.
 
@@ -49,15 +49,15 @@ When you are ready, click **Save** to complete the setup and proceed to the main
 The main window of the User Application has three tabs dedicated to managing your [Downloads](./downloading_data.md), [Drives](./managing_drives.md), and your own [Replicator](../built_in_features/replicator/overview.md), which do not contain anything useful at this moment:
 
 <figure>
-  <img src="../../assets/storage_user_app/main_window_download.png" alt="Download Tab">
+  <img src="/assets/storage_user_app/main_window_download.png" alt="Download Tab">
   <figcaption align="center">Download Tab</figcaption>
 </figure>
 <figure>
-  <img src="../../assets/storage_user_app/main_window_drives.png" alt="Drives Tab">
+  <img src="/assets/storage_user_app/main_window_drives.png" alt="Drives Tab">
   <figcaption align="center">Drives Tab</figcaption>
 </figure>
 <figure>
-  <img src="../../assets/storage_user_app/main_window_my_replicator.png" alt="My Replicator Tab">
+  <img src="/assets/storage_user_app/main_window_my_replicator.png" alt="My Replicator Tab">
   <figcaption align="center">My Replicator Tab</figcaption>
 </figure>
 
