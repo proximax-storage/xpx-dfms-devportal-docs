@@ -4,11 +4,11 @@ title: The External Economy of the Sirius Storage
 sidebar_label: The External Economy
 ---
 
-To create a democratized autonomous network, an economic component is essential. ProximaX Sirius Platform with different actors runs day to day operation concerning its responsibility. Each does work, and to create a fair incentive scheme, the system relies on digital assets called mosaics.
+To create a democratized autonomous network, an economic component is essential. ProximaX Sirius Platform with different actors runs day to day operation concerning its responsibility. Each does work, and to create a fair incentive scheme, the system relies on digital assets.
 
-## Sirius Internal Digial Assets: Mosaics
+## Sirius Digial Assets (SDAs)
 
-The [Sirius Storage](what_is.md) uses three types of [mosaics](https://bcdocs.xpxsirius.io/docs/built-in-features/mosaic/) that are intended for different purposes.
+The [Sirius Storage](what_is.md) uses three types of digital assets that are intended for different purposes.
 
 ### Sirius Platform Native Token — XPX
 

@@ -49,11 +49,11 @@ When the Replicator begins to process the Modification, it tries to download nec
 
 ### Uploading
 
-When a [Storage Director](../../roles/owner.md) node uploads new files, it fills the Actions List, where file hashes and their sizes are indicated. Blockchain automatically transfers *fileSize \* replicatorCount* [SM units](../../getting_started/economy.md#sm) for each file from the [Storage Director](../../roles/owner.md) account to the [Drive](overview.md) account. These mosaics are rewards for [Replicator](../../roles/replicator.md) nodes and the Storage Director node for file spreading (the Storage Director can also receive part of its mosaics back).
+When a [Storage Director](../../roles/owner.md) node uploads new files, it fills the Actions List, where file hashes and their sizes are indicated. Blockchain automatically transfers *fileSize \* replicatorCount* [SM units](../../getting_started/economy.md#streaming-units--sm) for each file from the [Storage Director](../../roles/owner.md) account to the [Drive](overview.md) account. These SDAs are rewards for [Replicator](../../roles/replicator.md) nodes and the Storage Director node for file spreading (the Storage Director can also receive part of its SDAs back).
 
 The transaction can be rejected in the following cases:
 
-- The Storage Director doesn't have enough mosaics;
+- The Storage Director doesn't have enough [SDAs](../../getting_started/economy.md);
 - The blockchain already contains the Modification with the same hash;
 - Not enough space left on the Drive.
 
@@ -92,6 +92,6 @@ If the Drive Owner wishes to close the Drive, they posts the `DriveClosure` tran
 The Drive contract is finished when the Drive duration is over. Besides that, the Drive can be terminated before the deadline. It can happen when:
 
 - The [Director Node](../../roles/owner.md) decides to terminate the Drive.
-- The [Drive](overview.md) does not have enough mosaics to start the next [Billing Period](overview.md#billing-period).
+- The [Drive](overview.md) does not have enough [SDAs](../../getting_started/economy.md) to start the next [Billing Period](overview.md#billing-period).
 
 After the end of the Drive duration, all [Replicator](../../roles/replicator.md) nodes receive their deposits back.
